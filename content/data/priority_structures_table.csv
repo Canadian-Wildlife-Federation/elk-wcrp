@@ -1,0 +1,12 @@
+﻿ID,Stream name,Road Name,Barrier Owner,Barrier Type,PSCIS Status,Barrier Status,Number of downstream barriers,Spawning and Rearing Habitat Blocked (KM),Priority Status,Comments
+197827 (1004600762),Fording River,FRO Coal Haul,Teck Coal,Resource road crossing,Barrier Assessment,Barrier,0,8.04,Teck Design,Explore design and remediation options (Teck Coal leading)
+1100001086,Harmer Creek,N/A,Teck Coal,Dam,Barrier Assessment,Barrier,0,5.24,Teck Design,Explore design and remediation options (Teck Coal leading)
+62181,Dry Creek,Rail,CP Rail,Railway crossing,Habitat Confirmation,Partial,1,4.53,Teck Design,Explore design and remediation options (Teck Coal leading)
+197542,Hartley Creek,Dicken Road,BC Ministry of Transportation and Infrastructure,Municipal road crossing,Habitat Confirmation,Barrier,0,4.46,MOTI Design,Explore design and remediation options with MOTI
+62416,Grace Creek,Line Road,CanWel Forest Products,Resource road crossing,Habitat Confirmation,Barrier,1,0.98,Owner Engagement,Persuade/confirm owner will address crossing
+197825 (1004604677),Henretta Creek,Unnamed,Teck Coal,Resource road crossing,Barrier Assessment,Barrier,1,0.36,Teck Design,Explore design and remediation options (Teck Coal leading)
+62182,Dry Creek,Fording Highway,Teck Coal,Highway crossing,Habitat Confirmation,Partial,0,0.03,Teck Design,Explore design and remediation options (Teck Coal leading)
+62505,Tributary to Lizard Creek,Mount Fernie Parkway,BC Parks,Resource road crossing,Habitat Confirmation,Barrier,0,0.25,Design,Advance to design
+50152,Stove Creek (Tributary to Lizard Creek),Mount Fernie Parkway,BC Parks,Resource road crossing,Habitat Confirmation,Barrier,0,0.36,Design,Advance to design
+1004602974,Grace Creek,Line Road,CanWel Forest Products,Resource road crossing,Barrier Assessment,Barrier,0,3.24,Owner Engagement,Persuade/confirm owner will address crossing based onconfirmed high quality habitat upstream of 62416
+,,,,,,,Total Gain:,27.49,,

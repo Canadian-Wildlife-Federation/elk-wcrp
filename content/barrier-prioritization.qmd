@@ -13,7 +13,7 @@ import pandas
 
 def barrier_extent(barrier_type):
 
-    request = 'https://cabd-pro.cwf-fcf.org/bcfishpass/functions/postgisftw.wcrp_barrier_extent/items.json?watershed_group_code=HORS&barrier_type=' + barrier_type
+    request = 'https://cabd-pro.cwf-fcf.org/bcfishpass/functions/postgisftw.wcrp_barrier_extent/items.json?watershed_group_code=ELKR&barrier_type=' + barrier_type
 
     response_api = requests.get(request)
     parse = response_api.text
@@ -25,7 +25,7 @@ def barrier_extent(barrier_type):
     return blocked_km, blocked_pct
 
 def barrier_count(barrier_type):
-    request = 'https://cabd-pro.cwf-fcf.org/bcfishpass/functions/postgisftw.wcrp_barrier_count/items.json?watershed_group_code=HORS&barrier_type=' + barrier_type
+    request = 'https://cabd-pro.cwf-fcf.org/bcfishpass/functions/postgisftw.wcrp_barrier_count/items.json?watershed_group_code=ELKR&barrier_type=' + barrier_type
 
     response_api = requests.get(request)
     parse = response_api.text
@@ -42,7 +42,7 @@ def barrier_count(barrier_type):
 
 def barrier_severity(barrier_type):
 
-    request = 'https://cabd-pro.cwf-fcf.org/bcfishpass/functions/postgisftw.wcrp_barrier_severity/items.json?watershed_group_code=HORS&barrier_type=' + barrier_type
+    request = 'https://cabd-pro.cwf-fcf.org/bcfishpass/functions/postgisftw.wcrp_barrier_severity/items.json?watershed_group_code=ELKR&barrier_type=' + barrier_type
 
     response_api = requests.get(request)
     parse = response_api.text
@@ -56,7 +56,7 @@ def barrier_severity(barrier_type):
 
 def watershed_connectivity(habitat_type):
 
-    request = 'https://cabd-pro.cwf-fcf.org/bcfishpass/functions/postgisftw.wcrp_habitat_connectivity_status/items.json?watershed_group_code=HORS&habitat_type=' + habitat_type
+    request = 'https://cabd-pro.cwf-fcf.org/bcfishpass/functions/postgisftw.wcrp_habitat_connectivity_status/items.json?watershed_group_code=ELKR&habitat_type=' + habitat_type
 
     response_api = requests.get(request)
     parse = response_api.text
@@ -87,12 +87,12 @@ gain <- py$gain
 
 ## Horsefly River Watershed Barrier Prioritization Summary {-}
 
-The primary conservation outcome of the WCRP will be the remediation of barriers to connectivity in the Horsefly River watershed. To achieve Goal 1 in this plan, it is necessary to prioritize and identify a suite of barriers that, if remediated, will provide access to a minimum of `r gain` km of spawning or rearing habitat (@tbl-table16):
+The primary conservation outcome of the WCRP is the remediation of barriers to connectivity in the Elk River watershed. To achieve the 2041 connectivity goals in this plan (Goals 2 and 4), it is necessary to prioritize and identify a suite of barriers for both the Upstream of Elko Dam and Downstream of Elko Dam units that, if remediated, will provide access to a minimum of 142 km of habitat and 3 km of habitat, respectively (Table 12).
 
 
 ```{python echo=FALSE}
 #| label: tbl-table16
-#| tbl-cap: "Spawning and rearing habitat connectivity gain requirements to meet WCRP goals in the Horsefly River watershed. The measures of currently accessible and total habitat values are derived from the Intrinsic Potential habitat model described in Appendix B."
+#| tbl-cap: "Habitat connectivity gain requirements to meet WCRP goals in each WCRP unit of the Elk River watershed. The measures of currently accessible and total habitat values are derived from the Intrinsic Potential habitat model described in Appendix B."
 #| warning: false
 #| echo: false
 
@@ -107,12 +107,12 @@ total = watershed_connectivity("ALL")[1] #total km in HORS
 access = watershed_connectivity("ALL")[2]
 gain = round((total*0.96)-access,2)
 
-df = pd.DataFrame({"Habitat Type":["Spawning and Rearing"],
-                   "Currently accessible (km)":[str(access)],
-                   "Total": [str(total)],
-                   "Current Connectivity Status":[str(watershed_connectivity("ALL")[0])+"%"],
-                   "Goal": ["96%"],
-                   "Gain required (km)": [str(gain)]
+df = pd.DataFrame({"WCRP Unit":["Upstream of Elko Dam","Downstream of Elko Dam"],
+                   "Currently accessible (km)":[str(access),"" ],
+                   "Total": [str(total),  ""],
+                   "Current Connectivity Status":[str(watershed_connectivity("ALL")[0])+"%", "" ],
+                   "Goal": ["96%",""],
+                   "Gain required (km)": [str(gain),  ""]
                    })
 
 data = df.style.hide().set_properties(**{'text-align': 'left'})
@@ -125,17 +125,28 @@ data.set_table_styles(
 
 ```
 
-The barrier prioritization analysis ranked barriers by the amount of habitat blocked to produce an "intermediate barrier list" comprising more barriers than are needed to achieve the goals. A longer list of barriers is needed due to the inherent assumptions in the connectivity model, habitat model, and gaps in available data. Barriers that have been modelled (i.e., points where streams and road/rail networks intersect) are assumed to be barriers until field verification is undertaken and structures that have been assessed as "potential" barriers (e.g., may be passable at certain flow levels or for certain life history stages) require further investigation before a definitive remediation decision is made. Additionally, the habitat model identifies stream segments that have the potential to support spawning or rearing habitat for target species but does not attempt to quantify habitat quality or suitability (see Appendix B), which will require additional field verification once barrier assessments have completed. As such, the intermediate list of barriers below (@tbl-deficient) should be considered as a starting point in the prioritization process and represents structures that are a priority to evaluate further through barrier assessment and habitat confirmations because some structures will likely be passable, others will not be associated with usable habitat, and others may not be feasible to remediate because of logistic considerations. The intermediate barrier list was updated following the barrier assessments and habitat confirmations that were undertaken during the 2021 field season - some barriers were moved forward to the "priority barrier list" (see @tbl-priority) and others were eliminated from consideration due to one or more of the considerations discussed above (see @tbl-remove). The priority barrier list represents structures that were confirmed to be partial or full barriers to fish passage and that block access to confirmed habitat. Barriers on the priority list were reviewed by planning team members and selected for inclusion for proactive pursual of remediation.  For more details on the barrier prioritization model, please see @Mazany-Wright2021-rz.
+The barrier prioritization process comprises three stages:
+
+- Stage 1: preliminary barrier list
+
+- Stage 2: intermediate barrier list
+
+- Stage 3: priority barrier list
+
+The barrier prioritization analysis ranked barriers by the amount of habitat blocked to produce an "intermediate barrier list" comprising more barriers than are needed to achieve the goals. A longer list of barriers is needed due to the inherent assumptions in the connectivity model, habitat model, and gaps in available data. Barriers that have been modelled (i.e., points where streams and road/rail networks intersect) are assumed to be barriers until field verification is undertaken and structures that have been assessed as "potential" barriers (e.g., may be passable at certain flow levels or for certain life history stages) require further investigation before a definitive remediation decision is made.
+Additionally, the habitat model identifies stream segmentsthat have the potential to support spawning or rearing habitat for target species but does not attempt to quantify habitat quality or suitability (see Appendix B), which will require additional field verification once barrier assessments have been completed. As such, the intermediate list of barriers (Table 14) should be considered as a starting point in the prioritization process and represents crossings that are a priority to evaluate further through barrier assessment and habitat confirmations because some structures will likely be passable, others will not be associated with usable habitat, some crossings may not exist, and others may not be feasible to remediate because of logistic considerations. The intermediate barrier list was updated following the barrier assessments and habitat confirmations that were undertaken during the 2021 field season - some barriers were moved forward to the "priority barrier list" (see Table 15) and others were eliminated from consideration due to one or more of the considerations discussed above (see Table 13). The priority barrier list represents structures that were confirmed to be partial or full barriers to fish passage and that block access to confirmed habitat.
+Barriers on the priority list were reviewed by planning team members and selected for inclusion for proactive remediation. For more details on the barrier prioritization model, please see Mazany-Wright et al. 2021a.
+
 
 ```{r priority, echo = FALSE, results = 'asis'}
-#| label: tbl-priority
-#| tbl-cap: "The Horsefly River watershed priority barrier list, which includes barriers that have undergone field assessment, been reviewed by the planning team, and selected to pursue for proactive remediation."
+#| label: tbl-removed_above
+#| tbl-cap: "List of barriers above Elko Dam that were prioritized as part of the first iteration of the intermediate barrier list (field assessments occurred during the 2021 field season) but were removed from consideration for proactive remediation following discussion with the planning team."
 #| warning: false
 #| echo: false
 
 library("flextable")
 
-data <- read.csv("data/priority_barriers_for_rehabilitation_table.csv", check.names=FALSE)
+data <- read.csv("data/removed-barriers-above.csv", check.names=FALSE)
 prior_num <- length(data)
 ft <- flextable(data) |> colformat_num(big.mark = "", decimal.mark = ".", digits = 2) 
 ft <- bg(ft, bg = "#008270", part = "header")
@@ -147,14 +158,14 @@ ft |> autofit()
 ```
 
 ```{r deficient, echo = FALSE, results = 'asis'}
-#| label: tbl-deficient
-#| tbl-cap: "Assessed structures that remain data deficient"
+#| label: tbl-removed_below
+#| tbl-cap: "List of barriers below Elko Dam that were prioritized as part of the first iteration of the intermediate barrier list (field assessments occurred during the 2021 field season) but were removed from consideration for proactive remediation following discussion with the planning team."
 #| warning: false
 #| echo: false
 
 library("flextable")
 
-data <- read.csv("data/assessed_data_deficient_structures_table.csv", check.names=FALSE)
+data <- read.csv("data/removed-barriers-below.csv", check.names=FALSE)
 inter_num <- length(data)
 ft <- flextable(data) |> colformat_num(big.mark = "", decimal.mark = ".", digits = 2) 
 ft <- bg(ft, bg = "#008270", part = "header")
@@ -165,16 +176,15 @@ ft <- align_nottext_col(ft, align = "left", header = TRUE)
 ft |> autofit() 
 ```
 
-<!--
-```{r intermediate, echo = FALSE, results = 'asis'}
-#| label: tbl-intermediate
-#| tbl-cap: "Updated intermediate barrier list resulting from the second barrier prioritization analysis in the Horsefly River watershed. After assessing the potential barriers on the first iteration of the intermediate list (2021 field season) and either identifying them as remediation priorities or eliminating them from consideration (e.g., because they passed fish or did hot have suitable habitat upstream), the remaining potential barriers in the watershed were re-prioritized. The barriers on this list were prioritized to exceed the connectivity goals of the plan. Barriers highlighted in the same colour represent sets of barriers that have been prioritized as a group. In the Barrier Status column, P = potential barrier and B = confirmed barrier. All barrier assessment data is compiled from the BC Provincial Stream Crossing Inventory System."
+```{r intermediate_above, echo = FALSE, results = 'asis'}
+#| label: tbl-intermediate_above
+#| tbl-cap: "Intermediate barrier list resulting from barrier prioritization analysis in the Elk River watershed above Elko Dam. Crossings on this list have been identified as either potential barriers that require field verification or barriers/potential barriers that require further habitat investigations to determine their suitability as Westslope Cutthroat Trout habitat."
 #| warning: false
 #| echo: false
 
 library("flextable")
 
-data <- read.csv("data/assessed_data_deficient_structures_table.csv", check.names=FALSE)
+data <- read.csv("data/intermediate-barriers-above.csv", check.names=FALSE)
 inter_num <- length(data)
 ft <- flextable(data) |> colformat_num(big.mark = "", decimal.mark = ".", digits = 2) 
 ft <- bg(ft, bg = "#008270", part = "header")
@@ -184,17 +194,18 @@ ft <- align_text_col(ft, align = "left", header = TRUE)
 ft <- align_nottext_col(ft, align = "left", header = TRUE)
 ft |> autofit() 
 ```
--->
 
-```{r remove, echo = FALSE, results = 'asis'}
-#| label: tbl-remove
-#| tbl-cap: "List of barriers that were prioritized as part of the first iteration of the intermediate barrier list (field assessments occurred during the 2021 field season) but were removed from consideration for pursual of proactive remediation following discussion with the planning team due to these structures not existing, being passable, not be associated with usable habitat, or deemed not feasible to remediate because of logistic considerations."
+
+```{r intermediate_below, echo = FALSE, results = 'asis'}
+#| label: tbl-intermediate_below
+#| tbl-cap: "Intermediate barrier list resulting from barrier prioritization analysis in the Elk River watershed below Elko Dam. Crossings on this list have been identified as either potential barriers that require field verification or barriers/potential barriers that require further habitat investigations to determine their suitability as Westslope Cutthroat Trout habitat."
 #| warning: false
 #| echo: false
 
 library("flextable")
 
-data <- read.csv("data/excluded_structures_table.csv", check.names=FALSE)
+data <- read.csv("data/intermediate-barriers-below.csv", check.names=FALSE)
+inter_num <- length(data)
 ft <- flextable(data) |> colformat_num(big.mark = "", decimal.mark = ".", digits = 2) 
 ft <- bg(ft, bg = "#008270", part = "header")
 ft <- color(ft, color = "white", part = "header")
@@ -204,28 +215,6 @@ ft <- align_nottext_col(ft, align = "left", header = TRUE)
 ft |> autofit() 
 ```
 
-<!--
-```{python}
-#| label: tbl-remove1
-#| tbl-cap: "List of barriers that were prioritized as part of the first iteration of the intermediate barrier list (field assessments occurred during the 2021 field season) but were removed from consideration for pursual of proactive remediation following discussion with the planning team due to these structures not existing, being passable, not be associated with usable habitat, or deemed not feasible to remediate because of logistic considerations."
-#| warning: false
-#| echo: false
-#| 
-import pandas as pd
-
-df = pd.read_csv('data/excluded_structures_table.csv')
-
-data = df.style.hide().set_properties(**{'text-align': 'left'})
-
-data.set_table_styles(
-   [{
-       'selector': 'th',
-       'props': [('background-color', '#008270'),('text-align', 'left')]
-   }])
-```
--->
-
-Out of the `r inter_num` on the intermediate list, 16 require further field assessment before selection as a final barrier to pursue for remediation: 
 
 <!--
 ```{r fieldreq, echo = FALSE, results = 'asis'}
@@ -270,14 +259,14 @@ ft |> autofit()
 -->
 
 ```{r rehab, echo = FALSE, results = 'asis'}
-#| label: tbl-rehab
-#| tbl-cap: "Rehabilitated structures."
+#| label: tbl-priority
+#| tbl-cap: "Elk River watershed priority barrier list, which includes barriers that have undergone field assessment, been reviewed by the planning team, and selected for proactive remediation. (Note that at present there are no priority barriers Below Elko Dam)."
 #| warning: false
 #| echo: false
 
 library("flextable")
 
-data <- read.csv("data/rehabilitated_structures_table.csv", check.names=FALSE)
+data <- read.csv("data/priority_structures_table.csv", check.names=FALSE)
 ft <- flextable(data)
 ft <- bg(ft, bg = "#008270", part = "header")
 ft <- color(ft, color = "white", part = "header")
