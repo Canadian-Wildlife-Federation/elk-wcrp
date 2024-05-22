@@ -87,12 +87,12 @@ gain <- py$gain
 
 ## Horsefly River Watershed Barrier Prioritization Summary {-}
 
-The primary conservation outcome of the WCRP is the remediation of barriers to connectivity in the Elk River watershed. To achieve the 2041 connectivity goals in this plan (Goals 2 and 4), it is necessary to prioritize and identify a suite of barriers for both the Upstream of Elko Dam and Downstream of Elko Dam units that, if remediated, will provide access to a minimum of 142 km of habitat and 3 km of habitat, respectively (Table 12).
+The primary conservation outcome of the WCRP is the remediation of barriers to connectivity in the Elk River watershed. To achieve the 2041 connectivity goals in this plan (Goals 2 and 4), it is necessary to prioritize and identify a suite of barriers for both the Upstream of Elko Dam and Downstream of Elko Dam units that, if remediated, will provide access to a minimum of 142 km of habitat and 3 km of habitat, respectively (@tbl-connectivity).
 
 
 ```{python echo=FALSE}
-#| label: tbl-table16
-#| tbl-cap: "Habitat connectivity gain requirements to meet WCRP goals in each WCRP unit of the Elk River watershed. The measures of currently accessible and total habitat values are derived from the Intrinsic Potential habitat model described in Appendix B."
+#| label: tbl-connectivity
+#| tbl-cap: "Habitat connectivity gain requirements to meet WCRP goals in each WCRP unit of the Elk River watershed. The measures of currently accessible and total habitat values are derived from the Intrinsic Potential habitat model described in the data methods."
 #| warning: false
 #| echo: false
 
@@ -134,12 +134,12 @@ The barrier prioritization process comprises three stages:
 - Stage 3: priority barrier list
 
 The barrier prioritization analysis ranked barriers by the amount of habitat blocked to produce an "intermediate barrier list" comprising more barriers than are needed to achieve the goals. A longer list of barriers is needed due to the inherent assumptions in the connectivity model, habitat model, and gaps in available data. Barriers that have been modelled (i.e., points where streams and road/rail networks intersect) are assumed to be barriers until field verification is undertaken and structures that have been assessed as "potential" barriers (e.g., may be passable at certain flow levels or for certain life history stages) require further investigation before a definitive remediation decision is made.
-Additionally, the habitat model identifies stream segmentsthat have the potential to support spawning or rearing habitat for target species but does not attempt to quantify habitat quality or suitability (see Appendix B), which will require additional field verification once barrier assessments have been completed. As such, the intermediate list of barriers (Table 14) should be considered as a starting point in the prioritization process and represents crossings that are a priority to evaluate further through barrier assessment and habitat confirmations because some structures will likely be passable, others will not be associated with usable habitat, some crossings may not exist, and others may not be feasible to remediate because of logistic considerations. The intermediate barrier list was updated following the barrier assessments and habitat confirmations that were undertaken during the 2021 field season - some barriers were moved forward to the "priority barrier list" (see Table 15) and others were eliminated from consideration due to one or more of the considerations discussed above (see Table 13). The priority barrier list represents structures that were confirmed to be partial or full barriers to fish passage and that block access to confirmed habitat.
+Additionally, the habitat model identifies stream segmentsthat have the potential to support spawning or rearing habitat for target species but does not attempt to quantify habitat quality or suitability see [data methods](data-methods.qmd), which will require additional field verification once barrier assessments have been completed. As such, the intermediate list of barriers (Table 14) should be considered as a starting point in the prioritization process and represents crossings that are a priority to evaluate further through barrier assessment and habitat confirmations because some structures will likely be passable, others will not be associated with usable habitat, some crossings may not exist, and others may not be feasible to remediate because of logistic considerations. The intermediate barrier list was updated following the barrier assessments and habitat confirmations that were undertaken during the 2021 field season - some barriers were moved forward to the "priority barrier list"(@tbl-priority) and others were eliminated from consideration due to one or more of the considerations discussed above see (@tbl-removed-above) and (@tbl-removed-below). The priority barrier list represents structures that were confirmed to be partial or full barriers to fish passage and that block access to confirmed habitat.
 Barriers on the priority list were reviewed by planning team members and selected for inclusion for proactive remediation. For more details on the barrier prioritization model, please see Mazany-Wright et al. 2021a.
 
 
-```{r priority, echo = FALSE, results = 'asis'}
-#| label: tbl-removed_above
+```{r removedab, echo = FALSE, results = 'asis'}
+#| label: tbl-removed-above
 #| tbl-cap: "List of barriers above Elko Dam that were prioritized as part of the first iteration of the intermediate barrier list (field assessments occurred during the 2021 field season) but were removed from consideration for proactive remediation following discussion with the planning team."
 #| warning: false
 #| echo: false
@@ -157,8 +157,8 @@ ft <- align_nottext_col(ft, align = "left", header = TRUE)
 ft |> autofit() 
 ```
 
-```{r deficient, echo = FALSE, results = 'asis'}
-#| label: tbl-removed_below
+```{r removedbl, echo = FALSE, results = 'asis'}
+#| label: tbl-removed-below
 #| tbl-cap: "List of barriers below Elko Dam that were prioritized as part of the first iteration of the intermediate barrier list (field assessments occurred during the 2021 field season) but were removed from consideration for proactive remediation following discussion with the planning team."
 #| warning: false
 #| echo: false
