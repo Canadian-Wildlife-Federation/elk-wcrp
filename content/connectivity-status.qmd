@@ -1,3 +1,14 @@
+```{python echo=FALSE}
+#| echo: false
+import warnings
+import pandas as pd
+import numpy as np
+import python.api_calls as api
+import python.connectivity_assess as conn_table
+
+warnings.filterwarnings('ignore')
+```
+
 # Connectivity Status Assessment and Goals {-}
 
 ## Connectivity Status Assessment {-}
@@ -6,127 +17,14 @@ The planning team devised two Key Ecological Attributes (KEAs) and associated in
 
 The current connectivity status assessment relies on GIS analyses to map known and modelled barriers to fish passage, identify stream reaches that have potential spawning and rearing habitat, estimate the proportion of habitat that is currently accessible to target species, and prioritize barriers for field assessment that would provide the greatest gains in connectivity. For the connectivity status assessments and barrier prioritization analysis the amount of spawning and rearing habitat is aggregated without duplication (i.e., a stream segment is only counted once if it is classified as both spawning and rearing habitat; see [data methods](data-methods.qmd)). To support a flexible prioritization framework to identify priority barriers in the watershed, two assumptions are made: 1) any modelled (i.e., the passability status is unknown) or partial barriers are treated as complete barriers to passage and 2) the habitat modelling is binary, it does not assign any habitat quality values. As such, the current connectivity status will be refined over time as more data on habitat and barriers are collected. For more detail on how the connectivity status assessments were conducted, see [data methods](data-methods.qmd).
 
-```{python}
-#| echo: false
-#| warning: false
-
-import requests
-import json
-import pandas
-
-def barrier_extent(barrier_type):
-
-    request = 'https://cabd-pro.cwf-fcf.org/bcfishpass/functions/postgisftw.wcrp_barrier_extent/items.json?watershed_group_code=ELKR&barrier_type=' + barrier_type
-
-    response_api = requests.get(request)
-    parse = response_api.text
-    result = json.loads(parse)
-
-    blocked_km = result[0]['all_habitat_blocked_km']
-    blocked_pct = result[0]['extent_pct']
-
-    return blocked_km, blocked_pct
-
-def barrier_count(barrier_type):
-    request = 'https://cabd-pro.cwf-fcf.org/bcfishpass/functions/postgisftw.wcrp_barrier_count/items.json?watershed_group_code=ELKR&barrier_type=' + barrier_type
-
-    response_api = requests.get(request)
-    parse = response_api.text
-    result = json.loads(parse)
-
-    n_passable = result[0]['n_passable']
-    n_barrier = result[0]['n_barrier']
-    n_potential = result[0]['n_potential']
-    n_unknown = result[0]['n_unknown']
-
-    sum_bar = (n_passable, n_barrier, n_potential, n_unknown)
-
-    return n_passable, n_barrier, n_potential, n_unknown, sum(sum_bar)
-
-def barrier_severity(barrier_type):
-
-    request = 'https://cabd-pro.cwf-fcf.org/bcfishpass/functions/postgisftw.wcrp_barrier_severity/items.json?watershed_group_code=ELKR&barrier_type=' + barrier_type
-
-    response_api = requests.get(request)
-    parse = response_api.text
-    result = json.loads(parse)
-
-    n_assessed_barrier = result[0]['n_assessed_barrier']
-    n_assess_total = result[0]['n_assess_total']
-    pct_assessed_barrier = result[0]['pct_assessed_barrier']
-
-    return n_assessed_barrier, n_assess_total, pct_assessed_barrier
-
-def watershed_connectivity(habitat_type):
-
-    request = 'https://cabd-pro.cwf-fcf.org/bcfishpass/functions/postgisftw.wcrp_habitat_connectivity_status/items.json?watershed_group_code=ELKR&habitat_type=' + habitat_type
-
-    response_api = requests.get(request)
-    parse = response_api.text
-    result = json.loads(parse)
-
-    connect_stat = result[0]['connectivity_status']
-
-    return str(round(connect_stat))
-
-num_dam = barrier_severity('DAM')[1]
-km_dam = barrier_extent('DAM')[0]
-pct_dam = barrier_extent('DAM')[1]
-resource_km = barrier_extent('ROAD, RESOURCE/OTHER')[0]
-resource_pct = round(barrier_extent('ROAD, RESOURCE/OTHER')[1])
-demo_km = barrier_extent('ROAD, DEMOGRAPHIC')[0]
-demo_pct = round(barrier_extent('ROAD, DEMOGRAPHIC')[1])
-resource_sev = round(barrier_severity('ROAD, RESOURCE/OTHER')[2])
-demo_sev = round(barrier_severity('ROAD, DEMOGRAPHIC')[2])
-sum_road = barrier_severity('ROAD, RESOURCE/OTHER')[1] + barrier_severity('ROAD, DEMOGRAPHIC')[1]
-
-```
-
 ```{python echo=FALSE}
 #| label: tbl-connectivity
 #| tbl-cap: "Connectivity status assessment for (a) habitat upstream of Elko Dam and (b) habitat downstream of Elko Dam in the Elk River watershed. The two KEAs - Accessible habitat upstream of Elko Dam and Accessible habitat downstream of Elko Dam - are evaluated using the Longest Fragment approach (Diaz et al. 2021), whereby the length of linear habitat that currently comprises the longest connected section in the watershed is divided by the total length of all linear habitat in the watershed."
 #| warning: false
 #| echo: false
 
-import pandas as pd
-import numpy as np
-import matplotlib as mpl
-import warnings
-
-warnings.filterwarnings('ignore')
-
-df = pd.DataFrame({"Target Species":["Westslope Cutthroat Trout"," "],
-                   "KEA":["Accessible Habitat upstream of Elko Dam"," "],
-                   "Indicator":["Longest Fragment (%)","Current Status:"],
-                   "Poor":["<25%"," "],
-                   "Fair":["25-50%"," "],
-                   "Good":["51-75%"," "],
-                   "Very Good":[">75%", watershed_connectivity("UPSTREAM_ELKO")]
-                   })
-
-
-def highlighttab7(val):
-    red = '#ff0000;'
-    yellow = '#ffff00;'
-    lgreen = '#92d050;'
-    dgreen = '#03853e;'
-
-    if val=="<25%" : color = red
-    elif val[0:].isdigit() and int(val) < 80 : color = red
-    elif val=="25-50%": color = yellow
-    elif val=="51-75%"  : color = lgreen
-    elif val[0:].isdigit() and (int(val) >= 80 and int(val) < 90) : color = lgreen 
-    elif val ==">75%": color = dgreen
-    elif val[0:].isdigit() and int(val) >= 90 : color = dgreen 
-    elif val == "Current Status:" : return "font-weight: bold"
-    else: color = 'white'
-    return 'background-color: %s' % color
-
-df.style.applymap(highlighttab7).set_table_styles(
-   [{
-       'selector': 'th',
-       'props': [('background-color', '#008270'),('text-align', 'left')]
-   }]).hide()
+df = conn_table.make_assess_table("Westslope Cutthroat Trout", "Accessible habitat upstream of Elko Dam", "Longest Fragment (%)", 25, 50, 75, api.connect_up)
+df
 ```
 
 **Comments:** Indicator rating definitions are based on the consensus decisions of the planning team. The current status is based on the CWF Barrier Prioritization Model output, which is current as of November 2022.
@@ -135,47 +33,8 @@ df.style.applymap(highlighttab7).set_table_styles(
 #| warning: false
 #| echo: false
 
-#creating table 7
-import pandas as pd
-import numpy as np
-import matplotlib as mpl
-
-
-warnings.filterwarnings('ignore')
-
-df = pd.DataFrame({"Target Species":["Westslope Cutthroat Trout",""],
-                   "KEA":["Accessible habitat downstream of Elko Dam",""],
-                   "Indicator":["Longest Fragment (%)","Current Status:"],
-                   "Poor":["<25%"," "],
-                   "Fair":["25-50%"," "],
-                   "Good":["51-75%"," "],
-                   "Very Good":[">75%", watershed_connectivity("DOWNSTREAM_ELKO")]
-                   })
-
-def highlighttab7b(val):
-    red = '#ff0000;'
-    yellow = '#ffff00;'
-    lgreen = '#92d050;'
-    dgreen = '#03853e;'
-
-    if val=="<25%" : color = red
-    elif val[0:].isdigit() and int(val) < 80 : color = red
-    elif val=="25-50%": color = yellow
-    elif val=="51-75%"  : color = lgreen
-    elif val[0:].isdigit() and (int(val) >= 80 and int(val) < 90) : color = lgreen 
-    elif val ==">75%": color = dgreen
-    elif val[0:].isdigit() and int(val) >= 90 : color = dgreen 
-    elif val == "Current Status:" : return "font-weight: bold"
-    else: color = 'white'
-    return 'background-color: %s' % color
-
-df.style.applymap(highlighttab7b).set_table_styles(
-   [{
-       'selector': 'th',
-       'props': [('background-color', '#008270'),('text-align', 'left')]
-   }]).hide()
-
-
+df = conn_table.make_assess_table("Westslope Cutthroat Trout", "Accessible habitat downstream of Elko Dam", "Longest Fragment (%)", 25, 50, 75, api.connect_down)
+df
 ```
 
 **Comments:** Indicator rating definitions are based on the consensus decisions of the planning team. The current status is based on the CWF Barrier Prioritization Model output, which is current as of November 2022.
@@ -197,9 +56,9 @@ import pandas as pd
 import numpy as np
 
 df = pd.DataFrame({"Goal #": [1,2,3,4],
-                   "Goal": ["By 2031, the Longest Fragment (%) for Westslope Cutthroat Trout will increase from 69% to 83% above the Elko Dam (i.e., reconnect at least 142 km of habitat).",
-                            "By 2041, the Longest Fragment (%) for Westslope Cutthroat Trout will increase to 86% above the Elko Dam (i.e., reconnect at least an additional 30 km of habitat).",
-                            "By 2031, the Longest Fragment (%) for Westslope Cutthroat Trout will increase from 98% to 99% below the Elko Dam (i.e., reconnect at least 3 km of habitat).",
+                   "Goal": ["By 2031, the Longest Fragment (%) for Westslope Cutthroat Trout will increase from "+ str(api.connect_up) +"% to 83% above the Elko Dam (i.e., reconnect at least "+str(api.gain_up_31)+" of habitat).",
+                            "By 2041, the Longest Fragment (%) for Westslope Cutthroat Trout will increase to 86% above the Elko Dam (i.e., reconnect at least an additional "+ str(round(api.gain_up_41-api.gain_up_31, 2)) +" km of habitat).",
+                            "By 2031, the Longest Fragment (%) for Westslope Cutthroat Trout will increase from "+ str(api.connect_down) +"% to 99% below the Elko Dam (i.e., reconnect at least "+ str(api.gain_down) +" km of habitat).",
                             "By 2041, the Longest Fragment (%) for Westslope Cutthroat Trout will not decrease from 99% below the Elko Dam."]
                     })
 
@@ -213,27 +72,5 @@ data.set_table_styles(
 
 ```
 
-
-
-```{r echo=FALSE}
-#| echo: false
-#| include: true
-#| warning: false
-
-library(reticulate)
-
-
-num_dam <- py$num_dam
-km_dam <- py$km_dam
-pct_dam <- py$pct_dam
-resource_km <- py$resource_km
-resource_pct <- py$resource_pct
-demo_km <- py$demo_km
-demo_pct <- py$demo_pct
-resource_sev <- py$resource_sev
-demo_sev <- py$demo_sev
-sum_road <- py$sum_road
-
-```
 
 

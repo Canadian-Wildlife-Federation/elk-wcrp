@@ -1,4 +1,12 @@
-<!-- # Horsefly River Watershed Secwepemcúl’ecw Connectivity Remediation Plan: 2021 - 2040 {-} -->
+```{r}
+#| echo: false
+#| warning: false
+
+library(reticulate)
+library("flextable")
+source("Rscripts/table_formatting.R")
+
+```
 
 # Supplementary Information {-}
 
@@ -133,14 +141,10 @@ data.set_table_styles(
 #| tbl-cap: "Confirmed funding sources for plan implementation in the Elk River watershed."
 #| warning: false
 
-library("flextable")
-
 data <- read.csv("data/confirmed-funding-sources.csv", check.names=FALSE)
 ft <- flextable(data)
-ft <- bg(ft, bg = "#008270", part = "header")
-ft <- color(ft, color = "white", part = "header")
-ft <- set_caption(ft)
-ft |> autofit() 
+ft <- format_flextable(ft)
+ft
 ```
 
 ```{r fund2, echo = FALSE, results = 'asis'}
@@ -148,12 +152,8 @@ ft |> autofit()
 #| tbl-cap: "Potential funding sources for plan implementation in the Elk River watershed. The Canadian Wildlife Federation and the planning team can coordinate proposal submission through these sources."
 #| warning: false
 
-library("flextable")
-
 data <- read.csv("data/potential-funding-sources.csv", check.names=FALSE)
 ft <- flextable(data)
-ft <- bg(ft, bg = "#008270", part = "header")
-ft <- color(ft, color = "white", part = "header")
-ft <- set_caption(ft)
-ft |> autofit() 
+ft <- format_flextable(ft)
+ft
 ```

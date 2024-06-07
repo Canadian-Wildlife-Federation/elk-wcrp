@@ -41,7 +41,7 @@ format:
   html:
     css: style.css
     theme: cosmo
-    toc-title: "HORS WCRP"
+    toc-title: "ELKR WCRP"
     crossref:
       fig-title: '**Figure**'
       tbl-title: '**Table**'

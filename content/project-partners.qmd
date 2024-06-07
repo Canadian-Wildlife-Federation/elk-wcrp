@@ -1,5 +1,12 @@
-<!-- # Horsefly River Watershed Secwepemcúl’ecw Connectivity Remediation Plan: 2021 - 2040 {-} -->
+```{r}
+#| echo: false
+#| warning: false
 
+library(reticulate)
+library("flextable")
+source("Rscripts/table_formatting.R")
+
+```
 ## Project Partners {-}
 
 ## Planning Team {-}
@@ -11,13 +18,9 @@ The Ktunaxa National Council (KNC) was invited to participate in the planning pr
 #| tbl-cap: "Elk River watershed WCRP planning team members. Planning team members contributed to the development of this plan by participating in a series of workshops and document and data review. The plan was generated based on the input and feedback of the local groups and organizations list in this table."
 #| warning: false
 
-library("flextable")
-
 data <- read.csv("data/planning_team.csv", check.names=FALSE)
 ft <- flextable(data)
-ft <- bg(ft, bg = "#008270", part = "header")
-ft <- color(ft, color = "white", part = "header")
-ft <- set_caption(ft)
-ft |> autofit() 
+ft <- format_flextable(ft)
+ft
 ```
 

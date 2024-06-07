@@ -1,89 +1,24 @@
-# Barrier Prioritization {-}
-
-```{python}
-#| echo: false
-#| warning: false
-
+```{python echo=FALSE}
+import python.api_calls as api
 import pandas as pd
-import numpy as np
 import warnings
-import requests
-import json
-import pandas
-
-def barrier_extent(barrier_type):
-
-    request = 'https://cabd-pro.cwf-fcf.org/bcfishpass/functions/postgisftw.wcrp_barrier_extent/items.json?watershed_group_code=ELKR&barrier_type=' + barrier_type
-
-    response_api = requests.get(request)
-    parse = response_api.text
-    result = json.loads(parse)
-
-    blocked_km = result[0]['all_habitat_blocked_km']
-    blocked_pct = result[0]['extent_pct']
-
-    return blocked_km, blocked_pct
-
-def barrier_count(barrier_type):
-    request = 'https://cabd-pro.cwf-fcf.org/bcfishpass/functions/postgisftw.wcrp_barrier_count/items.json?watershed_group_code=ELKR&barrier_type=' + barrier_type
-
-    response_api = requests.get(request)
-    parse = response_api.text
-    result = json.loads(parse)
-
-    n_passable = result[0]['n_passable']
-    n_barrier = result[0]['n_barrier']
-    n_potential = result[0]['n_potential']
-    n_unknown = result[0]['n_unknown']
-
-    sum_bar = (n_passable, n_barrier, n_potential, n_unknown)
-
-    return n_passable, n_barrier, n_potential, n_unknown, sum(sum_bar)
-
-def barrier_severity(barrier_type):
-
-    request = 'https://cabd-pro.cwf-fcf.org/bcfishpass/functions/postgisftw.wcrp_barrier_severity/items.json?watershed_group_code=ELKR&barrier_type=' + barrier_type
-
-    response_api = requests.get(request)
-    parse = response_api.text
-    result = json.loads(parse)
-
-    n_assessed_barrier = result[0]['n_assessed_barrier']
-    n_assess_total = result[0]['n_assess_total']
-    pct_assessed_barrier = result[0]['pct_assessed_barrier']
-
-    return n_assessed_barrier, n_assess_total, pct_assessed_barrier
-
-def watershed_connectivity(habitat_type):
-
-    request = 'https://cabd-pro.cwf-fcf.org/bcfishpass/functions/postgisftw.wcrp_habitat_connectivity_status/items.json?watershed_group_code=ELKR&habitat_type=' + habitat_type
-
-    response_api = requests.get(request)
-    parse = response_api.text
-    result = json.loads(parse)
-
-    connect_stat = result[0]['connectivity_status']
-    all_habitat = result[0]['all_habitat']
-    all_habitat_acc = result[0]['all_habitat_accessible']
-
-    return str(round(connect_stat)), all_habitat, all_habitat_acc
 
 warnings.filterwarnings('ignore')
-
-total = watershed_connectivity("ALL")[1] #total km in HORS
-access = watershed_connectivity("ALL")[2]
-gain = round((total*0.96)-access,2)
 ```
-
 ```{r}
 #| echo: false
 #| warning: false
 
 library(reticulate)
+api <- import("python.api_calls")
+gain <- api$gain
 
-gain <- py$gain
+source("Rscripts/table_formatting.R")
 
 ```
+
+# Barrier Prioritization {-}
+
 
 ## Horsefly River Watershed Barrier Prioritization Summary {-}
 
@@ -96,23 +31,12 @@ The primary conservation outcome of the WCRP is the remediation of barriers to c
 #| warning: false
 #| echo: false
 
-import pandas as pd
-import numpy as np
-import matplotlib as mpl
-import warnings
-
-warnings.filterwarnings('ignore')
-
-total = watershed_connectivity("ALL")[1] #total km in HORS
-access = watershed_connectivity("ALL")[2]
-gain = round((total*0.96)-access,2)
-
 df = pd.DataFrame({"WCRP Unit":["Upstream of Elko Dam","Downstream of Elko Dam"],
-                   "Currently accessible (km)":[str(access),"" ],
-                   "Total": [str(total),  ""],
-                   "Current Connectivity Status":[str(watershed_connectivity("ALL")[0])+"%", "" ],
-                   "Goal": ["96%",""],
-                   "Gain required (km)": [str(gain),  ""]
+                   "Currently accessible (km)":[str(api.access_up), str(api.access_down)],
+                   "Total": [str(api.total_up),  str(api.total_down)],
+                   "Current Connectivity Status":[str(api.connect_up)+"%", str(api.connect_down)+"%"],
+                   "Goal": ["86%",""],                 # Go to python/api_calls and update the multiplier for the gain variables to this percent value
+                   "Gain required (km)": [str(api.gain_up_41),  str(api.gain_down)]
                    })
 
 data = df.style.hide().set_properties(**{'text-align': 'left'})
@@ -144,17 +68,11 @@ Barriers on the priority list were reviewed by planning team members and selecte
 #| warning: false
 #| echo: false
 
-library("flextable")
-
 data <- read.csv("data/removed-barriers-above.csv", check.names=FALSE)
-prior_num <- length(data)
-ft <- flextable(data) |> colformat_num(big.mark = "", decimal.mark = ".", digits = 2) 
-ft <- bg(ft, bg = "#008270", part = "header")
-ft <- color(ft, color = "white", part = "header")
-ft <- set_caption(ft)
-ft <- align_text_col(ft, align = "left", header = TRUE)
-ft <- align_nottext_col(ft, align = "left", header = TRUE)
-ft |> autofit() 
+prior_num <- nrow(data)
+ft <- flextable(data)
+ft <- format_flextable(ft)
+ft
 ```
 
 ```{r removedbl, echo = FALSE, results = 'asis'}
@@ -163,17 +81,11 @@ ft |> autofit()
 #| warning: false
 #| echo: false
 
-library("flextable")
-
 data <- read.csv("data/removed-barriers-below.csv", check.names=FALSE)
-inter_num <- length(data)
-ft <- flextable(data) |> colformat_num(big.mark = "", decimal.mark = ".", digits = 2) 
-ft <- bg(ft, bg = "#008270", part = "header")
-ft <- color(ft, color = "white", part = "header")
-ft <- set_caption(ft)
-ft <- align_text_col(ft, align = "left", header = TRUE)
-ft <- align_nottext_col(ft, align = "left", header = TRUE)
-ft |> autofit() 
+rem_below_num <- nrow(data)
+ft <- flextable(data)
+ft <- format_flextable(ft)
+ft
 ```
 
 ```{r intermediate_above, echo = FALSE, results = 'asis'}
@@ -182,17 +94,11 @@ ft |> autofit()
 #| warning: false
 #| echo: false
 
-library("flextable")
-
 data <- read.csv("data/intermediate-barriers-above.csv", check.names=FALSE)
-inter_num <- length(data)
-ft <- flextable(data) |> colformat_num(big.mark = "", decimal.mark = ".", digits = 2) 
-ft <- bg(ft, bg = "#008270", part = "header")
-ft <- color(ft, color = "white", part = "header")
-ft <- set_caption(ft)
-ft <- align_text_col(ft, align = "left", header = TRUE)
-ft <- align_nottext_col(ft, align = "left", header = TRUE)
-ft |> autofit() 
+inter_above_num <- nrow(data)
+ft <- flextable(data)
+ft <- format_flextable(ft)
+ft
 ```
 
 
@@ -202,61 +108,16 @@ ft |> autofit()
 #| warning: false
 #| echo: false
 
-library("flextable")
-
 data <- read.csv("data/intermediate-barriers-below.csv", check.names=FALSE)
-inter_num <- length(data)
-ft <- flextable(data) |> colformat_num(big.mark = "", decimal.mark = ".", digits = 2) 
-ft <- bg(ft, bg = "#008270", part = "header")
-ft <- color(ft, color = "white", part = "header")
-ft <- set_caption(ft)
-ft <- align_text_col(ft, align = "left", header = TRUE)
-ft <- align_nottext_col(ft, align = "left", header = TRUE)
-ft |> autofit() 
+inter_below_num <- nrow(data)
+ft <- flextable(data)
+ft <- format_flextable(ft)
+ft
 ```
 
-
-<!--
-```{r fieldreq, echo = FALSE, results = 'asis'}
-#| label: tbl-fieldreq
-#| tbl-cap: "Field assessment requirements for the intermediate barrier list in the Horsefly River watershed. The cost per barrier values are estimates based on previously completed field work. The habitat confirmation count is based on the assumption that the 12 barriers requiring barrier assessments will also require a subsequent confirmation. In the case that some barriers are identified as unsuitable candidates for habitat confirmations, the total cost will be reduced."
-#| warning: false
-#| echo: false
-
-library("flextable")
-
-data <- read.csv("data/field-reqs.csv", check.names=FALSE)
-ft <- flextable(data) 
-ft <- bg(ft, bg = "#008270", part = "header")
-ft <- color(ft, color = "white", part = "header")
-ft <- set_caption(ft)
-ft <- align_text_col(ft, align = "left", header = TRUE)
-ft <- align_nottext_col(ft, align = "left", header = TRUE)
-ft |> autofit() 
-```
--->
 
 There are currently `r prior_num` barriers on the priority barrier list, which will be pursued for proactive remediation to achieve the connectivity goals in this plan:
 
-<!--
-```{r remcost, echo = FALSE, results = 'asis'}
-#| label: tbl-remcost
-#| tbl-cap: "Preliminary barrier remediation cost estimate to reach connectivity goals in the Horsefly River watershed. Cost per barrier values are estimated based on the average cost of previously completed projects. Barrier counts and total costs are subject to change as more information is collected through the implementation of this plan."
-#| warning: false
-#| echo: false
-
-library("flextable")
-
-data <- read.csv("data/remediation-cost.csv", check.names=FALSE)
-ft <- flextable(data)
-ft <- bg(ft, bg = "#008270", part = "header")
-ft <- color(ft, color = "white", part = "header")
-ft <- set_caption(ft)
-ft <- align_text_col(ft, align = "left", header = TRUE)
-ft <- align_nottext_col(ft, align = "left", header = TRUE)
-ft |> autofit() 
-```
--->
 
 ```{r rehab, echo = FALSE, results = 'asis'}
 #| label: tbl-priority
@@ -264,14 +125,8 @@ ft |> autofit()
 #| warning: false
 #| echo: false
 
-library("flextable")
-
 data <- read.csv("data/priority_structures_table.csv", check.names=FALSE)
 ft <- flextable(data)
-ft <- bg(ft, bg = "#008270", part = "header")
-ft <- color(ft, color = "white", part = "header")
-ft <- set_caption(ft)
-ft <- align_text_col(ft, align = "left", header = TRUE)
-ft <- align_nottext_col(ft, align = "left", header = TRUE)
-ft |> autofit() 
+ft <- format_flextable(ft)
+ft
 ```

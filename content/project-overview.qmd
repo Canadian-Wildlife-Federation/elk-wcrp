@@ -1,30 +1,58 @@
-# Project Overview {-} 
+```{python echo=FALSE}
+import python.api_calls as api
+from ipywidgets import *
+import pandas as pd
+import warnings
 
-## Plan Purpose, Approach, and Scope {-}
+warnings.filterwarnings('ignore')
+```
+```{r setup, include=FALSE}
+#| echo: false
+#| warning: false
 
-The following Watershed Connectivity Remediation Plan (WCRP) represents the culmination of a one-year collaborative planning effort for the Elk River watershed, the overall aim of which is to reduce the threat of aquatic barriers to resident, fluvial, and adfluvial fish and the livelihoods that they support, including the continued sustenance, cultural, and ceremonial needs of the Ktunaxa people both now and into the future. This 30-year plan was developed to identify priority actions that the Elk River WCRP planning team see [Planning Team](project-partners.qmd) for a list of team members will undertake between 2021-2041 to conserve and restore fish passage in the watershed through strategies aimed at barrier remediation and barrier prevention. 
+library(reticulate)
+api <- import("python.api_calls")
+gain <- api$gain
+num_dam <- api$num_dam
+km_dam <- api$km_dam
+pct_dam <- api$pct_dam
+resource_km <- api$resource_km
+resource_pct <- api$resource_pct
+demo_km <- api$demo_km
+demo_pct <- api$demo_pct
+resource_sev <- api$resource_sev
+demo_sev <- api$demo_sev
+sum_road <- api$sum_road
+sum_rail <- api$sum_rail
+rail_km <- api$rail_km
+rail_pct <- api$rail_pct
+rail_sev <- api$rail_sev
 
-WCRPs are long-term, actionable plans that blend local stakeholder and rightsholder knowledge with innovative GIS analyses to gain a shared understanding of where remediation efforts will have the greatest benefit for fish. The planning process is inspired by the Conservation Standards (v.4.0), which is a conservation planning framework that allows planning teams to systematically identify, implement, and monitor strategies to apply the most effective solutions to high-priority conservation problems.
-There is a rich history of fish and fish habitat conservation and restoration work in the Elk River watershed that this WCRP builds upon, including the work undertaken by the Ktunaxa Nation, the Province of British Columbia, and industry proponents, among others. The Canadian Wildlife Federation will continue to engage and coordinate with local partners and existing initiatives, including the Elk Valley Cumulative Effects Management Framework, the Elk Valley Fish and Fish Habitat Committee, and the Elk River Watershed Collaborative Monitoring Program.
- 
+source("Rscripts/table_formatting.R")
+```
+# Project Overview {.unnumbered}
+
+## Plan Purpose, Approach, and Scope {.unnumbered}
+
+The following Watershed Connectivity Remediation Plan (WCRP) represents the culmination of a one-year collaborative planning effort for the Elk River watershed, the overall aim of which is to reduce the threat of aquatic barriers to resident, fluvial, and adfluvial fish and the livelihoods that they support, including the continued sustenance, cultural, and ceremonial needs of the Ktunaxa people both now and into the future. This 30-year plan was developed to identify priority actions that the Elk River WCRP planning team see [Planning Team](project-partners.qmd) for a list of team members will undertake between 2021-2041 to conserve and restore fish passage in the watershed through strategies aimed at barrier remediation and barrier prevention.
+
+WCRPs are long-term, actionable plans that blend local stakeholder and rightsholder knowledge with innovative GIS analyses to gain a shared understanding of where remediation efforts will have the greatest benefit for fish. The planning process is inspired by the Conservation Standards (v.4.0), which is a conservation planning framework that allows planning teams to systematically identify, implement, and monitor strategies to apply the most effective solutions to high-priority conservation problems. There is a rich history of fish and fish habitat conservation and restoration work in the Elk River watershed that this WCRP builds upon, including the work undertaken by the Ktunaxa Nation, the Province of British Columbia, and industry proponents, among others. The Canadian Wildlife Federation will continue to engage and coordinate with local partners and existing initiatives, including the Elk Valley Cumulative Effects Management Framework, the Elk Valley Fish and Fish Habitat Committee, and the Elk River Watershed Collaborative Monitoring Program.
 
 The planning team compiled existing barrier location and assessment data, habitat data, and previously identified priorities, and combined this with local knowledge to create a strategic watershed-scale plan to improve connectivity. To expand on this work, the Elk River WCRP planning team applied the WCRP planning framework to define the thematic scope of freshwater connectivity and refine the geographic scope to identify those portions of the watershed where barrier prioritization will be conducted, and subsequent remediation efforts will take place. Additionally, the team selected target fish species, assessed their current connectivity status in the watershed, defined concrete goals for gains in connectivity, and developed an intermediate list of barriers for remediation to achieve those goals. Field assessments were completed for 31 barriers above Elko Dam, and 21 barriers below Elko Dam on the preliminary barrier list during the summer of 2021, followed by a series of WCRP Update Workshops in winter 2021. The aim of these workshops was for the team to receive updates on progress made during the field season, review assessment results and identify priority barriers, revise the connectivity status assessment and goals, and update the Operational Plan for 2022. While the current version of this plan is based on the best-available information at the time of publishing, WCRPs are intended to be living plans that are updated regularly as new information becomes available, or if local priorities and contexts change. As such, this document should be interpreted as a current snap-shot in time, and future iterations of this WCRP will build upon the material presented in this plan to continuously improve aquatic barrier remediation for fish in the Elk River watershed. For more information on how WCRPs are developed, see @Mazany-Wright2021-hs.
 
-## Vision Statement {-}
+## Vision Statement {.unnumbered}
 
 Healthy, well-connected streams and rivers within the Elk River watershed support thriving populations of Westslope Cutthroat Trout. Watershed users work together to mitigate the negative impacts of aquatic barriers, improving the resiliency of streams and rivers for the benefit and appreciation of all.
 
-## Project Scope {-}
+## Project Scope {.unnumbered}
 
 Connectivity is a critical component of freshwater ecosystems that encompasses a variety of factors related to ecosystem structure and function, such as the ability of aquatic organisms to disperse and/or migrate, the transportation of energy and matter (e.g., nutrient cycling and sediment flows), and temperature regulation (@Seliger2018-be). Though each of these factors are important when considering the health of a watershed, for the purposes of this WCRP the term "connectivity" is defined as the degree to which aquatic organisms can disperse and/or migrate freely through freshwater systems. Within this context, connectivity is primarily constrained by physical barriers including anthropogenic infrastructure such as dams, weirs, and stream crossings, and natural features such as waterfalls and debris flows. This plan is intended to focus on the direct remediation and prevention of localized, physical barriers instead of the broad land-use patterns that are causing chronic connectivity issues in the watershed. The planning team decided that the primary focus of this WCRP is addressing barriers to longitudinal connectivity (i.e., along the upstream-downstream plane) due to the magnitude of the threat posed by linear development (i.e., road and rail lines) in the watershed. In the Elk River watershed, an additional connectivity consideration is identifying barriers that should not be remediated to protect genetically pure Westslope Cutthroat Trout (Oncorhunchus clarkii lewisi) populations and mitigate the threat of introgression due to aquatic invasive species (AIS).
 
 ![The primary geographic scope — the Elk River watershed.](images/geo-scope-elkr.png){#fig-geoscope}
 
-
 The primary geographic scope of this WCRP is the Elk River watershed, located in the Kootenays along the southeastern portion of the British Columbia-Alberta border. The scope constitutes the Elk River "watershed group" as defined by the British Columbia Freshwater Atlas (FWA), due to an effort made to standardize spatial scales of the watershed groups. A consistent spatial framework was necessary to undertake a watershed-selection process at the provincial scale to identify target watersheds to improve connectivity for salmonids. The Elk River watershed was identified by the BC Fish Passage Restoration Initiative as one of four target watersheds for WCRP development (@Mazany-Wright2021-do). The Elk River watershed has a drainage area of 430,937 ha, spanning from the Rocky Mountains in the northeast, the border with the United States in the south, and the confluence with the Koocanusa Reservoir in the southwest (@fig-geoscope).
 
-The Elk River watershed comprises part of the traditional territory of the Ktunaxa peoples, and contains culturally and economically important populations of Westslope Cutthroat Trout, which historically supported Indigenous sustenance and trading economies.
-The geographic scope for this WCRP was further refined by the planning team through the exclusion of the Flathead River system from the defined watershed group. The Flathead River is hydrographically and topographically distinct from the rest of the watershed and does not flow into the Elk River and Columbia River systems, but is considered part of the watershed group in the FWA. The planning team decided that the watershed connectivity planning process should focus on just the Elk River system and the important Westslope Cutthroat Trout populations supported by the streams and rivers there.
+The Elk River watershed comprises part of the traditional territory of the Ktunaxa peoples, and contains culturally and economically important populations of Westslope Cutthroat Trout, which historically supported Indigenous sustenance and trading economies. The geographic scope for this WCRP was further refined by the planning team through the exclusion of the Flathead River system from the defined watershed group. The Flathead River is hydrographically and topographically distinct from the rest of the watershed and does not flow into the Elk River and Columbia River systems, but is considered part of the watershed group in the FWA. The planning team decided that the watershed connectivity planning process should focus on just the Elk River system and the important Westslope Cutthroat Trout populations supported by the streams and rivers there.
 
 Additionally, the planning team decided to divide the remaining watershed into two discrete WCRP units— 1) Upstream of the Elko Dam and 2) Downstream of the Elko Dam. The Elko Dam was constructed in 1924 on the site of a series of waterfalls that were natural barriers to upstream fish passage, and the dam facility remains impassable to all fish species (J. Bisset, Bisset & Associates, pers. comm., @Ladell). The Elko Dam plays an important role in preventing the upstream dispersal of invasive/hybridized trout populations from the Columbia River thereby acting as an important barrier to introgression (@Lamson2018). This role, coupled with the waterfalls acting as natural barrier prior to dam construction, provided the justification to remove the Elko Dam from consideration as a barrier to remediate. Each WCRP unit has Westslope Cutthroat Trout populations with unique life-history forms, and was evaluated independently for connectivity status assessments, goal setting, and barrier prioritization analyses.
 
@@ -32,49 +60,38 @@ Finally, “potentially accessible” stream segments, which are defined as stre
 
 ```{r targspec, echo = FALSE, results = 'asis'}
 #| label: tbl-targspec
-#| tbl-cap: "Target fish species in the Horsefly River watershed. The Secwepemctsín and Western common and scientific species names are provided."
+#| tbl-cap: "Target fish species in the Elk River watershed. The Secwepemctsín and Western common and scientific species names are provided."
 #| warning: false
 #| echo: false
 
-library("flextable")
-
 data <- read.csv("data/species_names.csv", check.names=FALSE)
-inter_num <- length(data)
-ft <- flextable(data) |> colformat_num(big.mark = "", decimal.mark = ".", digits = 2) 
-ft <- bg(ft, bg = "#008270", part = "header")
-ft <- color(ft, color = "white", part = "header")
-ft <- set_caption(ft)
-ft <- align_text_col(ft, align = "left", header = TRUE)
-ft <- align_nottext_col(ft, align = "left", header = TRUE)
-ft |> autofit() 
+inter_num <- nrow(data)
+ft <- flextable(data)
+ft <- format_flextable(ft)
+ft
 ```
-
-
 
 The Horsefly River watershed comprises parts of Secwepemcúl’ecw, the traditional territory of the Northern Secwepemc te Qelmucw (NStQ), represented by the Northern Shuswap Tribal Council and four member communities or autonomous nations:
 
-- Xatśūll Cmetem’ (Soda Creek First Nations) 
+-   Xatśūll Cmetem’ (Soda Creek First Nations)
 
-- Stswēceḿc Xgāt’tem (Canoe Creek/Dog Creek First Nations) 
+-   Stswēceḿc Xgāt’tem (Canoe Creek/Dog Creek First Nations)
 
-- T’ēxelc (Williams Lake First Nation) 
+-   T’ēxelc (Williams Lake First Nation)
 
-- Tsq’ēsceń (Canim Lake First Nation)
+-   Tsq’ēsceń (Canim Lake First Nation)
 
-The geographic scope of this WCRP was further refined by identifying “potentially accessible” stream segments, which are defined as streams that target species should be able to access in the absence of anthropogenic barriers (@fig-strseg). Potentially accessible stream segments were spatially delineated using fish species observation and distribution data, as well as data on "exclusionary points". These include waterfalls greater than 5 m in height, gradient barriers based on species-specific swimming abilities, and watershed exclusion areas, which are portions of the watershed where barrier remediation efforts should not occur. These maps were explored by the planning team to incorporate additional local knowledge, ensure accuracy, and finalize the constraints on potentially accessible stream segments. The planning team identified certain tributaries to the mainstem Horsefly River as "watershed exclusion areas", which were excluded from further consideration under this plan, due to intermittent or insufficient flows to support restoring connectivity for the target species. The geographic scope was further refined based on several confirmed impassable waterfalls and modelled gradient barriers. Specifically, there are two impassable waterfalls that severely limit potentially accessible habitat: one on the mainstem Horsefly River approximately 4 km upstream of the confluence with McKinley Creek, and the second on Moffat Creek approximately 5 km upstream from where it flows into the Horsefly River. All stream segments not identified as potentially accessible were removed from the scope for further consideration. The "constrained geographic scope" formed the foundation for all subsequent analyses and planning steps, including mapping and modelling useable habitat types, quantifying the current connectivity status, goal setting, and action planning @Mazany-Wright2021-rz. 
-
+The geographic scope of this WCRP was further refined by identifying “potentially accessible” stream segments, which are defined as streams that target species should be able to access in the absence of anthropogenic barriers (@fig-strseg). Potentially accessible stream segments were spatially delineated using fish species observation and distribution data, as well as data on "exclusionary points". These include waterfalls greater than 5 m in height, gradient barriers based on species-specific swimming abilities, and watershed exclusion areas, which are portions of the watershed where barrier remediation efforts should not occur. These maps were explored by the planning team to incorporate additional local knowledge, ensure accuracy, and finalize the constraints on potentially accessible stream segments. The planning team identified certain tributaries to the mainstem Horsefly River as "watershed exclusion areas", which were excluded from further consideration under this plan, due to intermittent or insufficient flows to support restoring connectivity for the target species. The geographic scope was further refined based on several confirmed impassable waterfalls and modelled gradient barriers. Specifically, there are two impassable waterfalls that severely limit potentially accessible habitat: one on the mainstem Horsefly River approximately 4 km upstream of the confluence with McKinley Creek, and the second on Moffat Creek approximately 5 km upstream from where it flows into the Horsefly River. All stream segments not identified as potentially accessible were removed from the scope for further consideration. The "constrained geographic scope" formed the foundation for all subsequent analyses and planning steps, including mapping and modelling useable habitat types, quantifying the current connectivity status, goal setting, and action planning @Mazany-Wright2021-rz.
 
 ![Potentially accessible stream segments within the Upstream of the Elko Dam (light blue) and Downstream of the Elko Dam (dark blue) units in Elk River watershed. These do not represent useable habitat types, but rather identifies the stream segments within which habitat modelling and barrier mapping and prioritization was undertaken.](images/accessible-streams-elkr.png){#fig-strseg}
 
-## Target species {-}
+## Target species {.unnumbered}
 
 Target species represent the ecologically and culturally important species for which habitat connectivity is being conserved and/or restored in the watershed. In the Elk River watershed, the planning team selected Westslope Cutthroat Trout as the target species. The selection of this target species was driven primarily by the target species of the primary fund supporting this planning work. The planning team also identified other culturally and ecologically important species within the watershed to consider for inclusion in future iterations of the WCRP, including Burbot (Lota lota), Bull Trout (Salvelinus confluentus), and Whitefish (Prosopium williamsoni).
 
+### Westslope Cutthroat Trout \| Oncorhynchus clarkii lewisi {.unnumbered}
 
-### Westslope Cutthroat Trout | Oncorhynchus clarkii lewisi {-}
-
-Westslope Cutthroat Trout is a cultural and ecological keystone species in the Elk River watershed, playing an important role in structuring aquatic ecosystems and contributing to nutrient recovery for riparian vegetation and forests in cold water streams and lakes, including small, steep streams not accessible to other fish species (@Willson1998-kb, @Cosewic2016-qf). Westslope Cutthroat Trout are a traditionally important species for the Ktunaxa people and provide substantial economic value for recreational and commercial fisheries. Westslope Cutthroat Trout populations have declined in recent decades due to a combination of threats including, introgressive hybridization with AIS (particularly Rainbow Trout; Oncorhynchus mykiss), habitat degradation, fragmentation, overexploitation, and rising water temperatures due to climate change (@Cosewic2016-qf, @Lamson2018). Most relevant to this WCRP, road networks have disrupted many parts of the Elk River watershed thereby increasing the density of stream crossings, leading to stream fragmentation and limiting upstream fish passage. Additionally, some entire headwater reaches have been disrupted or have disappeared due to rock drains associated with mining activity in the watershed (@Cosewic2016-qf). 
-
+Westslope Cutthroat Trout is a cultural and ecological keystone species in the Elk River watershed, playing an important role in structuring aquatic ecosystems and contributing to nutrient recovery for riparian vegetation and forests in cold water streams and lakes, including small, steep streams not accessible to other fish species (@Willson1998-kb, @Cosewic2016-qf). Westslope Cutthroat Trout are a traditionally important species for the Ktunaxa people and provide substantial economic value for recreational and commercial fisheries. Westslope Cutthroat Trout populations have declined in recent decades due to a combination of threats including, introgressive hybridization with AIS (particularly Rainbow Trout; Oncorhynchus mykiss), habitat degradation, fragmentation, overexploitation, and rising water temperatures due to climate change (@Cosewic2016-qf, @Lamson2018). Most relevant to this WCRP, road networks have disrupted many parts of the Elk River watershed thereby increasing the density of stream crossings, leading to stream fragmentation and limiting upstream fish passage. Additionally, some entire headwater reaches have been disrupted or have disappeared due to rock drains associated with mining activity in the watershed (@Cosewic2016-qf).
 
 ```{r wctrout, echo = FALSE, results = 'asis'}
 #| label: tbl-wctrout
@@ -85,19 +102,13 @@ Westslope Cutthroat Trout is a cultural and ecological keystone species in the E
 library("flextable")
 
 data <- read.csv("data/wctrout-pop-assess-elkr-cosewic-2016.csv", check.names=FALSE)
-inter_num <- length(data)
-ft <- flextable(data) |> colformat_num(big.mark = "", decimal.mark = ".", digits = 2) 
-ft <- bg(ft, bg = "#008270", part = "header")
-ft <- color(ft, color = "white", part = "header")
-ft <- set_caption(ft)
-ft <- align_text_col(ft, align = "left", header = TRUE)
-ft <- align_nottext_col(ft, align = "left", header = TRUE)
-ft |> autofit() 
+inter_num <- nrow(data)
+ft <- flextable(data)
+ft <- format_flextable(ft)
+ft
 ```
 
-
 Westslope Cutthroat Trout populations and subpopulations found in the Elk River watershed are captured by the "Pacific populations" Designated Unit as defined by the Committee on the Status of Endangered Wildlife in Canada (COSEWIC), which has a core distribution covering the upper Kootenay River drainage (@tbl-wctrout). Specifically, the Elk River watershed contains the Elk River and Upper Kootenay population groups, with each population group containing multiple sub-populations with variable life history forms (@tbl-wcrp-pop). High levels of hybridization exist in most waterbodies connected to the Koocanusa Reservoir (i.e., the Upper Kootenay population group), including the Elk River mainstem downstream of the Elko Dam and much of the Wigwam and Lodgepole systems. Generally, the hybridization levels upstream of Elko Dam are quite low, though there is known hybridization occurring in the Michel Creek sub-drainage (@Cosewic2016-qf; H. Lamson, BC Ministry of Environment pers. comm.). Pure Westslope Cutthroat Trout sub-populations exist in the upper Fording River (upstream of Josephine Falls), Greenhills Creek, Forsyth Creek, Grave Creek, Harmer Creek, Morrissey Creek, Weary Creek, upper Lodgepole Creek, and the upper Elk River (@Lamson2018).
-
 
 ```{r popdetails, echo = FALSE, results = 'asis'}
 #| label: tbl-wcrp-pop
@@ -108,106 +119,23 @@ Westslope Cutthroat Trout populations and subpopulations found in the Elk River 
 library("flextable")
 
 data <- read.csv("data/pop-details-wcrp-cosewic-2016.csv", check.names=FALSE)
-inter_num <- length(data)
-ft <- flextable(data) |> colformat_num(big.mark = "", decimal.mark = ".", digits = 2) 
-ft <- bg(ft, bg = "#008270", part = "header")
-ft <- color(ft, color = "white", part = "header")
-ft <- set_caption(ft)
-ft <- align_text_col(ft, align = "left", header = TRUE)
-ft <- align_nottext_col(ft, align = "left", header = TRUE)
-ft |> autofit() 
+inter_num <- nrow(data)
+ft <- flextable(data)
+ft <- format_flextable(ft)
+ft
 ```
 
 Adult Westslope Cutthroat Trout overwinter in deep pools or lakes and then generally move upstream to spawning habitat during high spring flows, with spawning peaking between May and June. Fry emergence occurs between July and August, with individuals migrating to lower velocity rearing habitats in and around natal streams (@Cosewic2016-qf, @ERA). Westslope Cutthroat Trout exist with three distinct life history forms in the Elk River watershed (@Oliver2009, @ERA):
 
-- Stream-resident — individuals spend their entire life history within a restricted distribution of headwater streams, often because movement is restricted by natural barriers.
+-   Stream-resident — individuals spend their entire life history within a restricted distribution of headwater streams, often because movement is restricted by natural barriers.
 
-- Fluvial — individuals migrate between tributaries and larger mainstem rivers to complete various life-history stages (e.g., spawning, overwintering).
+-   Fluvial — individuals migrate between tributaries and larger mainstem rivers to complete various life-history stages (e.g., spawning, overwintering).
 
-- Adfluvial — individuals migrate between tributaries and lakes/reservoirs to complete life-history stages.
-See Appendix A for maps of modelled Westslope Cutthroat Trout habitat in the Elk River watershed.
+-   Adfluvial — individuals migrate between tributaries and lakes/reservoirs to complete life-history stages. See Appendix A for maps of modelled Westslope Cutthroat Trout habitat in the Elk River watershed.
 
-
-
-## Barrier Types {-}
+## Barrier Types {.unnumbered}
 
 The following table highlights which barrier types pose the greatest threat to Westslope Cutthroat Trout in the watershed. The results of this assessment were used to inform the subsequent planning steps, as well as to identify knowledge gaps where there are little spatial data to inform the assessment for a specific barrier type.
-
-```{python}
-#| echo: false
-#| warning: false
-
-import requests
-import json
-import pandas
-
-def barrier_extent(barrier_type):
-
-    request = 'https://cabd-pro.cwf-fcf.org/bcfishpass/functions/postgisftw.wcrp_barrier_extent/items.json?watershed_group_code=ELKR&barrier_type=' + barrier_type
-
-    response_api = requests.get(request)
-    parse = response_api.text
-    result = json.loads(parse)
-
-    blocked_km = result[0]['all_habitat_blocked_km']
-    blocked_pct = result[0]['extent_pct']
-
-    return blocked_km, blocked_pct
-
-def barrier_count(barrier_type):
-    request = 'https://cabd-pro.cwf-fcf.org/bcfishpass/functions/postgisftw.wcrp_barrier_count/items.json?watershed_group_code=ELKR&barrier_type=' + barrier_type
-
-    response_api = requests.get(request)
-    parse = response_api.text
-    result = json.loads(parse)
-
-    n_passable = result[0]['n_passable']
-    n_barrier = result[0]['n_barrier']
-    n_potential = result[0]['n_potential']
-    n_unknown = result[0]['n_unknown']
-
-    sum_bar = (n_passable, n_barrier, n_potential, n_unknown)
-
-    return n_passable, n_barrier, n_potential, n_unknown, sum(sum_bar)
-
-def barrier_severity(barrier_type):
-
-    request = 'https://cabd-pro.cwf-fcf.org/bcfishpass/functions/postgisftw.wcrp_barrier_severity/items.json?watershed_group_code=ELKR&barrier_type=' + barrier_type
-
-    response_api = requests.get(request)
-    parse = response_api.text
-    result = json.loads(parse)
-
-    n_assessed_barrier = result[0]['n_assessed_barrier']
-    n_assess_total = result[0]['n_assess_total']
-    pct_assessed_barrier = result[0]['pct_assessed_barrier']
-
-    return n_assessed_barrier, n_assess_total, pct_assessed_barrier
-
-def watershed_connectivity(habitat_type):
-
-    request = 'https://cabd-pro.cwf-fcf.org/bcfishpass/functions/postgisftw.wcrp_habitat_connectivity_status/items.json?watershed_group_code=ELKR&habitat_type=' + habitat_type
-
-    response_api = requests.get(request)
-    parse = response_api.text
-    result = json.loads(parse)
-
-    connect_stat = result[0]['connectivity_status']
-
-    return str(round(connect_stat))
-
-num_dam = barrier_severity('DAM')[1]
-km_dam = barrier_extent('DAM')[0]
-pct_dam = barrier_extent('DAM')[1]
-resource_km = barrier_extent('ROAD, RESOURCE/OTHER')[0]
-resource_pct = round(barrier_extent('ROAD, RESOURCE/OTHER')[1])
-demo_km = barrier_extent('ROAD, DEMOGRAPHIC')[0]
-demo_pct = round(barrier_extent('ROAD, DEMOGRAPHIC')[1])
-resource_sev = round(barrier_severity('ROAD, RESOURCE/OTHER')[2])
-demo_sev = round(barrier_severity('ROAD, DEMOGRAPHIC')[2])
-sum_road = barrier_severity('ROAD, RESOURCE/OTHER')[1] + barrier_severity('ROAD, DEMOGRAPHIC')[1]
-
-```
 
 
 ```{python barriertype, echo=FALSE}
@@ -235,17 +163,17 @@ def condition(pct):
 def rating(threat, barrier):
     if threat == "extent":
         if barrier == "DAM":
-            pct = barrier_extent(barrier)[1]
+            pct = api.barrier_extent(barrier)[1]
             rating = condition(pct)
         elif barrier == "ROAD":
-            pct = barrier_extent('ROAD, RESOURCE/OTHER')[1] + barrier_extent('ROAD, DEMOGRAPHIC')[1]
+            pct = api.barrier_extent('ROAD, RESOURCE/OTHER')[1] + api.barrier_extent('ROAD, DEMOGRAPHIC')[1]
             rating = condition(pct)
     elif threat == "severity":
         if barrier == "DAM":
-            pct = barrier_severity(barrier)[2]
+            pct = api.barrier_severity(barrier)[2]
             rating = condition(pct)
         elif barrier == "ROAD":
-            pct = barrier_severity('ROAD, RESOURCE/OTHER')[2] + barrier_severity('ROAD, DEMOGRAPHIC')[2]
+            pct = api.barrier_severity('ROAD, RESOURCE/OTHER')[2] + api.barrier_severity('ROAD, DEMOGRAPHIC')[2]
             rating = condition(pct)
             
     return rating
@@ -288,69 +216,31 @@ data.set_table_styles(
 
 ```
 
+### Dams {.unnumbered}
 
-### Dams {-}
-```{python}
-#| echo: false
-#| include: true
-
-
-num_dam = barrier_severity('DAM')[1]
-km_dam = barrier_extent('DAM')[0]
-pct_dam = barrier_extent('DAM')[1]
-resource_km = barrier_extent('ROAD, RESOURCE/OTHER')[0]
-resource_pct = round(barrier_extent('ROAD, RESOURCE/OTHER')[1])
-demo_km = barrier_extent('ROAD, DEMOGRAPHIC')[0]
-demo_pct = round(barrier_extent('ROAD, DEMOGRAPHIC')[1])
-resource_sev = round(barrier_severity('ROAD, RESOURCE/OTHER')[2])
-demo_sev = round(barrier_severity('ROAD, DEMOGRAPHIC')[2])
-sum_road = barrier_severity('ROAD, RESOURCE/OTHER')[1] + barrier_severity('ROAD, DEMOGRAPHIC')[1]
-```
-
-```{r echo=FALSE}
-#| echo: false
-#| include: true
-#| warning: false
-
-library(reticulate)
-
-
-num_dam <- py$num_dam
-km_dam <- py$km_dam
-pct_dam <- py$pct_dam
-resource_km <- py$resource_km
-resource_pct <- py$resource_pct
-demo_km <- py$demo_km
-demo_pct <- py$demo_pct
-resource_sev <- py$resource_sev
-demo_sev <- py$demo_sev
-sum_road <- py$sum_road
-
-```
 
 There are `r num_dam` mapped dams on potential habitat in the watershed, blocking`r km_dam` km (`r pct_dam`% of the total blocked habitat) of modelled spawning and rearing habitat, resulting in a Low extent. The Elko Dam is excluded from this assessment due to its function in preventing introgression and the spread of AIS upstream, and the historic natural barrier at this site. The extent rating of these structures was confirmed by the planning team — there are a small number of known dams in the watershed, mostly associated with mining activity (e.g., settling/tailing ponds). The Harmer Creek Dam was identified by the planning team as an important dam to remediate to benefit a genetically pure Westslope Cutthroat Trout population in the Grave-Harmer system, and Teck Resources Ltd. is currently undertaking an assessment process to evaluate potential remediation options (W. Franklin, Teck Resources Ltd., pers. comm.). There are no known fishways in the watershed, and the identified dams likely block passage for Westslope Cutthroat Trout. Due to the significant resources required to remediate dams and the Low extent of dams in the watershed, a final pressure rating of Low was assigned.
 
-### Road-stream Crossings {-}
+### Road-stream Crossings {.unnumbered}
 
-Road-stream crossings are the most abundant barrier type in the watershed, with `r sum_road` assessed and modelled crossings located on potential habitat. Demographic road crossings (highways, municipal, and paved roads) block 56.38 km of habitat (~`r demo_pct`% of the total blocked habitat), with `r demo_sev`% of assessed crossings having been identified as barriers to fish passage. Resource roads potentially block `r resource_km` km of habitat (~`r resource_pct`%), with `r resource_sev`% of assessed crossings have been identified as barriers. Significant land use and linear development throughout the valley bottom, including Highways 3 and 43, have disconnected the Elk River from important habitat in many tributaries. The resource road-stream crossings are primarily associated with mining and forestry activities in the watershed. The collective experience and input from the planning team resulted in a Medium irreversibility rating due to the technical complexity and resources required to remediate road-stream crossings, though it was noted that this differs considerably between resource roads and highway crossings.
+Road-stream crossings are the most abundant barrier type in the watershed, with `r sum_road` assessed and modelled crossings located on potential habitat. Demographic road crossings (highways, municipal, and paved roads) block 56.38 km of habitat (\~`r demo_pct`% of the total blocked habitat), with `r demo_sev`% of assessed crossings having been identified as barriers to fish passage. Resource roads potentially block `r resource_km` km of habitat (\~`r resource_pct`%), with `r resource_sev`% of assessed crossings have been identified as barriers. Significant land use and linear development throughout the valley bottom, including Highways 3 and 43, have disconnected the Elk River from important habitat in many tributaries. The resource road-stream crossings are primarily associated with mining and forestry activities in the watershed. The collective experience and input from the planning team resulted in a Medium irreversibility rating due to the technical complexity and resources required to remediate road-stream crossings, though it was noted that this differs considerably between resource roads and highway crossings.
 
-### Rail-stream crossings{-}
+### Rail-stream crossings {.unnumbered}
 
-There are relatively few rail-stream crossings in the watershed (65 crossings on potential habitat), potentially blocking only 13.99 km of habitat (~3% of the total habitat blocked). Only 14 rail-stream crossings have been assessed in the watershed, and of these 45% are considered to be barriers. All rail- stream crossings in the watershed are associated with the Canadian Pacific (CP) rail lines running along the Elk River, Fording River, and Michel Creek. With significant financial costs, technical challenges, and stakeholder engagement required with CP to remediate these barriers, the planning team decided on an overall pressure rating of Medium for this barrier type.
+There are relatively few rail-stream crossings in the watershed (65 crossings on potential habitat), potentially blocking only 13.99 km of habitat (\~3% of the total habitat blocked). Only 14 rail-stream crossings have been assessed in the watershed, and of these 45% are considered to be barriers. All rail- stream crossings in the watershed are associated with the Canadian Pacific (CP) rail lines running along the Elk River, Fording River, and Michel Creek. With significant financial costs, technical challenges, and stakeholder engagement required with CP to remediate these barriers, the planning team decided on an overall pressure rating of Medium for this barrier type.
 
-### Trail-stream crossings{-}
+### Trail-stream crossings {.unnumbered}
 
 There are very little spatial data available on trail-stream crossings in the watershed, so the planning team was unable to numerically quantify the Extent and Severity of this barrier type. The planning team felt that recreational trail network crossings rarely significantly block passage for Westslope Cutthroat Trout. Given that most crossings will likely be fords or similar structures, the remediation costs associated with these barriers would be quite low. Overall, the planning team felt that the pressure rating for trail-stream crossings was likely Low.
 
-### Lateral Barriers{-}
+### Lateral Barriers {.unnumbered}
 
 There are numerous types of lateral barriers that potentially occur in the watershed, including dykes, berms, and linear development (i.e., road and rail lines), all of which can restrict the ability of Westslope Cutthroat Trout to move into floodplains, riparian wetlands, and other off-channel habitats. No comprehensive lateral barrier data exist within the watershed, so pressure ratings were based on qualitative local knowledge. Lateral barriers are not thought to be as prevalent as road- or rail-stream crossings and are likely to be passable for at least certain parts of the year where they do exist. Highway 3, Highway 43, and the CP rail line were identified as potential lateral barriers that disconnect the mainstem channels from their historic floodplain and off-channel habitat. Overall, the planning team decided that a Low pressure rating adequately captured the effect that lateral barriers are having on connectivity in the watershed, while recognizing that the lack of data on lateral barriers in the watershed is an important knowledge gap to fill.
- 
 
-### Sediment Wedges {-}
+### Sediment Wedges {.unnumbered}
 
 Sediment wedges include both mass wasting events and chronic bank erosion that can lead to the deposition of sediment to such an extent as to limit fish passage. The extent and severity of sediment wedges acting as barriers fluctuates seasonally and annually due to natural and human-induced changes to the flow regime, and natural barriers of this type are difficult to include in a spatial prioritization framework due to their transient nature. Both current and historic land-use practices, including mining and forest-harvesting impacts, contribute to the formation of sediment wedges in the watershed; however, the planning team felt that the extent and severity were Low overall.
 
-### Landslides {-}
+### Landslides {.unnumbered}
 
 Though a relatively rare occurrence, landslides that result in impediments to fish passage do occur in the watershed and can be technically and financially difficult to remediate when they occur. Overall, the planning team felt that a Low rating adequately captured the effects of landslides, but felt that it was an important barrier type to identify in this WCRP.

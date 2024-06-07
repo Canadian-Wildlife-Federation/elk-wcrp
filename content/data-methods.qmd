@@ -1,3 +1,15 @@
+```{r}
+#| echo: false
+#| warning: false
+
+library(reticulate)
+api <- import("python.api_calls")
+gain <- api$gain
+
+source("Rscripts/table_formatting.R")
+
+```
+
 # Data Download and Methods {-}
 
 ## Elk River Watershed Habitat and Barrier Maps {-}
@@ -17,12 +29,9 @@ The model uses an adapted version of the Intrinsic Potential (IP) fish habitat m
 #| tbl-cap: "Parameters and thresholds used to inform the Intrinsic Potential habitat model for spawning and rearing habitat for Westslope Cutthroat Trout in the Elk River watershed."
 #| warning: false
 
-library("flextable")
 
 data <- read.csv("data/additional-key-actors.csv", check.names=FALSE)
 ft <- flextable(data)
-ft <- bg(ft, bg = "#008270", part = "header")
-ft <- color(ft, color = "white", part = "header")
-ft <- set_caption(ft)
-ft |> autofit() 
+ft <- format_flextable(ft)
+ft
 ```
