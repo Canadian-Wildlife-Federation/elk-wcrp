@@ -35,7 +35,7 @@ df = pd.DataFrame({"WCRP Unit":["Upstream of Elko Dam","Downstream of Elko Dam"]
                    "Currently accessible (km)":[str(api.access_up), str(api.access_down)],
                    "Total": [str(api.total_up),  str(api.total_down)],
                    "Current Connectivity Status":[str(api.connect_up)+"%", str(api.connect_down)+"%"],
-                   "Goal": ["86%",""],                 # Go to python/api_calls and update the multiplier for the gain variables to this percent value
+                   "Goal": ["86%","99%"],                 # Go to python/api_calls and update the multiplier for the gain variables to this percent value
                    "Gain required (km)": [str(api.gain_up_41),  str(api.gain_down)]
                    })
 
