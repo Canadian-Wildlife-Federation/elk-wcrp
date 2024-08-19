@@ -30,8 +30,10 @@ The model uses an adapted version of the Intrinsic Potential (IP) fish habitat m
 #| warning: false
 
 
-data <- read.csv("data/additional-key-actors.csv", check.names=FALSE)
+data <- read.csv("data/params-elk.csv", check.names=FALSE)
 ft <- flextable(data)
 ft <- format_flextable(ft)
 ft
 ```
+
+[References: [1] @Busch2011-uy. [2] @Cooney2006-qf. [3] @Bjornn1991-zd. [4] @Neuman1977-wg. [5] @Woll2017-vf. [6] @Roberge2002-xq. [7] @Raleigh1986-cn. [8] @Porter2008-qd. [9] @Agrawal2005-xu. [10] @Sloat2017-bp. [11] @Mcmahon1983-rz. [12] @Rosenfeld2000-vq. [13] @Burnett2007-yv. [14] @Lake1999-tl. [15] @Hoopes1972.]{style="color: grey"}
