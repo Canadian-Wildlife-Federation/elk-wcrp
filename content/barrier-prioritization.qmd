@@ -20,7 +20,7 @@ source("Rscripts/table_formatting.R")
 # Barrier Prioritization {-}
 
 
-## Horsefly River Watershed Barrier Prioritization Summary {-}
+## Elk River Watershed Barrier Prioritization Summary {-}
 
 The primary conservation outcome of the WCRP is the remediation of barriers to connectivity in the Elk River watershed. To achieve the 2041 connectivity goals in this plan (Goals 2 and 4), it is necessary to prioritize and identify a suite of barriers for both the Upstream of Elko Dam and Downstream of Elko Dam units that, if remediated, will provide access to a minimum of 142 km of habitat and 3 km of habitat, respectively (@tbl-connectivity).
 

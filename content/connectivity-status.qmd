@@ -11,7 +11,7 @@ warnings.filterwarnings('ignore')
 
 # Connectivity Status Assessment and Goals {-}
 
-## Connectivity Status Assessment {-}
+## Key Ecological Attributes and Current Connectivity Status {-}
 
 The planning team devised two Key Ecological Attributes (KEAs) and associated indicators to assess the current connectivity status of the watershed – Accessible habitat above Elko Dam and Accessible habitat below Elko Dam (@tbl-connectivity). KEAs are the key aspects of Westslope Cutthroat Trout ecology that are being targeted by this WCRP. The connectivity statuses for the Westslope Cutthroat Trout KEAs were used to establish goals to improve habitat connectivity in the watershed and will be the baseline against which progress is tracked over time. 
 
