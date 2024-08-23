@@ -12,13 +12,13 @@ source("Rscripts/table_formatting.R")
 
 # Data Download and Methods {-}
 
-## ## Appendix A: Modelled Anadromous Salmon Habitat Maps {-}
+## Modelled Anadromous Salmon Habitat Maps {-}
 
 High-resolution PDF maps of the Elk River watershed and model results can be accessed here. The watershed is divided into multiple map sheets to allow for detailed examination of modelled habitat and priority barriers identified through this planning process. The locations of WCRP priority barriers and associated map sheet numbers are shown below. In each individual map sheet, priority barriers are symbolized using the following notation: ![label](images/priority-crossing-label.png)
 
 ![Elk River watershed overview map identifying the portions of the watershed covered by each map sheet (grey squares) and the prioritized barriers on the intermediate barrier list (orange points; see Appendix C).](images/overview-map-elkr.png){#fig-over}
 
-## Appendix B: Connectivity Status Assessment Methods {-}
+## Connectivity Status Assessment Methods {-}
 
 The connectivity status assessment for Westslope Cutthroat Trout in the Elk River watershed builds on existing connectivity modelling work undertaken by the BC Fish Passage Technical Working Group, resulting in a flexible, customizable open-source spatial model called "bcfishpass". The model spatially locates known and modelled barriers to fish passage, identifies potential spawning and rearing habitat for Westslope Cutthroat Trout, and estimates the amount of habitat that is currently accessible as part of the Longest Fragment for each WCRP unit. The Longest Fragment approach is adapted from @Diaz2021 and is calculated as the ratio between the length of largest connected set of habitat patches and the total length of all habitat patches in each WCRP unit. In the Elk River watershed, the longest fragment represents the mainstem Elk River and all currently connected tributaries, both upstream and downstream of the Elko Dam. As such, meeting the connectivity goals set in this plan requires prioritizing barriers for remediation that will reconnect tributaries to the existing longest fragments see [barrier prioritzation](barrier-prioritization.qmd).
 

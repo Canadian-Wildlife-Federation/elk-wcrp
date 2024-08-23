@@ -220,7 +220,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">ELKR WCRP</h2>
    
   <ul>
-  <li><a href="#key-ecological-attributes-and-current-connectivity-status" id="toc-key-ecological-attributes-and-current-connectivity-status" class="nav-link active" data-scroll-target="#key-ecological-attributes-and-current-connectivity-status">Key Ecological Attributes and Current Connectivity Status</a></li>
+  <li><a href="#connectivity-status-assessment" id="toc-connectivity-status-assessment" class="nav-link active" data-scroll-target="#connectivity-status-assessment">Connectivity Status Assessment</a></li>
   <li><a href="#goals" id="toc-goals" class="nav-link" data-scroll-target="#goals">Goals</a></li>
   </ul>
 </nav>
@@ -231,69 +231,69 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="key-ecological-attributes-and-current-connectivity-status" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="key-ecological-attributes-and-current-connectivity-status">Key Ecological Attributes and Current Connectivity Status</h2>
+<section id="connectivity-status-assessment" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="connectivity-status-assessment">Connectivity Status Assessment</h2>
 <p>The planning team devised two Key Ecological Attributes (KEAs) and associated indicators to assess the current connectivity status of the watershed – Accessible habitat above Elko Dam and Accessible habitat below Elko Dam (<a href="barrier-prioritization.html#tbl-connectivity">Table&nbsp;<span>1</span></a>). KEAs are the key aspects of Westslope Cutthroat Trout ecology that are being targeted by this WCRP. The connectivity statuses for the Westslope Cutthroat Trout KEAs were used to establish goals to improve habitat connectivity in the watershed and will be the baseline against which progress is tracked over time.</p>
 <p>The current connectivity status assessment relies on GIS analyses to map known and modelled barriers to fish passage, identify stream reaches that have potential spawning and rearing habitat, estimate the proportion of habitat that is currently accessible to target species, and prioritize barriers for field assessment that would provide the greatest gains in connectivity. For the connectivity status assessments and barrier prioritization analysis the amount of spawning and rearing habitat is aggregated without duplication (i.e., a stream segment is only counted once if it is classified as both spawning and rearing habitat; see <a href="../content/data-methods.html">data methods</a>). To support a flexible prioritization framework to identify priority barriers in the watershed, two assumptions are made: 1) any modelled (i.e., the passability status is unknown) or partial barriers are treated as complete barriers to passage and 2) the habitat modelling is binary, it does not assign any habitat quality values. As such, the current connectivity status will be refined over time as more data on habitat and barriers are collected. For more detail on how the connectivity status assessments were conducted, see <a href="../content/data-methods.html">data methods</a>.</p>
 <div class="cell" data-execution_count="2">
-<div class="cell-output cell-output-display" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="6">
 <style type="text/css">
-#T_88c79 th {
+#T_79c56 th {
   background-color: #008270;
   text-align: left;
 }
-#T_88c79_row0_col0, #T_88c79_row0_col1, #T_88c79_row0_col2, #T_88c79_row1_col0, #T_88c79_row1_col1, #T_88c79_row1_col3, #T_88c79_row1_col4, #T_88c79_row1_col6 {
+#T_79c56_row0_col0, #T_79c56_row0_col1, #T_79c56_row0_col2, #T_79c56_row1_col0, #T_79c56_row1_col1, #T_79c56_row1_col3, #T_79c56_row1_col4, #T_79c56_row1_col6 {
   background-color: white;
 }
-#T_88c79_row0_col3 {
+#T_79c56_row0_col3 {
   background-color: #ff0000;
 }
-#T_88c79_row0_col4 {
+#T_79c56_row0_col4 {
   background-color: #ffff00;
 }
-#T_88c79_row0_col5, #T_88c79_row1_col5 {
+#T_79c56_row0_col5, #T_79c56_row1_col5 {
   background-color: #92d050;
 }
-#T_88c79_row0_col6 {
+#T_79c56_row0_col6 {
   background-color: #03853e;
 }
-#T_88c79_row1_col2 {
+#T_79c56_row1_col2 {
   font-weight: bold;
 }
 </style>
 
 <div id="tbl-connectivity" class="anchored">
-<table id="T_88c79" data-quarto-postprocess="true" class="table table-sm table-striped small">
+<table id="T_79c56" data-quarto-postprocess="true" class="table table-sm table-striped small">
 <caption><strong>Table</strong>&nbsp;1: Connectivity status assessment for (a) habitat upstream of Elko Dam and (b) habitat downstream of Elko Dam in the Elk River watershed. The two KEAs - Accessible habitat upstream of Elko Dam and Accessible habitat downstream of Elko Dam - are evaluated using the Longest Fragment approach (Diaz et al. 2021), whereby the length of linear habitat that currently comprises the longest connected section in the watershed is divided by the total length of all linear habitat in the watershed.</caption>
 <thead>
 <tr class="header">
-<th id="T_88c79_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Target Species</th>
-<th id="T_88c79_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">KEA</th>
-<th id="T_88c79_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Indicator</th>
-<th id="T_88c79_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">Poor</th>
-<th id="T_88c79_level0_col4" class="col_heading level0 col4" data-quarto-table-cell-role="th">Fair</th>
-<th id="T_88c79_level0_col5" class="col_heading level0 col5" data-quarto-table-cell-role="th">Good</th>
-<th id="T_88c79_level0_col6" class="col_heading level0 col6" data-quarto-table-cell-role="th">Very Good</th>
+<th id="T_79c56_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Target Species</th>
+<th id="T_79c56_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">KEA</th>
+<th id="T_79c56_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Indicator</th>
+<th id="T_79c56_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">Poor</th>
+<th id="T_79c56_level0_col4" class="col_heading level0 col4" data-quarto-table-cell-role="th">Fair</th>
+<th id="T_79c56_level0_col5" class="col_heading level0 col5" data-quarto-table-cell-role="th">Good</th>
+<th id="T_79c56_level0_col6" class="col_heading level0 col6" data-quarto-table-cell-role="th">Very Good</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td id="T_88c79_row0_col0" class="data row0 col0">Westslope Cutthroat Trout</td>
-<td id="T_88c79_row0_col1" class="data row0 col1">Accessible habitat upstream of Elko Dam</td>
-<td id="T_88c79_row0_col2" class="data row0 col2">Longest Fragment (%)</td>
-<td id="T_88c79_row0_col3" class="data row0 col3">&lt;25%</td>
-<td id="T_88c79_row0_col4" class="data row0 col4">26-50%</td>
-<td id="T_88c79_row0_col5" class="data row0 col5">51-75%</td>
-<td id="T_88c79_row0_col6" class="data row0 col6">&gt;75%</td>
+<td id="T_79c56_row0_col0" class="data row0 col0">Westslope Cutthroat Trout</td>
+<td id="T_79c56_row0_col1" class="data row0 col1">Accessible habitat upstream of Elko Dam</td>
+<td id="T_79c56_row0_col2" class="data row0 col2">Longest Fragment (%)</td>
+<td id="T_79c56_row0_col3" class="data row0 col3">&lt;25%</td>
+<td id="T_79c56_row0_col4" class="data row0 col4">26-50%</td>
+<td id="T_79c56_row0_col5" class="data row0 col5">51-75%</td>
+<td id="T_79c56_row0_col6" class="data row0 col6">&gt;75%</td>
 </tr>
 <tr class="even">
-<td id="T_88c79_row1_col0" class="data row1 col0"></td>
-<td id="T_88c79_row1_col1" class="data row1 col1"></td>
-<td id="T_88c79_row1_col2" class="data row1 col2">Current Status:</td>
-<td id="T_88c79_row1_col3" class="data row1 col3"></td>
-<td id="T_88c79_row1_col4" class="data row1 col4"></td>
-<td id="T_88c79_row1_col5" class="data row1 col5">72</td>
-<td id="T_88c79_row1_col6" class="data row1 col6"></td>
+<td id="T_79c56_row1_col0" class="data row1 col0"></td>
+<td id="T_79c56_row1_col1" class="data row1 col1"></td>
+<td id="T_79c56_row1_col2" class="data row1 col2">Current Status:</td>
+<td id="T_79c56_row1_col3" class="data row1 col3"></td>
+<td id="T_79c56_row1_col4" class="data row1 col4"></td>
+<td id="T_79c56_row1_col5" class="data row1 col5">70</td>
+<td id="T_79c56_row1_col6" class="data row1 col6"></td>
 </tr>
 </tbody>
 </table>
@@ -302,62 +302,62 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <p><strong>Comments:</strong> Indicator rating definitions are based on the consensus decisions of the planning team. The current status is based on the CWF Barrier Prioritization Model output, which is current as of November 2022.</p>
 <div class="cell" data-execution_count="3">
-<div class="cell-output cell-output-display" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="7">
 <style type="text/css">
-#T_560e0 th {
+#T_22ddf th {
   background-color: #008270;
   text-align: left;
 }
-#T_560e0_row0_col0, #T_560e0_row0_col1, #T_560e0_row0_col2, #T_560e0_row1_col0, #T_560e0_row1_col1, #T_560e0_row1_col3, #T_560e0_row1_col4, #T_560e0_row1_col5 {
+#T_22ddf_row0_col0, #T_22ddf_row0_col1, #T_22ddf_row0_col2, #T_22ddf_row1_col0, #T_22ddf_row1_col1, #T_22ddf_row1_col3, #T_22ddf_row1_col4, #T_22ddf_row1_col5 {
   background-color: white;
 }
-#T_560e0_row0_col3 {
+#T_22ddf_row0_col3 {
   background-color: #ff0000;
 }
-#T_560e0_row0_col4 {
+#T_22ddf_row0_col4 {
   background-color: #ffff00;
 }
-#T_560e0_row0_col5 {
+#T_22ddf_row0_col5 {
   background-color: #92d050;
 }
-#T_560e0_row0_col6, #T_560e0_row1_col6 {
+#T_22ddf_row0_col6, #T_22ddf_row1_col6 {
   background-color: #03853e;
 }
-#T_560e0_row1_col2 {
+#T_22ddf_row1_col2 {
   font-weight: bold;
 }
 </style>
 
-<table id="T_560e0" data-quarto-postprocess="true" class="table table-sm table-striped small">
+<table id="T_22ddf" data-quarto-postprocess="true" class="table table-sm table-striped small">
 <thead>
 <tr class="header">
-<th id="T_560e0_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Target Species</th>
-<th id="T_560e0_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">KEA</th>
-<th id="T_560e0_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Indicator</th>
-<th id="T_560e0_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">Poor</th>
-<th id="T_560e0_level0_col4" class="col_heading level0 col4" data-quarto-table-cell-role="th">Fair</th>
-<th id="T_560e0_level0_col5" class="col_heading level0 col5" data-quarto-table-cell-role="th">Good</th>
-<th id="T_560e0_level0_col6" class="col_heading level0 col6" data-quarto-table-cell-role="th">Very Good</th>
+<th id="T_22ddf_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Target Species</th>
+<th id="T_22ddf_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">KEA</th>
+<th id="T_22ddf_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Indicator</th>
+<th id="T_22ddf_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">Poor</th>
+<th id="T_22ddf_level0_col4" class="col_heading level0 col4" data-quarto-table-cell-role="th">Fair</th>
+<th id="T_22ddf_level0_col5" class="col_heading level0 col5" data-quarto-table-cell-role="th">Good</th>
+<th id="T_22ddf_level0_col6" class="col_heading level0 col6" data-quarto-table-cell-role="th">Very Good</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td id="T_560e0_row0_col0" class="data row0 col0">Westslope Cutthroat Trout</td>
-<td id="T_560e0_row0_col1" class="data row0 col1">Accessible habitat downstream of Elko Dam</td>
-<td id="T_560e0_row0_col2" class="data row0 col2">Longest Fragment (%)</td>
-<td id="T_560e0_row0_col3" class="data row0 col3">&lt;25%</td>
-<td id="T_560e0_row0_col4" class="data row0 col4">26-50%</td>
-<td id="T_560e0_row0_col5" class="data row0 col5">51-75%</td>
-<td id="T_560e0_row0_col6" class="data row0 col6">&gt;75%</td>
+<td id="T_22ddf_row0_col0" class="data row0 col0">Westslope Cutthroat Trout</td>
+<td id="T_22ddf_row0_col1" class="data row0 col1">Accessible habitat downstream of Elko Dam</td>
+<td id="T_22ddf_row0_col2" class="data row0 col2">Longest Fragment (%)</td>
+<td id="T_22ddf_row0_col3" class="data row0 col3">&lt;25%</td>
+<td id="T_22ddf_row0_col4" class="data row0 col4">26-50%</td>
+<td id="T_22ddf_row0_col5" class="data row0 col5">51-75%</td>
+<td id="T_22ddf_row0_col6" class="data row0 col6">&gt;75%</td>
 </tr>
 <tr class="even">
-<td id="T_560e0_row1_col0" class="data row1 col0"></td>
-<td id="T_560e0_row1_col1" class="data row1 col1"></td>
-<td id="T_560e0_row1_col2" class="data row1 col2">Current Status:</td>
-<td id="T_560e0_row1_col3" class="data row1 col3"></td>
-<td id="T_560e0_row1_col4" class="data row1 col4"></td>
-<td id="T_560e0_row1_col5" class="data row1 col5"></td>
-<td id="T_560e0_row1_col6" class="data row1 col6">98</td>
+<td id="T_22ddf_row1_col0" class="data row1 col0"></td>
+<td id="T_22ddf_row1_col1" class="data row1 col1"></td>
+<td id="T_22ddf_row1_col2" class="data row1 col2">Current Status:</td>
+<td id="T_22ddf_row1_col3" class="data row1 col3"></td>
+<td id="T_22ddf_row1_col4" class="data row1 col4"></td>
+<td id="T_22ddf_row1_col5" class="data row1 col5"></td>
+<td id="T_22ddf_row1_col6" class="data row1 col6">98</td>
 </tr>
 </tbody>
 </table>
@@ -368,42 +368,42 @@ ul.task-list li input[type="checkbox"] {
 <section id="goals" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="goals">Goals</h2>
 <div class="cell" data-execution_count="4">
-<div class="cell-output cell-output-display" data-execution_count="4">
+<div class="cell-output cell-output-display" data-execution_count="8">
 <style type="text/css">
-#T_efd14 th {
+#T_28ae1 th {
   background-color: #008270;
   text-align: left;
 }
-#T_efd14_row0_col0, #T_efd14_row0_col1, #T_efd14_row1_col0, #T_efd14_row1_col1, #T_efd14_row2_col0, #T_efd14_row2_col1, #T_efd14_row3_col0, #T_efd14_row3_col1 {
+#T_28ae1_row0_col0, #T_28ae1_row0_col1, #T_28ae1_row1_col0, #T_28ae1_row1_col1, #T_28ae1_row2_col0, #T_28ae1_row2_col1, #T_28ae1_row3_col0, #T_28ae1_row3_col1 {
   text-align: left;
 }
 </style>
 
 <div id="tbl-goals" class="anchored">
-<table id="T_efd14" data-quarto-postprocess="true" class="table table-sm table-striped small">
+<table id="T_28ae1" data-quarto-postprocess="true" class="table table-sm table-striped small">
 <caption><strong>Table</strong>&nbsp;2: Goals to improve habitat connectivity for Westslope Cutthroat Trout, upstream and downstream of Elko Dam, in the Elk River watershed over the lifespan of the WCRP (2021-2041). The goals were established through discussions with the planning team and represent the resulting desired state of connectivity in the watershed. The goals for the Downstream of the Elko Dam unit assume that remediation can be undertaken while mitigating the risk of introgressive hybridization (see action 1.11 in Strategies &amp; Actions). The goals are subject to change as more information and data are collected over the course of the plan timeline (e.g., the current connectivity status is updated based on barrier field assessments).</caption>
 <thead>
 <tr class="header">
-<th id="T_efd14_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Goal #</th>
-<th id="T_efd14_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Goal</th>
+<th id="T_28ae1_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Goal #</th>
+<th id="T_28ae1_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Goal</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td id="T_efd14_row0_col0" class="data row0 col0">1</td>
-<td id="T_efd14_row0_col1" class="data row0 col1">By 2031, the Longest Fragment (%) for Westslope Cutthroat Trout will increase from 72% to 83% above the Elko Dam (i.e., reconnect at least 98.11 of habitat).</td>
+<td id="T_28ae1_row0_col0" class="data row0 col0">1</td>
+<td id="T_28ae1_row0_col1" class="data row0 col1">By 2031, the Longest Fragment (%) for Westslope Cutthroat Trout will increase from 70% to 83% above the Elko Dam (i.e., reconnect at least 126.96 of habitat).</td>
 </tr>
 <tr class="even">
-<td id="T_efd14_row1_col0" class="data row1 col0">2</td>
-<td id="T_efd14_row1_col1" class="data row1 col1">By 2041, the Longest Fragment (%) for Westslope Cutthroat Trout will increase to 86% above the Elko Dam (i.e., reconnect at least an additional 27.62 km of habitat).</td>
+<td id="T_28ae1_row1_col0" class="data row1 col0">2</td>
+<td id="T_28ae1_row1_col1" class="data row1 col1">By 2041, the Longest Fragment (%) for Westslope Cutthroat Trout will increase to 86% above the Elko Dam (i.e., reconnect at least an additional 29.04 km of habitat).</td>
 </tr>
 <tr class="odd">
-<td id="T_efd14_row2_col0" class="data row2 col0">3</td>
-<td id="T_efd14_row2_col1" class="data row2 col1">By 2031, the Longest Fragment (%) for Westslope Cutthroat Trout will increase from 98% to 99% below the Elko Dam (i.e., reconnect at least 2.52 km of habitat).</td>
+<td id="T_28ae1_row2_col0" class="data row2 col0">3</td>
+<td id="T_28ae1_row2_col1" class="data row2 col1">By 2031, the Longest Fragment (%) for Westslope Cutthroat Trout will increase from 98% to 99% below the Elko Dam (i.e., reconnect at least 2.34 km of habitat).</td>
 </tr>
 <tr class="even">
-<td id="T_efd14_row3_col0" class="data row3 col0">4</td>
-<td id="T_efd14_row3_col1" class="data row3 col1">By 2041, the Longest Fragment (%) for Westslope Cutthroat Trout will not decrease from 99% below the Elko Dam.</td>
+<td id="T_28ae1_row3_col0" class="data row3 col0">4</td>
+<td id="T_28ae1_row3_col1" class="data row3 col1">By 2041, the Longest Fragment (%) for Westslope Cutthroat Trout will not decrease from 99% below the Elko Dam.</td>
 </tr>
 </tbody>
 </table>
