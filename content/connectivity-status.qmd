@@ -9,6 +9,15 @@ import python.connectivity_assess as conn_table
 warnings.filterwarnings('ignore')
 ```
 
+```{r echo=FALSE}
+#| echo: false
+#| include: true
+#| warning: false
+
+library(reticulate)
+
+```
+
 # Connectivity Status Assessment and Goals {-}
 
 ## Connectivity Status Assessment {-}

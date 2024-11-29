@@ -36,6 +36,15 @@ def highlighttab7(val):
 
 ```
 
+```{r echo=FALSE}
+#| echo: false
+#| include: true
+#| warning: false
+
+library(reticulate)
+
+```
+
 ```{python opplan, echo=FALSE}
 #| label: tbl-opplan
 #| tbl-cap: "Operational plan to support the implementation of strategies and actions to improve connectivity for target species in the Horsefly River watershed."
