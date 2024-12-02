@@ -119,14 +119,19 @@ ft
 There are currently `r prior_num` barriers on the priority barrier list, which will be pursued for proactive remediation to achieve the connectivity goals in this plan:
 
 
-```{r rehab, echo = FALSE, results = 'asis'}
+```{python echo=FALSE}
 #| label: tbl-priority
 #| tbl-cap: "Elk River watershed priority barrier list, which includes barriers that have undergone field assessment, been reviewed by the planning team, and selected for proactive remediation. (Note that at present there are no priority barriers Below Elko Dam)."
 #| warning: false
 #| echo: false
 
-data <- read.csv("data/priority_structures_table.csv", check.names=FALSE)
-ft <- flextable(data)
-ft <- format_flextable(ft)
-ft
+df = api_calls.confirmed_struc
+df.reset_index(drop=True, inplace=True)
+data = df.style.hide().set_properties(**{'text-align': 'left'})
+
+data.set_table_styles(
+   [{
+       'selector': 'th',
+       'props': [('background-color', '#008270'),('text-align', 'left')]
+   }])
 ```
