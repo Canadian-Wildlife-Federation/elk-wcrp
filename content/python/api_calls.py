@@ -62,6 +62,93 @@ def watershed_connectivity(habitat_type):
 
     return round(connect_stat), all_habitat, all_habitat_acc
 
+def confirmed_barriers(rawDF):
+
+        tableColumns = ['barrier_id', 'modelled_crossing_id', 'watercourse_name', 'road_name','structure_type', 'partial_passability',
+                        'structure_owner','num_barriers_set','total_hab_gain_set',
+                        'upstream_habitat_quality', 'estimated_cost_$', 'next_steps','reason', 'notes', 'supporting_links', 
+                        'structure_list_status', 'priority']
+        priorityDF = rawDF[tableColumns]
+        
+        queryColumn1 = 'structure_list_status'
+        priorityDF.query(f'{queryColumn1}  == "Confirmed barrier" & priority !=  "Non-actionable" ', inplace = True)
+        priorityDF = priorityDF.drop(columns=['structure_list_status', 'priority'])
+
+
+        priorityDF.to_csv('data/confirmed_barriers.csv', index=False)
+#grabs assessed data deficient structures
+def assessedStrucDD(rawDF):
+
+        tableColumns = ['barrier_id', 'modelled_crossing_id', 'watercourse_name', 'road_name', 'structure_type', 'structure_owner', 'barrier_status','partial_passability',
+                            'assessment_type_completed','total_hab_gain_set','num_barriers_set','next_steps','notes','supporting_links',
+                            'structure_list_status']
+        priorityDF = rawDF[tableColumns]
+
+        queryColumn1 = 'structure_list_status'
+        priorityDF.query(f'{queryColumn1}  == "Assessed structure that remains data deficient" ', inplace = True)
+        priorityDF = priorityDF.drop(columns=['structure_list_status'])
+
+
+        priorityDF.to_csv('data/assessed_strucDD.csv', index=False)
+
+#grabs rehabilitated structures
+def RehabilitatedBarriers(rawDF):
+    #To work on later
+
+        tableColumns = ['barrier_id','modelled_crossing_id', 'watercourse_name', 'road_name','type_of_rehabilitation','rehabilitated_by',
+                        'rehabilitated_date', 'total_hab_gain_set', 'actual_project_cost_$',
+                            'next_steps', 'notes', 'supporting_links',
+                            'structure_list_status']
+        priorityDF = rawDF[tableColumns]
+
+        queryColumn1 = 'structure_list_status'
+        priorityDF.query(f'{queryColumn1}  == "Rehabilitated barrier" ', inplace = True)
+        priorityDF = priorityDF.drop(columns=['structure_list_status'])
+
+
+        priorityDF.to_csv('data/rehabilitated_barriers.csv', index=False)
+
+#grabs non-actionable structures
+def nonActionable_barriers(rawDF):
+
+        tableColumns = ['barrier_id', 'modelled_crossing_id', 'watercourse_name', 'road_name','structure_type', 'reason', 'notes', 'supporting_links', 
+                        'structure_list_status', 'priority']
+        priorityDF = rawDF[tableColumns]
+        
+        queryColumn1 = 'structure_list_status'
+        priorityDF.query(f'{queryColumn1}  == "Confirmed barrier" & priority ==  "Non-actionable" ', inplace = True)
+        priorityDF = priorityDF.drop(columns=['structure_list_status', 'priority'])
+
+
+        priorityDF.to_csv('data/nonactionable_barriers.csv', index=False)
+
+#grabs excluded strucutures
+def ExcludedStructures(rawDF):
+
+        tableColumns = ['barrier_id', 'modelled_crossing_id', 'watercourse_name', 'road_name','structure_type', 
+                        'reason_for_exclusion', 'method_of_exclusion','reason', 'notes', 'supporting_links', 
+                        'structure_list_status']
+        priorityDF = rawDF[tableColumns]
+
+        queryColumn1 = 'structure_list_status'
+        priorityDF.query(f'{queryColumn1}  == "Excluded structure" ', inplace = True)
+        priorityDF = priorityDF.drop(columns=['structure_list_status'])
+
+
+        priorityDF.to_csv('data/excluded_structures.csv', index=False)
+
+def GetTrackingTableData():
+    request = "https://cabd-pro.cwf-fcf.org/bcfishpass/collections/wcrp_elk.combined_tracking_table_crossings_wcrp_vw_elk/items.json" 
+    response_api = requests.get(request)
+    parse = response_api.text
+    result = json.loads(parse)
+    data = result["features"]
+    df = pd.json_normalize(data, sep="_")
+    df.columns = [col.replace("properties_", "") for col in df.columns]
+    #print (df.head())
+    return df
+
+
 warnings.filterwarnings('ignore')
 
 connect = watershed_connectivity("ALL")[0]
@@ -104,3 +191,12 @@ sum_rail = barrier_severity('RAIL')[1]
 rail_km = barrier_extent('RAIL')[0]
 rail_pct = round(barrier_extent('RAIL')[1])
 rail_sev = round(barrier_severity('RAIL')[2])
+
+
+df = GetTrackingTableData()
+confirmed_struc = confirmed_barriers(df)
+
+add_struc = assessedStrucDD(df)
+excluded_struc = ExcludedStructures(df)
+nonaction_struc = nonActionable_barriers(df)
+rehabilitated_struc = RehabilitatedBarriers(df)
