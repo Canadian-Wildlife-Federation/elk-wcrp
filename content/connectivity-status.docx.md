@@ -34,144 +34,59 @@ The current connectivity status assessment relies on GIS analyses to map known a
 
 ```{=html}
 <style type="text/css">
-#T_6c202 th {
+#T_a7c83 th {
   background-color: #008270;
   text-align: left;
 }
-#T_6c202_row0_col0, #T_6c202_row0_col1, #T_6c202_row0_col2, #T_6c202_row1_col0, #T_6c202_row1_col1, #T_6c202_row1_col3, #T_6c202_row1_col4, #T_6c202_row1_col6 {
+#T_a7c83_row0_col0, #T_a7c83_row0_col1, #T_a7c83_row0_col2, #T_a7c83_row1_col0, #T_a7c83_row1_col1, #T_a7c83_row1_col3, #T_a7c83_row1_col4, #T_a7c83_row1_col6 {
   background-color: white;
 }
-#T_6c202_row0_col3 {
+#T_a7c83_row0_col3 {
   background-color: #ff0000;
 }
-#T_6c202_row0_col4 {
+#T_a7c83_row0_col4 {
   background-color: #ffff00;
 }
-#T_6c202_row0_col5, #T_6c202_row1_col5 {
+#T_a7c83_row0_col5, #T_a7c83_row1_col5 {
   background-color: #92d050;
 }
-#T_6c202_row0_col6 {
+#T_a7c83_row0_col6 {
   background-color: #03853e;
 }
-#T_6c202_row1_col2 {
+#T_a7c83_row1_col2 {
   font-weight: bold;
 }
 </style>
-<table id="T_6c202">
+<table id="T_a7c83">
   <thead>
     <tr>
-      <th id="T_6c202_level0_col0" class="col_heading level0 col0" >Target Species</th>
-      <th id="T_6c202_level0_col1" class="col_heading level0 col1" >KEA</th>
-      <th id="T_6c202_level0_col2" class="col_heading level0 col2" >Indicator</th>
-      <th id="T_6c202_level0_col3" class="col_heading level0 col3" >Poor</th>
-      <th id="T_6c202_level0_col4" class="col_heading level0 col4" >Fair</th>
-      <th id="T_6c202_level0_col5" class="col_heading level0 col5" >Good</th>
-      <th id="T_6c202_level0_col6" class="col_heading level0 col6" >Very Good</th>
+      <th id="T_a7c83_level0_col0" class="col_heading level0 col0" >Target Species</th>
+      <th id="T_a7c83_level0_col1" class="col_heading level0 col1" >KEA</th>
+      <th id="T_a7c83_level0_col2" class="col_heading level0 col2" >Indicator</th>
+      <th id="T_a7c83_level0_col3" class="col_heading level0 col3" >Poor</th>
+      <th id="T_a7c83_level0_col4" class="col_heading level0 col4" >Fair</th>
+      <th id="T_a7c83_level0_col5" class="col_heading level0 col5" >Good</th>
+      <th id="T_a7c83_level0_col6" class="col_heading level0 col6" >Very Good</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td id="T_6c202_row0_col0" class="data row0 col0" >Westslope Cutthroat Trout</td>
-      <td id="T_6c202_row0_col1" class="data row0 col1" >Accessible habitat upstream of Elko Dam</td>
-      <td id="T_6c202_row0_col2" class="data row0 col2" >Longest Fragment (%)</td>
-      <td id="T_6c202_row0_col3" class="data row0 col3" ><25%</td>
-      <td id="T_6c202_row0_col4" class="data row0 col4" >26-50%</td>
-      <td id="T_6c202_row0_col5" class="data row0 col5" >51-75%</td>
-      <td id="T_6c202_row0_col6" class="data row0 col6" >>75%</td>
+      <td id="T_a7c83_row0_col0" class="data row0 col0" >Westslope Cutthroat Trout</td>
+      <td id="T_a7c83_row0_col1" class="data row0 col1" >Accessible habitat upstream of Elko Dam</td>
+      <td id="T_a7c83_row0_col2" class="data row0 col2" >Longest Fragment (%)</td>
+      <td id="T_a7c83_row0_col3" class="data row0 col3" ><25%</td>
+      <td id="T_a7c83_row0_col4" class="data row0 col4" >26-50%</td>
+      <td id="T_a7c83_row0_col5" class="data row0 col5" >51-75%</td>
+      <td id="T_a7c83_row0_col6" class="data row0 col6" >>75%</td>
     </tr>
     <tr>
-      <td id="T_6c202_row1_col0" class="data row1 col0" > </td>
-      <td id="T_6c202_row1_col1" class="data row1 col1" > </td>
-      <td id="T_6c202_row1_col2" class="data row1 col2" >Current Status:</td>
-      <td id="T_6c202_row1_col3" class="data row1 col3" > </td>
-      <td id="T_6c202_row1_col4" class="data row1 col4" > </td>
-      <td id="T_6c202_row1_col5" class="data row1 col5" >70</td>
-      <td id="T_6c202_row1_col6" class="data row1 col6" > </td>
-    </tr>
-  </tbody>
-</table>
-
-```
-
-
-:::
-:::
-
-
-
-
-
-
-
-
-**Comments:** Indicator rating definitions are based on the consensus decisions of the planning team. The current status is based on the CWF Barrier Prioritization Model output, which is current as of November 2022.
-
-
-
-
-
-
-
-
-::: {.cell}
-::: {.cell-output-display}
-
-
-```{=html}
-<style type="text/css">
-#T_9aca3 th {
-  background-color: #008270;
-  text-align: left;
-}
-#T_9aca3_row0_col0, #T_9aca3_row0_col1, #T_9aca3_row0_col2, #T_9aca3_row1_col0, #T_9aca3_row1_col1, #T_9aca3_row1_col3, #T_9aca3_row1_col4, #T_9aca3_row1_col5 {
-  background-color: white;
-}
-#T_9aca3_row0_col3 {
-  background-color: #ff0000;
-}
-#T_9aca3_row0_col4 {
-  background-color: #ffff00;
-}
-#T_9aca3_row0_col5 {
-  background-color: #92d050;
-}
-#T_9aca3_row0_col6, #T_9aca3_row1_col6 {
-  background-color: #03853e;
-}
-#T_9aca3_row1_col2 {
-  font-weight: bold;
-}
-</style>
-<table id="T_9aca3">
-  <thead>
-    <tr>
-      <th id="T_9aca3_level0_col0" class="col_heading level0 col0" >Target Species</th>
-      <th id="T_9aca3_level0_col1" class="col_heading level0 col1" >KEA</th>
-      <th id="T_9aca3_level0_col2" class="col_heading level0 col2" >Indicator</th>
-      <th id="T_9aca3_level0_col3" class="col_heading level0 col3" >Poor</th>
-      <th id="T_9aca3_level0_col4" class="col_heading level0 col4" >Fair</th>
-      <th id="T_9aca3_level0_col5" class="col_heading level0 col5" >Good</th>
-      <th id="T_9aca3_level0_col6" class="col_heading level0 col6" >Very Good</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td id="T_9aca3_row0_col0" class="data row0 col0" >Westslope Cutthroat Trout</td>
-      <td id="T_9aca3_row0_col1" class="data row0 col1" >Accessible habitat downstream of Elko Dam</td>
-      <td id="T_9aca3_row0_col2" class="data row0 col2" >Longest Fragment (%)</td>
-      <td id="T_9aca3_row0_col3" class="data row0 col3" ><25%</td>
-      <td id="T_9aca3_row0_col4" class="data row0 col4" >26-50%</td>
-      <td id="T_9aca3_row0_col5" class="data row0 col5" >51-75%</td>
-      <td id="T_9aca3_row0_col6" class="data row0 col6" >>75%</td>
-    </tr>
-    <tr>
-      <td id="T_9aca3_row1_col0" class="data row1 col0" > </td>
-      <td id="T_9aca3_row1_col1" class="data row1 col1" > </td>
-      <td id="T_9aca3_row1_col2" class="data row1 col2" >Current Status:</td>
-      <td id="T_9aca3_row1_col3" class="data row1 col3" > </td>
-      <td id="T_9aca3_row1_col4" class="data row1 col4" > </td>
-      <td id="T_9aca3_row1_col5" class="data row1 col5" > </td>
-      <td id="T_9aca3_row1_col6" class="data row1 col6" >98</td>
+      <td id="T_a7c83_row1_col0" class="data row1 col0" > </td>
+      <td id="T_a7c83_row1_col1" class="data row1 col1" > </td>
+      <td id="T_a7c83_row1_col2" class="data row1 col2" >Current Status:</td>
+      <td id="T_a7c83_row1_col3" class="data row1 col3" > </td>
+      <td id="T_a7c83_row1_col4" class="data row1 col4" > </td>
+      <td id="T_a7c83_row1_col5" class="data row1 col5" >70</td>
+      <td id="T_a7c83_row1_col6" class="data row1 col6" > </td>
     </tr>
   </tbody>
 </table>
@@ -207,37 +122,37 @@ The current connectivity status assessment relies on GIS analyses to map known a
 
 ```{=html}
 <style type="text/css">
-#T_1142d th {
+#T_1ec85 th {
   background-color: #008270;
   text-align: left;
 }
-#T_1142d_row0_col0, #T_1142d_row0_col1, #T_1142d_row1_col0, #T_1142d_row1_col1, #T_1142d_row2_col0, #T_1142d_row2_col1, #T_1142d_row3_col0, #T_1142d_row3_col1 {
+#T_1ec85_row0_col0, #T_1ec85_row0_col1, #T_1ec85_row1_col0, #T_1ec85_row1_col1, #T_1ec85_row2_col0, #T_1ec85_row2_col1, #T_1ec85_row3_col0, #T_1ec85_row3_col1 {
   text-align: left;
 }
 </style>
-<table id="T_1142d">
+<table id="T_1ec85">
   <thead>
     <tr>
-      <th id="T_1142d_level0_col0" class="col_heading level0 col0" >Goal #</th>
-      <th id="T_1142d_level0_col1" class="col_heading level0 col1" >Goal</th>
+      <th id="T_1ec85_level0_col0" class="col_heading level0 col0" >Goal #</th>
+      <th id="T_1ec85_level0_col1" class="col_heading level0 col1" >Goal</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td id="T_1142d_row0_col0" class="data row0 col0" >1</td>
-      <td id="T_1142d_row0_col1" class="data row0 col1" >By 2031, the Longest Fragment (%) for Westslope Cutthroat Trout will increase from 70% to 83% above the Elko Dam (i.e., reconnect at least 126.96 of habitat).</td>
+      <td id="T_1ec85_row0_col0" class="data row0 col0" >1</td>
+      <td id="T_1ec85_row0_col1" class="data row0 col1" >By 2031, the Longest Fragment (%) for Westslope Cutthroat Trout will increase from 70% to 83% above the Elko Dam (i.e., reconnect at least 126.96 of habitat).</td>
     </tr>
     <tr>
-      <td id="T_1142d_row1_col0" class="data row1 col0" >2</td>
-      <td id="T_1142d_row1_col1" class="data row1 col1" >By 2041, the Longest Fragment (%) for Westslope Cutthroat Trout will increase to 86% above the Elko Dam (i.e., reconnect at least an additional 29.04 km of habitat).</td>
+      <td id="T_1ec85_row1_col0" class="data row1 col0" >2</td>
+      <td id="T_1ec85_row1_col1" class="data row1 col1" >By 2041, the Longest Fragment (%) for Westslope Cutthroat Trout will increase to 86% above the Elko Dam (i.e., reconnect at least an additional 29.04 km of habitat).</td>
     </tr>
     <tr>
-      <td id="T_1142d_row2_col0" class="data row2 col0" >3</td>
-      <td id="T_1142d_row2_col1" class="data row2 col1" >By 2031, the Longest Fragment (%) for Westslope Cutthroat Trout will increase from 98% to 99% below the Elko Dam (i.e., reconnect at least 2.34 km of habitat).</td>
+      <td id="T_1ec85_row2_col0" class="data row2 col0" >3</td>
+      <td id="T_1ec85_row2_col1" class="data row2 col1" >By 2031, the Longest Fragment (%) for Westslope Cutthroat Trout will increase from 98% to 99% below the Elko Dam (i.e., reconnect at least 2.34 km of habitat).</td>
     </tr>
     <tr>
-      <td id="T_1142d_row3_col0" class="data row3 col0" >4</td>
-      <td id="T_1142d_row3_col1" class="data row3 col1" >By 2041, the Longest Fragment (%) for Westslope Cutthroat Trout will not decrease from 99% below the Elko Dam.</td>
+      <td id="T_1ec85_row3_col0" class="data row3 col0" >4</td>
+      <td id="T_1ec85_row3_col1" class="data row3 col1" >By 2041, the Longest Fragment (%) for Westslope Cutthroat Trout will not decrease from 99% below the Elko Dam.</td>
     </tr>
   </tbody>
 </table>

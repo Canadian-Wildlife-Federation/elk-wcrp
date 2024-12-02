@@ -148,94 +148,94 @@ The following table highlights which barrier types pose the greatest threat to W
 
 ```{=html}
 <style type="text/css">
-#T_97e81 th {
+#T_306ce th {
   background-color: #008270;
   text-align: left;
 }
-#T_97e81_row0_col0, #T_97e81_row1_col0, #T_97e81_row2_col0, #T_97e81_row3_col0, #T_97e81_row4_col0, #T_97e81_row5_col0, #T_97e81_row6_col0 {
+#T_306ce_row0_col0, #T_306ce_row1_col0, #T_306ce_row2_col0, #T_306ce_row3_col0, #T_306ce_row4_col0, #T_306ce_row5_col0, #T_306ce_row6_col0 {
   background-color: white;
 }
-#T_97e81_row0_col1, #T_97e81_row1_col3, #T_97e81_row5_col3 {
+#T_306ce_row0_col1, #T_306ce_row1_col3, #T_306ce_row5_col3 {
   background-color: #92d050;
 }
-#T_97e81_row0_col2, #T_97e81_row1_col2, #T_97e81_row2_col1, #T_97e81_row3_col1, #T_97e81_row3_col2, #T_97e81_row3_col3, #T_97e81_row4_col1, #T_97e81_row4_col2, #T_97e81_row5_col1, #T_97e81_row5_col2, #T_97e81_row6_col1, #T_97e81_row6_col2 {
+#T_306ce_row0_col2, #T_306ce_row1_col2, #T_306ce_row2_col1, #T_306ce_row3_col1, #T_306ce_row3_col2, #T_306ce_row3_col3, #T_306ce_row4_col1, #T_306ce_row4_col2, #T_306ce_row5_col1, #T_306ce_row5_col2, #T_306ce_row6_col1, #T_306ce_row6_col2 {
   background-color: #03853e;
 }
-#T_97e81_row0_col3, #T_97e81_row1_col1, #T_97e81_row2_col2, #T_97e81_row2_col3, #T_97e81_row4_col3, #T_97e81_row6_col3 {
+#T_306ce_row0_col3, #T_306ce_row1_col1, #T_306ce_row2_col2, #T_306ce_row2_col3, #T_306ce_row4_col3, #T_306ce_row6_col3 {
   background-color: #ffff00;
 }
-#T_97e81_row0_col4, #T_97e81_row3_col4, #T_97e81_row4_col4, #T_97e81_row5_col4, #T_97e81_row6_col4 {
+#T_306ce_row0_col4, #T_306ce_row3_col4, #T_306ce_row4_col4, #T_306ce_row5_col4, #T_306ce_row6_col4 {
   font-weight: bold;
   background-color: #03853e;
 }
-#T_97e81_row1_col4 {
+#T_306ce_row1_col4 {
   font-weight: bold;
   background-color: #ffff00;
 }
-#T_97e81_row2_col4 {
+#T_306ce_row2_col4 {
   font-weight: bold;
   background-color: #92d050;
 }
 </style>
-<table id="T_97e81">
+<table id="T_306ce">
   <thead>
     <tr>
-      <th id="T_97e81_level0_col0" class="col_heading level0 col0" >Barrier Types</th>
-      <th id="T_97e81_level0_col1" class="col_heading level0 col1" >Extent</th>
-      <th id="T_97e81_level0_col2" class="col_heading level0 col2" >Severity</th>
-      <th id="T_97e81_level0_col3" class="col_heading level0 col3" >Irreversibility</th>
-      <th id="T_97e81_level0_col4" class="col_heading level0 col4" >Overall Threat Rating:</th>
+      <th id="T_306ce_level0_col0" class="col_heading level0 col0" >Barrier Types</th>
+      <th id="T_306ce_level0_col1" class="col_heading level0 col1" >Extent</th>
+      <th id="T_306ce_level0_col2" class="col_heading level0 col2" >Severity</th>
+      <th id="T_306ce_level0_col3" class="col_heading level0 col3" >Irreversibility</th>
+      <th id="T_306ce_level0_col4" class="col_heading level0 col4" >Overall Threat Rating:</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td id="T_97e81_row0_col0" class="data row0 col0" >Dams</td>
-      <td id="T_97e81_row0_col1" class="data row0 col1" >Medium</td>
-      <td id="T_97e81_row0_col2" class="data row0 col2" >Low</td>
-      <td id="T_97e81_row0_col3" class="data row0 col3" >High</td>
-      <td id="T_97e81_row0_col4" class="data row0 col4" >Low</td>
+      <td id="T_306ce_row0_col0" class="data row0 col0" >Dams</td>
+      <td id="T_306ce_row0_col1" class="data row0 col1" >Medium</td>
+      <td id="T_306ce_row0_col2" class="data row0 col2" >Low</td>
+      <td id="T_306ce_row0_col3" class="data row0 col3" >High</td>
+      <td id="T_306ce_row0_col4" class="data row0 col4" >Low</td>
     </tr>
     <tr>
-      <td id="T_97e81_row1_col0" class="data row1 col0" >Road-Stream Crossings</td>
-      <td id="T_97e81_row1_col1" class="data row1 col1" >High</td>
-      <td id="T_97e81_row1_col2" class="data row1 col2" >Low</td>
-      <td id="T_97e81_row1_col3" class="data row1 col3" >Medium</td>
-      <td id="T_97e81_row1_col4" class="data row1 col4" >High</td>
+      <td id="T_306ce_row1_col0" class="data row1 col0" >Road-Stream Crossings</td>
+      <td id="T_306ce_row1_col1" class="data row1 col1" >High</td>
+      <td id="T_306ce_row1_col2" class="data row1 col2" >Low</td>
+      <td id="T_306ce_row1_col3" class="data row1 col3" >Medium</td>
+      <td id="T_306ce_row1_col4" class="data row1 col4" >High</td>
     </tr>
     <tr>
-      <td id="T_97e81_row2_col0" class="data row2 col0" >Rail-stream Crossings</td>
-      <td id="T_97e81_row2_col1" class="data row2 col1" >Low</td>
-      <td id="T_97e81_row2_col2" class="data row2 col2" >High</td>
-      <td id="T_97e81_row2_col3" class="data row2 col3" >High</td>
-      <td id="T_97e81_row2_col4" class="data row2 col4" >Medium</td>
+      <td id="T_306ce_row2_col0" class="data row2 col0" >Rail-stream Crossings</td>
+      <td id="T_306ce_row2_col1" class="data row2 col1" >Low</td>
+      <td id="T_306ce_row2_col2" class="data row2 col2" >High</td>
+      <td id="T_306ce_row2_col3" class="data row2 col3" >High</td>
+      <td id="T_306ce_row2_col4" class="data row2 col4" >Medium</td>
     </tr>
     <tr>
-      <td id="T_97e81_row3_col0" class="data row3 col0" >Trail-stream Crossings</td>
-      <td id="T_97e81_row3_col1" class="data row3 col1" >Low</td>
-      <td id="T_97e81_row3_col2" class="data row3 col2" >Low</td>
-      <td id="T_97e81_row3_col3" class="data row3 col3" >Low</td>
-      <td id="T_97e81_row3_col4" class="data row3 col4" >Low</td>
+      <td id="T_306ce_row3_col0" class="data row3 col0" >Trail-stream Crossings</td>
+      <td id="T_306ce_row3_col1" class="data row3 col1" >Low</td>
+      <td id="T_306ce_row3_col2" class="data row3 col2" >Low</td>
+      <td id="T_306ce_row3_col3" class="data row3 col3" >Low</td>
+      <td id="T_306ce_row3_col4" class="data row3 col4" >Low</td>
     </tr>
     <tr>
-      <td id="T_97e81_row4_col0" class="data row4 col0" >Lateral Barriers</td>
-      <td id="T_97e81_row4_col1" class="data row4 col1" >Low</td>
-      <td id="T_97e81_row4_col2" class="data row4 col2" >Low</td>
-      <td id="T_97e81_row4_col3" class="data row4 col3" >High</td>
-      <td id="T_97e81_row4_col4" class="data row4 col4" >Low</td>
+      <td id="T_306ce_row4_col0" class="data row4 col0" >Lateral Barriers</td>
+      <td id="T_306ce_row4_col1" class="data row4 col1" >Low</td>
+      <td id="T_306ce_row4_col2" class="data row4 col2" >Low</td>
+      <td id="T_306ce_row4_col3" class="data row4 col3" >High</td>
+      <td id="T_306ce_row4_col4" class="data row4 col4" >Low</td>
     </tr>
     <tr>
-      <td id="T_97e81_row5_col0" class="data row5 col0" >Sediment Wedges</td>
-      <td id="T_97e81_row5_col1" class="data row5 col1" >Low</td>
-      <td id="T_97e81_row5_col2" class="data row5 col2" >Low</td>
-      <td id="T_97e81_row5_col3" class="data row5 col3" >Medium</td>
-      <td id="T_97e81_row5_col4" class="data row5 col4" >Low</td>
+      <td id="T_306ce_row5_col0" class="data row5 col0" >Sediment Wedges</td>
+      <td id="T_306ce_row5_col1" class="data row5 col1" >Low</td>
+      <td id="T_306ce_row5_col2" class="data row5 col2" >Low</td>
+      <td id="T_306ce_row5_col3" class="data row5 col3" >Medium</td>
+      <td id="T_306ce_row5_col4" class="data row5 col4" >Low</td>
     </tr>
     <tr>
-      <td id="T_97e81_row6_col0" class="data row6 col0" >Landslides</td>
-      <td id="T_97e81_row6_col1" class="data row6 col1" >Low</td>
-      <td id="T_97e81_row6_col2" class="data row6 col2" >Low</td>
-      <td id="T_97e81_row6_col3" class="data row6 col3" >High</td>
-      <td id="T_97e81_row6_col4" class="data row6 col4" >Low</td>
+      <td id="T_306ce_row6_col0" class="data row6 col0" >Landslides</td>
+      <td id="T_306ce_row6_col1" class="data row6 col1" >Low</td>
+      <td id="T_306ce_row6_col2" class="data row6 col2" >Low</td>
+      <td id="T_306ce_row6_col3" class="data row6 col3" >High</td>
+      <td id="T_306ce_row6_col4" class="data row6 col4" >Low</td>
     </tr>
   </tbody>
 </table>

@@ -38,16 +38,6 @@ df
 
 **Comments:** Indicator rating definitions are based on the consensus decisions of the planning team. The current status is based on the CWF Barrier Prioritization Model output, which is current as of November 2022.
 
-```{python echo=FALSE}
-#| warning: false
-#| echo: false
-
-df = conn_table.make_assess_table("Westslope Cutthroat Trout", "Accessible habitat downstream of Elko Dam", "Longest Fragment (%)", 25, 50, 75, api.connect_down)
-df
-```
-
-**Comments:** Indicator rating definitions are based on the consensus decisions of the planning team. The current status is based on the CWF Barrier Prioritization Model output, which is current as of November 2022.
-
 
 ## Goals {-}
 
