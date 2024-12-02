@@ -19,7 +19,7 @@ def barrier_extent(barrier_type):
     return blocked_km, blocked_pct
 
 def barrier_count(barrier_type):
-    request = 'https://cabd-pro.cwf-fcf.org/bcfishpass/functions/postgisftw.wcrp_barrier_count/items.json?watershed_group_codeELKR&barrier_type=' + barrier_type
+    request = 'https://cabd-pro.cwf-fcf.org/bcfishpass/functions/postgisftw.wcrp_barrier_count/items.json?watershed_group_code=ELKR&barrier_type=' + barrier_type
 
     response_api = requests.get(request)
     parse = response_api.text
