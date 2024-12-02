@@ -9,6 +9,15 @@ import python.connectivity_assess as conn_table
 warnings.filterwarnings('ignore')
 ```
 
+```{r echo=FALSE}
+#| echo: false
+#| include: true
+#| warning: false
+
+library(reticulate)
+
+```
+
 # Connectivity Status Assessment and Goals {-}
 
 ## Connectivity Status Assessment {-}
@@ -24,16 +33,6 @@ The current connectivity status assessment relies on GIS analyses to map known a
 #| echo: false
 
 df = conn_table.make_assess_table("Westslope Cutthroat Trout", "Accessible habitat upstream of Elko Dam", "Longest Fragment (%)", 25, 50, 75, api.connect_up)
-df
-```
-
-**Comments:** Indicator rating definitions are based on the consensus decisions of the planning team. The current status is based on the CWF Barrier Prioritization Model output, which is current as of November 2022.
-
-```{python echo=FALSE}
-#| warning: false
-#| echo: false
-
-df = conn_table.make_assess_table("Westslope Cutthroat Trout", "Accessible habitat downstream of Elko Dam", "Longest Fragment (%)", 25, 50, 75, api.connect_down)
 df
 ```
 

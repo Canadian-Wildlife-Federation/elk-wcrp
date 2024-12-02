@@ -1,0 +1,128 @@
+{
+  "cells": [
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| echo: false\n",
+        "import warnings\n",
+        "import pandas as pd\n",
+        "import numpy as np\n",
+        "import python.api_calls as api\n",
+        "import python.connectivity_assess as conn_table\n",
+        "\n",
+        "warnings.filterwarnings('ignore')"
+      ],
+      "id": "07aaa2fe",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Connectivity Status Assessment and Goals {-}\n",
+        "\n",
+        "## Connectivity Status Assessment {-}\n",
+        "\n",
+        "The planning team devised two Key Ecological Attributes (KEAs) and associated indicators to assess the current connectivity status of the watershed – Accessible habitat above Elko Dam and Accessible habitat below Elko Dam (@tbl-connectivity). KEAs are the key aspects of Westslope Cutthroat Trout ecology that are being targeted by this WCRP. The connectivity statuses for the Westslope Cutthroat Trout KEAs were used to establish goals to improve habitat connectivity in the watershed and will be the baseline against which progress is tracked over time. \n",
+        "\n",
+        "The current connectivity status assessment relies on GIS analyses to map known and modelled barriers to fish passage, identify stream reaches that have potential spawning and rearing habitat, estimate the proportion of habitat that is currently accessible to target species, and prioritize barriers for field assessment that would provide the greatest gains in connectivity. For the connectivity status assessments and barrier prioritization analysis the amount of spawning and rearing habitat is aggregated without duplication (i.e., a stream segment is only counted once if it is classified as both spawning and rearing habitat; see [data methods](data-methods.qmd)). To support a flexible prioritization framework to identify priority barriers in the watershed, two assumptions are made: 1) any modelled (i.e., the passability status is unknown) or partial barriers are treated as complete barriers to passage and 2) the habitat modelling is binary, it does not assign any habitat quality values. As such, the current connectivity status will be refined over time as more data on habitat and barriers are collected. For more detail on how the connectivity status assessments were conducted, see [data methods](data-methods.qmd).\n"
+      ],
+      "id": "c081e0d5"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| label: tbl-connectivity\n",
+        "#| tbl-cap: 'Connectivity status assessment for (a) habitat upstream of Elko Dam and (b) habitat downstream of Elko Dam in the Elk River watershed. The two KEAs - Accessible habitat upstream of Elko Dam and Accessible habitat downstream of Elko Dam - are evaluated using the Longest Fragment approach (Diaz et al. 2021), whereby the length of linear habitat that currently comprises the longest connected section in the watershed is divided by the total length of all linear habitat in the watershed.'\n",
+        "#| warning: false\n",
+        "#| echo: false\n",
+        "\n",
+        "df = conn_table.make_assess_table(\"Westslope Cutthroat Trout\", \"Accessible habitat upstream of Elko Dam\", \"Longest Fragment (%)\", 25, 50, 75, api.connect_up)\n",
+        "df"
+      ],
+      "id": "tbl-connectivity",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "**Comments:** Indicator rating definitions are based on the consensus decisions of the planning team. The current status is based on the CWF Barrier Prioritization Model output, which is current as of November 2022.\n"
+      ],
+      "id": "c2992dba"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| warning: false\n",
+        "#| echo: false\n",
+        "\n",
+        "df = conn_table.make_assess_table(\"Westslope Cutthroat Trout\", \"Accessible habitat downstream of Elko Dam\", \"Longest Fragment (%)\", 25, 50, 75, api.connect_down)\n",
+        "df"
+      ],
+      "id": "4c0ec6b4",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "**Comments:** Indicator rating definitions are based on the consensus decisions of the planning team. The current status is based on the CWF Barrier Prioritization Model output, which is current as of November 2022.\n",
+        "\n",
+        "\n",
+        "## Goals {-}\n"
+      ],
+      "id": "3d85b581"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| label: tbl-goals\n",
+        "#| tbl-cap: 'Goals to improve habitat connectivity for Westslope Cutthroat Trout, upstream and downstream of Elko Dam, in the Elk River watershed over the lifespan of the WCRP (2021-2041). The goals were established through discussions with the planning team and represent the resulting desired state of connectivity in the watershed. The goals for the Downstream of the Elko Dam unit assume that remediation can be undertaken while mitigating the risk of introgressive hybridization (see action 1.11 in Strategies & Actions). The goals are subject to change as more information and data are collected over the course of the plan timeline (e.g., the current connectivity status is updated based on barrier field assessments).'\n",
+        "#| warning: false\n",
+        "#| echo: false\n",
+        "\n",
+        "#creating table 7\n",
+        "import warnings\n",
+        "\n",
+        "warnings.filterwarnings('ignore')\n",
+        "import pandas as pd\n",
+        "import numpy as np\n",
+        "\n",
+        "df = pd.DataFrame({\"Goal #\": [1,2,3,4],\n",
+        "                   \"Goal\": [\"By 2031, the Longest Fragment (%) for Westslope Cutthroat Trout will increase from \"+ str(api.connect_up) +\"% to 83% above the Elko Dam (i.e., reconnect at least \"+str(api.gain_up_31)+\" of habitat).\",\n",
+        "                            \"By 2041, the Longest Fragment (%) for Westslope Cutthroat Trout will increase to 86% above the Elko Dam (i.e., reconnect at least an additional \"+ str(round(api.gain_up_41-api.gain_up_31, 2)) +\" km of habitat).\",\n",
+        "                            \"By 2031, the Longest Fragment (%) for Westslope Cutthroat Trout will increase from \"+ str(api.connect_down) +\"% to 99% below the Elko Dam (i.e., reconnect at least \"+ str(api.gain_down) +\" km of habitat).\",\n",
+        "                            \"By 2041, the Longest Fragment (%) for Westslope Cutthroat Trout will not decrease from 99% below the Elko Dam.\"]\n",
+        "                    })\n",
+        "\n",
+        "data = df.style.hide().set_properties(**{'text-align': 'left'})\n",
+        "\n",
+        "data.set_table_styles(\n",
+        "   [{\n",
+        "       'selector': 'th',\n",
+        "       'props': [('background-color', '#008270'),('text-align', 'left')]\n",
+        "   }])"
+      ],
+      "id": "tbl-goals",
+      "execution_count": null,
+      "outputs": []
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "display_name": "Python 3",
+      "language": "python",
+      "name": "python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}

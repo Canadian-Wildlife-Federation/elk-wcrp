@@ -59,7 +59,7 @@ format:
     keep-md: true
     keep-ipynb: true
 
-
+engine: knitr
 #jupyter: "local-venv"
 
 # execute:
