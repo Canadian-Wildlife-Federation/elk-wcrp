@@ -75,8 +75,7 @@ def confirmed_barriers(rawDF):
         priorityDF = priorityDF.drop(columns=['structure_list_status', 'priority'])
 
 
-        return priorityDF
-
+        priorityDF.to_csv('data/confirmed_barriers.csv', index=False)
 #grabs assessed data deficient structures
 def assessedStrucDD(rawDF):
 
@@ -90,7 +89,7 @@ def assessedStrucDD(rawDF):
         priorityDF = priorityDF.drop(columns=['structure_list_status'])
 
 
-        return(priorityDF)
+        priorityDF.to_csv('data/assessed_strucDD.csv', index=False)
 
 #grabs rehabilitated structures
 def RehabilitatedBarriers(rawDF):
@@ -107,7 +106,7 @@ def RehabilitatedBarriers(rawDF):
         priorityDF = priorityDF.drop(columns=['structure_list_status'])
 
 
-        return(priorityDF)
+        priorityDF.to_csv('data/rehabilitated_barriers.csv', index=False)
 
 #grabs non-actionable structures
 def nonActionable_barriers(rawDF):
@@ -121,7 +120,7 @@ def nonActionable_barriers(rawDF):
         priorityDF = priorityDF.drop(columns=['structure_list_status', 'priority'])
 
 
-        return(priorityDF)
+        priorityDF.to_csv('data/nonactionable_barriers.csv', index=False)
 
 #grabs excluded strucutures
 def ExcludedStructures(rawDF):
@@ -136,7 +135,7 @@ def ExcludedStructures(rawDF):
         priorityDF = priorityDF.drop(columns=['structure_list_status'])
 
 
-        return(priorityDF)
+        priorityDF.to_csv('data/excluded_structures.csv', index=False)
 
 def GetTrackingTableData():
     request = "https://cabd-pro.cwf-fcf.org/bcfishpass/collections/wcrp_elk.combined_tracking_table_crossings_wcrp_vw_elk/items.json" 
@@ -148,6 +147,7 @@ def GetTrackingTableData():
     df.columns = [col.replace("properties_", "") for col in df.columns]
     #print (df.head())
     return df
+
 
 warnings.filterwarnings('ignore')
 
