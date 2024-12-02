@@ -18,9 +18,9 @@ The following situation model was developed by the planning team to “map” th
 
 ## Strategies & Actions {-}
 
-Effectiveness evaluation of identified conservation strategies and associated actions to improve connectivity for Westslope Cutthroat Trout in the Elk River watershed. The planning team identified two broad strategies to implement through this WCRP, 1) barrier remediation and 2) barrier prevention. Individual actions were qualitatively evaluated based on the anticipated effect each action will have on realizing on-the-ground gains in connectivity. Effectiveness ratings are based on a combination of "Feasibility" and "Impact", Feasibility is defined as the degree to which the project team can implement the action within realistic constraints (financial, time, ethical, etc.) and Impact is the degree to which the action is likely to contribute to achieving one or more of the goals established in this plan.
+Effectiveness evaluation of identified conservation strategies and associated actions to improve connectivity for Westslope Cutthroat Trout in the Elk River watershed. The planning team identified two broad strategies to implement through this WCRP, 1) barrier rehabilitation and 2) barrier prevention. Individual actions were qualitatively evaluated based on the anticipated effect each action will have on realizing on-the-ground gains in connectivity. Effectiveness ratings are based on a combination of "Feasibility" and "Impact", Feasibility is defined as the degree to which the project team can implement the action within realistic constraints (financial, time, ethical, etc.) and Impact is the degree to which the action is likely to contribute to achieving one or more of the goals established in this plan.
 
-## Strategy 1: Barrier Remediation {-}
+## Strategy 1: Barrier Rehabilitation {-}
 ```{python echo=FALSE}
 #| label: tbl-S1
 #| tbl-cap: "Strategy 1"
@@ -94,7 +94,7 @@ data.set_table_styles(
 
 Theories of Change are explicit assumptions around how the identified actions will achieve gains in connectivity and contribute towards reaching the goals of the plan. To develop Theories of Change, the planning team developed explicit assumptions for each strategy which helped to clarify the rationale used for undertaking actions and provided an opportunity for feedback on invalid assumptions or missing opportunities. The Theories of Change are results oriented and clearly define the expected outcome. The following theory of change models were developed by the WCRP planning team to “map” the causal (“if-then”) progression of assumptions of how the actions within a strategy work together to achieve project goals.
 
-![Theory of change developed by the planning team for the actions identified under Strategy 1: Barrier Remediation in the Elk River watershed.](images/flowchart-barrier-rem.png){#fig-stra1}
+![Theory of change developed by the planning team for the actions identified under Strategy 1: Barrier Rehabilitation in the Elk River watershed.](images/flowchart-barrier-rem.png){#fig-stra1}
 
 ![Theory of change developed by the planning team for the actions identified under Strategy 2: Barrier Prevention in the Elk River watershed.](images/flowchart-barrier-prevention.png){#fig-stra2}
 
@@ -107,7 +107,7 @@ The operational plan represents a preliminary exercise undertaken by the plannin
 
 ```{python opplan, echo=FALSE}
 #| label: tbl-opplan
-#| tbl-cap: "Operational plan to support the implementation of strategies and actions to improve connectivity for target species in the Horsefly River watershed."
+#| tbl-cap: "Operational plan to support the implementation of strategies and actions to improve connectivity for focal species in the Horsefly River watershed."
 #| warning: false
 #| echo: false
 

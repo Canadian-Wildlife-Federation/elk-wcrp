@@ -47,7 +47,7 @@ library(reticulate)
 
 ```{python opplan, echo=FALSE}
 #| label: tbl-opplan
-#| tbl-cap: "Operational plan to support the implementation of strategies and actions to improve connectivity for target species in the Horsefly River watershed."
+#| tbl-cap: "Operational plan to support the implementation of strategies and actions to improve connectivity for focal species in the Horsefly River watershed."
 #| warning: false
 #| echo: false
 
