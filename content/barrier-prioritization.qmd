@@ -125,7 +125,32 @@ There are currently `r prior_num` barriers on the priority barrier list, which w
 #| warning: false
 #| echo: false
 
-data <- read.csv("data/priority_structures_table.csv", check.names=FALSE)
+data <- read.csv("data/confirmed_barriers.csv", check.names=FALSE)
+ft <- flextable(data)
+ft <- format_flextable(ft)
+ft
+```
+
+```{r rehab, echo = FALSE, results = 'asis'}
+#| label: tbl-datadeficient
+#| tbl-cap: "Data Deficient Structures"
+#| warning: false
+#| echo: false
+
+data <- read.csv("data/assessed_strucDD.csv", check.names=FALSE)
+ft <- flextable(data)
+ft <- format_flextable(ft)
+ft
+```
+
+
+```{r rehab, echo = FALSE, results = 'asis'}
+#| label: tbl-rehabilitated
+#| tbl-cap: "Rehabilitated Structures"
+#| warning: false
+#| echo: false
+
+data <- read.csv("data/rehabilitated_barriers.csv", check.names=FALSE)
 ft <- flextable(data)
 ft <- format_flextable(ft)
 ft

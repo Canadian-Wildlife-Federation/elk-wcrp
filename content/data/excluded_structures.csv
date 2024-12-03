@@ -1,0 +1,35 @@
+barrier_id,modelled_crossing_id,watercourse_name,road_name,structure_type,reason_for_exclusion,method_of_exclusion,reason,notes,supporting_links
+1004605216,4605216.0,Tributary to Wigwam River,Unnamed,None,No structure,Field assessment,Crossing does not exist,,
+1004606284,4606284.0,Fording River,Unnamed,Stream crossing - Ford,Passable,Informal assessment,Ford,Confirmed via literature: Cope et al. (2016),
+1024735443,24735443.0,Abruzzi Creek,Trail,None,No structure,Local knowledge,No crossing,Recreational trail erroneously mapped in Digital Road Atlas,
+112336,,Tributary to Alexander Creek,Alexander Road,Stream crossing - CBS,No key upstream habitat,Local knowledge,Limited habitat value,Improperly mapped on mainstem. Located on tributary with limited habitat value.,https://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=112516
+197527,4605697.0,Crossing Creek,Elk River FSR,Stream crossing - CBS,No key upstream habitat,Local knowledge,"Low quality habitat, confirmed with Working Group","Dry channel at time of assessment, transitions into grass flats 60 m downstream of crossing.",https://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=198427
+197782,4602359.0,Rabbit Creek,Unknown,Stream crossing - OBS,Passable,Field assessment,Collapsed bridge but not blocking flows,,https://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=198802
+197783,4605937.0,Tributary to Wigwam River,Wigwam Forest Service Road,Stream crossing - CBS,No key upstream habitat,Field assessment,Low quality habitat,Dry with poorly defined channel downstream,http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=198803
+197785,4606129.0,Tributary to Wigwam River,R08380-10,Stream crossing - CBS,No key upstream habitat,Field assessment,No channel,Snowshoe Lake drains to basin upstream with no visible channel between lake and road,https://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=198805
+197789,4603791.0,Tributary to Lodgepole Creek,Unnamed,Other,No structure,Field assessment,Bridge has been removed,No issues,https://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=198809
+197790,4606411.0,Tributary to Lodgepole Creek,Unnamed,Stream crossing - Ford,Passable,Field assessment,Ford,No issues,https://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=198810
+197792,4605499.0,Tributary to Bean Creek,Cabin Creek FSR,Stream crossing - OBS,Passable,Field assessment,Bridge,,https://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=198812
+197793,4606347.0,Bean Creek,Lodgepole FSR,Stream crossing - CBS,No key upstream habitat,Field assessment,Low quality habitat. Winter habitat assessments revealed low habitat values. Dewatered in summer and winter. No sutiable habitat to support most life stages.,,"https://www.newgraphenvironment.com/fish_passage_elk_2021_reporting/appendix---197793---bean-creek.html Also see: VAST. 2023. Elk River Westslope Cutthroat Trout passage and habitat investigations. Prepared for Canadian Wildlife Federation by VAST Resource Solutions Inc., Cranbrook, B.C."
+197794,4603480.0,Bean Creek,Utility line,Stream crossing - OBS,Passable,Field assessment,Bridge,,http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=198814
+197795,24733953.0,Tributary to Lodgepole Creek,Unnamed,Stream crossing - OBS,Passable,Field assessment,Bridge,,http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=198815
+197797,4603553.0,Bighorn Creek,Spur,Stream crossing - Ford,Passable,Field assessment,Ford,Crossing removed,http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=198817
+197803,4602514.0,Harmer Creek,Unnamed,Stream crossing - Ford,Passable,Field assessment,Ford,Bridge may have been recently removed,https://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=198823
+197805,,Tributary To Harmer Creek,Unnamed,None,No structure,Field assessment,No crossing,,https://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=198825
+197816,,Weigert Creek,Weigert FSR,Stream crossing - Ford,Passable,Field assessment,Ford,,http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=198836
+197818,4606007.0,Weigert Creek,Spur,Stream crossing - Ford,Passable,Field assessment,Ford,Road deactivated,https://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=198840
+197820,24735049.0,Weigert Creek,Spur,Stream crossing - Ford,Passable,Field assessment,Ford,Road deactivated,http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=198838
+197821,4606545.0,Cummings Creek,Cummings Creek FSR,Stream crossing - Ford,Passable,Field assessment,Ford,ATV trail,https://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=198841
+197823,24706614.0,Henretta Creek,Unnamed,Stream crossing - Ford,Passable,Field assessment,Ford,Located approx 60 m downstream of modeled location,https://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=198844
+197826,4603334.0,Fording River,Unnamed,Stream crossing - Ford,Passable,Field assessment,Ford,,https://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=198846
+197837,4602163.0,Morrissey Creek,Spur,Stream crossing - Ford,Passable,Field assessment,Ford,,https://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=198857
+197838,4601704.0,Morrissey Creek,Unnamed,None,No structure,Field assessment,No crossing,Road not detectable in field,https://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=198858
+197839,,McCool Creek,Spur,Stream crossing - Ford,Passable,Field assessment,Ford,Well-used ford. Actual crossing location 11U 648220 5499799,http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=198859
+197846,,Tribtary to Ewin Creek,Unnaed,Stream crossing - Ford,Passable,Field assessment,Fored,Road deactivated,https://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=198866
+197847,4600533.0,Chauncey Creek,Unnamed,None,No structure,Field assessment,No structure,,https://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=198867
+197861,4602646.0,Tributary to Wigwam River,Wigwam Lookout Trail,None,No structure,Field assessment,No crossing,,https://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=198881
+197867,4606926.0,Bighorn Creek,Spur,Stream crossing - Ford,Passable,Field assessment,Ford,,http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=198887
+da28f1e5-4fb1-43cd-ac85-123d6735677e,,Boivin Creek,n/a,Dam,Passable,Field assessment,Located off channel. Not a barrier,,https://www.newgraphenvironment.com/fish_passage_elk_2021_reporting/results-and-discussion.html
+1004603432,,Tributary to Cadorna Creek,trail,None,No structure,Local knowledge,No crossing,Confirmed to not exist by BC Parks. Recreational trail erroneously mapped in Digital Road Atlas,
+1004605338,,Tributary to Wigwam River,Unnamed,None,No structure and key upstream habitat,Field assessment,"No crossing, no channel",Dry area with no channel,
+1004603793,,Lodgepole Creek,unnamed,None,No structure,Field assessment,Crossing removed,,

@@ -138,7 +138,7 @@ def ExcludedStructures(rawDF):
         priorityDF.to_csv('data/excluded_structures.csv', index=False)
 
 def GetTrackingTableData():
-    request = "https://cabd-pro.cwf-fcf.org/bcfishpass/collections/wcrp_elk.combined_tracking_table_crossings_wcrp_vw_elk/items.json" 
+    request = "https://cabd-pro.cwf-fcf.org/bcfishpass/collections/wcrp_elkr.combined_tracking_table_crossings_wcrp_vw_elkr/items.json" 
     response_api = requests.get(request)
     parse = response_api.text
     result = json.loads(parse)
