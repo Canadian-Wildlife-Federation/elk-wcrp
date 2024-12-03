@@ -18,7 +18,7 @@ def make_assess_table(species, kea, indicator, poor_upper, fair_upper, good_uppe
   Note that very good will be inferred from good_upper
   
   """
-  df = pd.DataFrame({"Target Species":[str(species)," "],
+  df = pd.DataFrame({"Focal Species":[str(species)," "],
                    "KEA":[str(kea)," "],
                    "Indicator":[str(indicator),"Current Status:"],
                    "Poor":["<"+str(poor_upper)+"%"," "],
