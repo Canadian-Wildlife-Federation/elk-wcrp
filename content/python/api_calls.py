@@ -62,6 +62,14 @@ def watershed_connectivity(habitat_type):
 
     return round(connect_stat), all_habitat, all_habitat_acc
 
+def capitalize_and_clean_columns(df):
+
+    #creates a mapping of the old column names to the new column names
+    new_columns = {col: col.replace('_', ' ').title() for col in df.columns}
+    # Rename the columns using the mapping
+    df.rename(columns=new_columns, inplace=True)
+    return df
+
 def confirmed_barriers(rawDF):
 
         tableColumns = ['barrier_id', 'modelled_crossing_id', 'watercourse_name', 'road_name','structure_type', 'partial_passability',
@@ -74,7 +82,7 @@ def confirmed_barriers(rawDF):
         priorityDF.query(f'{queryColumn1}  == "Confirmed barrier" & priority !=  "Non-actionable" ', inplace = True)
         priorityDF = priorityDF.drop(columns=['structure_list_status', 'priority'])
 
-
+        priorityDF = capitalize_and_clean_columns(priorityDF)
         priorityDF.to_csv('data/confirmed_barriers.csv', index=False)
 #grabs assessed data deficient structures
 def assessedStrucDD(rawDF):
@@ -88,7 +96,7 @@ def assessedStrucDD(rawDF):
         priorityDF.query(f'{queryColumn1}  == "Assessed structure that remains data deficient" ', inplace = True)
         priorityDF = priorityDF.drop(columns=['structure_list_status'])
 
-
+        priorityDF = capitalize_and_clean_columns(priorityDF)
         priorityDF.to_csv('data/assessed_strucDD.csv', index=False)
 
 #grabs rehabilitated structures
@@ -105,7 +113,7 @@ def RehabilitatedBarriers(rawDF):
         priorityDF.query(f'{queryColumn1}  == "Rehabilitated barrier" ', inplace = True)
         priorityDF = priorityDF.drop(columns=['structure_list_status'])
 
-
+        priorityDF = capitalize_and_clean_columns(priorityDF)
         priorityDF.to_csv('data/rehabilitated_barriers.csv', index=False)
 
 #grabs non-actionable structures
@@ -119,7 +127,7 @@ def nonActionable_barriers(rawDF):
         priorityDF.query(f'{queryColumn1}  == "Confirmed barrier" & priority ==  "Non-actionable" ', inplace = True)
         priorityDF = priorityDF.drop(columns=['structure_list_status', 'priority'])
 
-
+        priorityDF = capitalize_and_clean_columns(priorityDF)
         priorityDF.to_csv('data/nonactionable_barriers.csv', index=False)
 
 #grabs excluded strucutures
@@ -134,7 +142,7 @@ def ExcludedStructures(rawDF):
         priorityDF.query(f'{queryColumn1}  == "Excluded structure" ', inplace = True)
         priorityDF = priorityDF.drop(columns=['structure_list_status'])
 
-
+        priorityDF = capitalize_and_clean_columns(priorityDF)
         priorityDF.to_csv('data/excluded_structures.csv', index=False)
 
 def GetTrackingTableData():
