@@ -1,4 +1,4 @@
-barrier_id,modelled_crossing_id,watercourse_name,road_name,structure_type,reason_for_exclusion,method_of_exclusion,reason,notes,supporting_links
+Barrier Id,Modelled Crossing Id,Watercourse Name,Road Name,Structure Type,Reason For Exclusion,Method Of Exclusion,Reason,Notes,Supporting Links
 1004605216,4605216.0,Tributary to Wigwam River,Unnamed,None,No structure,Field assessment,Crossing does not exist,,
 1004606284,4606284.0,Fording River,Unnamed,Stream crossing - Ford,Passable,Informal assessment,Ford,Confirmed via literature: Cope et al. (2016),
 1024735443,24735443.0,Abruzzi Creek,Trail,None,No structure,Local knowledge,No crossing,Recreational trail erroneously mapped in Digital Road Atlas,
