@@ -15,6 +15,7 @@ format_flextable <- function(ft) {
     align_text_col(align = "left", header = TRUE) %>%
     align_nottext_col(align = "left", header = TRUE) %>%
     vline(part = "all", border = std_border) %>%
+    hline(part = "all", border = std_border) %>%
     autofit()
   return(ft)
 }
