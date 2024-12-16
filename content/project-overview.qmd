@@ -30,7 +30,7 @@ rail_sev <- api$rail_sev
 
 source("Rscripts/table_formatting.R")
 ```
-# Project Overview {-}
+# Project Overview 
 
 ## Plan Purpose, Approach, and Scope {-}
 

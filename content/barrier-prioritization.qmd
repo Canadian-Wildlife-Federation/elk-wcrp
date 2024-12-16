@@ -17,7 +17,7 @@ source("Rscripts/table_formatting.R")
 
 ```
 
-# Structure Prioritization {-}
+# Structure Prioritization 
 
 
 ## Elk River Watershed Barrier Structure Summary {-}

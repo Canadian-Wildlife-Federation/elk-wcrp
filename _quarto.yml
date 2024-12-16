@@ -30,7 +30,7 @@ book:
           - text: Word DOCX
             url: _book/Horsefly-River-Watershed-Secwepemcúl’ecw-Connectivity-Restoration-Plan--2021---2040.docx
 
-
+csl: csl/apa.csl
 
 
 bibliography: references.bib
