@@ -2,7 +2,6 @@ Barrier Id,Modelled Crossing Id,Watercourse Name,Road Name,Structure Type,Reason
 1004605216,4605216.0,Tributary to Wigwam River,Unnamed,None,No structure,Field assessment,Crossing does not exist,,
 1004606284,4606284.0,Fording River,Unnamed,Stream crossing - Ford,Passable,Informal assessment,Ford,Confirmed via literature: Cope et al. (2016),
 1024735443,24735443.0,Abruzzi Creek,Trail,None,No structure,Local knowledge,No crossing,Recreational trail erroneously mapped in Digital Road Atlas,
-112336,,Tributary to Alexander Creek,Alexander Road,Stream crossing - CBS,No key upstream habitat,Local knowledge,Limited habitat value,Improperly mapped on mainstem. Located on tributary with limited habitat value.,https://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=112516
 197527,4605697.0,Crossing Creek,Elk River FSR,Stream crossing - CBS,No key upstream habitat,Local knowledge,"Low quality habitat, confirmed with Working Group","Dry channel at time of assessment, transitions into grass flats 60 m downstream of crossing.",https://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=198427
 197782,4602359.0,Rabbit Creek,Unknown,Stream crossing - OBS,Passable,Field assessment,Collapsed bridge but not blocking flows,,https://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=198802
 197783,4605937.0,Tributary to Wigwam River,Wigwam Forest Service Road,Stream crossing - CBS,No key upstream habitat,Field assessment,Low quality habitat,Dry with poorly defined channel downstream,http://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=198803
@@ -32,4 +31,5 @@ Barrier Id,Modelled Crossing Id,Watercourse Name,Road Name,Structure Type,Reason
 da28f1e5-4fb1-43cd-ac85-123d6735677e,,Boivin Creek,n/a,Dam,Passable,Field assessment,Located off channel. Not a barrier,,https://www.newgraphenvironment.com/fish_passage_elk_2021_reporting/results-and-discussion.html
 1004603432,,Tributary to Cadorna Creek,trail,None,No structure,Local knowledge,No crossing,Confirmed to not exist by BC Parks. Recreational trail erroneously mapped in Digital Road Atlas,
 1004605338,,Tributary to Wigwam River,Unnamed,None,No structure and key upstream habitat,Field assessment,"No crossing, no channel",Dry area with no channel,
+112336,,Tributary to Alexander Creek,Alexander Road,Stream crossing - CBS,No key upstream habitat,Local knowledge,Limited habitat value,Improperly mapped on mainstem. Located on tributary with limited habitat value.,https://a100.gov.bc.ca/pub/pscismap/imageViewer.do?assessmentId=112516
 1004603793,,Lodgepole Creek,unnamed,None,No structure,Field assessment,Crossing removed,,
