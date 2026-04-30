@@ -14,6 +14,7 @@ book:
     - content/methods.qmd
     - content/connectivity-status-ranking.qmd
     - content/workplan.qmd
+    - content/progress-reporting.qmd
     - content/references.qmd
     - content/version-history.qmd
   appendices: 
