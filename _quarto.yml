@@ -10,25 +10,16 @@ book:
   chapters:
     - index.qmd
     - content/project-overview.qmd
-    - content/connectivity-status.qmd
-    - content/barrier-prioritization.qmd
-    - content/work-planning.qmd
+    - content/glossary.qmd
+    - content/methods.qmd
+    - content/connectivity-status-ranking.qmd
+    - content/workplan.qmd
     - content/references.qmd
     - content/version-history.qmd
   appendices: 
-    - content/project-partners.qmd
-    - content/supplementary-information.qmd 
-    - content/data-methods.qmd
-  
-  
-  sidebar: 
-    pinned: true
-    logo: images/logo.png
-    tools: 
-      - icon: save
-        menu: 
-          - text: Word DOCX
-            url: _book/Horsefly-River-Watershed-Secwepemcúl’ecw-Connectivity-Restoration-Plan--2021---2040.docx
+    - content/appendix-a.qmd
+    - content/appendix-b.qmd
+
 
 csl: csl/apa.csl
 
@@ -41,7 +32,7 @@ format:
   html:
     css: style.css
     theme: cosmo
-    toc-title: "ELKR WCRP"
+    toc: false
     crossref:
       fig-title: '**Figure**'
       tbl-title: '**Table**'

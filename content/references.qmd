@@ -1,6 +1,46 @@
-<!-- # Elk River Watershed Qukin ?amak?is Connectivity Remediation Plan: 2021 - 2041 {-} -->
 
-# References {.unnumbered}
+# Acknowledgements and References {-}
 
-::: {#refs}
-:::
+## Recommended Citation 
+
+N. Mazany-Wright, F. Montgomery, B. Rebellato, S. M. Norris, J. Noseworthy, S. Sra, and N. W. R. Lapointe. 2026. Elk River watershed (Qukin ?amak?is) connectivity restoration plan. Canadian Wildlife Federation. Ottawa, Ontario, Canada. 
+
+
+## Acknowledgements {-}
+
+CWF recognizes that the lands and waters that form the basis of this plan are the traditional unceded territory of the Ktunaxa peoples and the Yaq̓it ʔa·knuqⱡi'it First Nation. Plan development and implementation was funded by Environment and Climate Change Canada Environmental Damages Fund and the Fish & Wildlife Compensation Program. Members of the Planning Team (Appendix B) are passionate about the conservation and restoration of freshwater ecosystems and the species they support, and contributed feedback, guidance, and knowledge. Model outputs were further refined based on feedback provided by local knowledge holders beyond the Planning Team. Accessibility models were inspired by fish-passage prioritization approaches developed by British Columbia’s Fish Passage Technical Working Group.  
+
+
+## References {-}
+
+Bennett, S. Westslope Cutthroat Trout (Oncorhynchus clarki lewisi). Accounts and Measures for Managing Identified Wildlife - Accounts V. https://www2.gov.bc.ca/assets/gov/environment/natural-resource-policy-legislation/accounts-measures-for-managing-identified-wildlife/fish_westslope_cutthroat_trout.pdf. 
+
+Cope, S., C.J. Schwarz, A. Prince and J. Bisset. 2016. Upper Fording River Westslope Cutthroat Trout population assessment and telemetry project: final report. Prepared for Teck Coal Limited, Sparwood, BC by Westslope Fisheries Ltd., Cranbrook, BC. 266 p.   
+
+COSEWIC. 2016. COSEWIC assessment and status report on the Westslope Cutthroat Trout (Oncorhynchus clarkii lewisi), Saskatchewan-Nelson River populations and Pacific populations, in Canada. Committeee on the Status of Endangered Wildlife in Canada, Ottawa, Ontario. https://www.canada.ca/en/environment-climate-change/services/species-risk-public-registry/cosewic-assessments-status-reports/westslope-cutthroat-trout-2016.html. 
+
+Díaz, G., K. Górski, J. Heino, P. Arriagada, O. Link, and E. Habit. 2021. The longest fragment drives fish beta diversity in fragmented river networks: implications for river management and conservation. Science of the Total Environment 766. https://doi.org/10.1016/j.scitotenv.2020.144323. 
+
+ERA. n.d. Westslope Cutthroat Trout in the Elk River Watershed. Elk River Alliance, Fernie, British Columbia. https://d3n8a8pro7vhmx.cloudfront.net/elkriveralliance/pages/282/attachments/original/1560891712/WCT_Poster__1.pdf?1560891712. 
+
+Ladell, J., J.D. McPhail, and J.S. Baxter. n.d. BC Hydro Dam Impact Footprint Review - Whitefish, Westslope Cutthroat Trout, Cottids, Cyprinids & Catostomids. Prepared for Fish and Wildlife Compensation Program. https://a100.gov.bc.ca/pub/acat/documents/r40025/BCH_Dam_Impac_Cottids_1385051732450_5041247788.pdf. 
+
+Lamson, H.M. 2018. Evaluation of Current Westslope Cutthroat Trout Hybridization Levels in the Upper Kootenay Drainage - Project Year 2 (2017/18). Prepared for Fish and Wildlife Compensation Program. UKE-F18-F-2461. https://a100.gov.bc.ca/pub/acat/documents/r54502/UKE_F18_F_2461_1533849001065_3840691946.pdf. 
+
+Magee, J.P., and T.E. McMahon. 1996. Spatial variation in spawning habitat of cutthroat trout in a sediment-rich stream basin. Transactions of the American Fisheries Society 125: 768-779. https://www.montana.edu/mcmahon/documents/Magee%20basin%20Sed%20TAFS%2096.pdf 
+
+Mazany-Wright, N., S. M. Norris, N. W. R. Lapointe, and B. Rebellato. 2021a. A Freshwater Connectivity Modelling Framework to Support Barrier Prioritization and Rehabilitation in British Columbia. Canadian Wildlife Federation, Ottawa, Ontario. 
+
+Mazany-Wright, N., S. M. Norris, N. W. R. Lapointe, and B. Rebellato. 2021b. B.C. Fish Passage Restoration Initiative Target Watershed Selection Process: Technical Documentation. Canadian Wildlife Federation, Ottawa, Ontario. 
+
+Mazany-Wright, N., J. Noseworthy, S. Sra, S. M. Norris, and N. W. R Lapointe. 2021c. Breaking Down Barriers: A Practitioners' Guide to Watershed Connectivity Rehabilitation Planning. Canadian Wildlife Federation, Ottawa, Ontario. 
+
+Oliver, G.G. 2009. Towards a Westslope Cutthroat Trout Management Plan for the Province of British Columbia. Prepared for B.C. Ministry of Environment, Cranbrook, British Columbia. 
+
+Peterson D.P., B.E. Rieman, J.B. Dunham, K.D. Fausch, and M.K. Young. 2008. Analysis of trade-offs between threats and invasion by nonnative brook trout (Salvelinus frontalis) and intentional isolation for native westslope cutthroat trout (Oncorhynchus clarkii lewisi). Canadian Journal of Fisheries and Aquatic Sciences 65: 557-573. 
+
+Seliger, C., and B. Zeiringer. 2018. River Connectivity, Habitat Fragmentation and Related Restoration Measures. In Riverine Ecosystem Management: Science for Governing Towards a Sustainable Future, edited by Stefan Schmutz and Jan Sendzimir, 171–86. Cham: Springer International Publishing. https://doi.org/10.1007/978-3-319-73250-3_9. 
+
+Sheer, M. B., D. S. Busch, E. Gilbert, J. M. Bayer, S. Lanigan, J. L. Schei, K. M. Burnett, and D. Miller. 2009. Development and Management of Fish Intrinsic Potential Data and Methodologies: State of the IP 2008 Summary Report. Pacific Northwest Aquatic Monitoring Partnership Series. 
+
+Willson, M.F., and K.C. Halupka. 1995. Anadromous fish as keystone species in vertebrate communities. Conservation Biology 9: 489-497. 

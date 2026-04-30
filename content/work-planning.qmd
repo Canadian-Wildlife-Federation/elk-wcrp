@@ -1,79 +1,29 @@
 # Work Planning 
 
-## Annual Progress Report {-}
+## Structure Ranking Context {-}
 
-CWF continues to work with program partners to identify and address priority barriers in the Elk River watershed. CWF worked with BC Parks to replace a barrier culvert on a tributary to Lizard Creek with an clearspan bridge in Mount Fernie Park in 2023 and is developing designs for a second replacement in the park on Stove Creek, with the intent of replacing that crossing with a geotextile reinforced arch culvert in 2025. The BC Ministry of Transportation and Infrastructure is advancing plans for the Hartley Creek crossing, with work currently going through the regulatory approvals process. Teck Coal is actively advancing work to remove the Harmer dam, and a multiplate crossing on the FRO Coal Haul road is anticipated in the near future. CWF is also working with program partners to continue to complete barrier assessments in the watershed during summer/fall 2024 and has begun to investigate ways to improve the Westslope Cutthroat Trout habitat model that is currently being used to assist in identify potential candidate sites for assessment. 
+Structures are primarily ranked to inform field-assessment planning. Higher-ranked structures contribute greater potential toward habitat connectivity restoration and are therefore typically higher priorities for field assessment. They also represent key knowledge gaps with potential to significantly affect model results. Estimates of current connectivity status could improve considerably, for instance, if many high-ranking structures are passable or do not have habitat upstream. Habitat accumulation curves support decision making around how many and which structures should be assessed, by showing which structures may only minimally affect connectivity. High-ranked structures with minimal habitat upstream may be located low on these curves, because they must be addressed before benefits can be achieved by addressing lower-ranked barriers with more upstream habitat. 
 
-## Operational Plan {-}
+If confirmed as barriers, high-ranking structures are also often priorities for further field assessments to confirm upstream habitat before decisions are made about where fish passage should be rehabilitated.  
 
-The operational plan represents a preliminary exercise undertaken by the planning team to identify the potential leads, potential participants, and estimated cost for the implementation of each action in the Elk River watershed. Table 8 summarizes individuals, groups, or organizations that the planning team felt could lead or participate in the implementation of the plan and should be interpreted as the first step in on-going planning and engagement to develop more detailed plan for entries into this table. The individuals, groups, and organizations listed under the "Lead(s)" or "Potential Participants" columns are those that provisionally expressed interest in participating in one of those roles or were suggested by the planning team for further engagement (denoted in parentheses), for those that are not members of the planning team. The leads, participants, and estimated costs in the operational plan are not binding nor an official commitment of resources, but rather provide a roadmap for future coordination and engagement to work towards implementation of the WCRP.
+Once field assessments are completed, management decisions are made for each assessed structure. An assessed structure may be excluded from the model if it is passable or there is no habitat upstream, or it may be listed as a priority barrier for fish-passage rehabilitation. Alternatively, some structures confirmed as barriers may be considered “non-actionable” because the amount and quality of habitat upstream may be low and the costs of rehabilitation may be high relative to those limited potential benefits. 
 
-```{python echo=FALSE}
-#| label: tbl-S1
-#| tbl-cap: "Strategy 1"
+Model ranks provide only limited information on the relative value of rehabilitation among priority barriers. Ranks convey only the relative amount of habitat upstream and do not represent other factors relevant to restoration prioritization, such as habitat quality, cost, social priorities, or logistical constraints and opportunities. Deciding which priority barriers to address first is a social decision-making process that is only partially informed by model outputs. Model outputs also provide broader context about how many structures exist in the system, how many have been identified as priority barriers, and how much habitat is upstream of each relative to others.
+
+
+## Workplan {-}
+
+```{r workplan, echo = FALSE, results = 'asis'}
+#| label: table-8
+#| tbl-cap: "Implementation plan for 2026-2027 to close knowledge gaps and advance barrier rehabilitation to improve connectivity for Westslope Cutthroat Trout in Qukin ?amak?is. Steps to incorporate field data, update models, and revise this WCRP are also included."
 #| warning: false
 #| echo: false
+source("Rscripts/table_formatting.R")
+library("flextable")
 
-import numpy as np
-from IPython.display import display
-import pandas as pd
-
- 
-def fix_table(val):
-    return str(val)
-
-def highlighttab7(val):
-    red = '#ff0000;'
-    yellow = '#ffff00;'
-    lgreen = '#92d050;'
-    dgreen = '#03853e;'
-
-    if val=="Medium" or val=="Need more information": color = yellow
-    elif val=="Very high" or val=="Very effective" : color = lgreen
-    elif val =="High" or val=="Effective": color = dgreen
-    else: color = 'white'
-    return 'background-color: %s' % color
-
+data <- read.csv("data/workplan.csv", check.names=FALSE)
+ft <- flextable(data)
+ft <- format_flextable(ft)
+ft
 ```
 
-```{r echo=FALSE}
-#| echo: false
-#| include: true
-#| warning: false
-
-library(reticulate)
-
-```
-
-```{python opplan, echo=FALSE}
-#| label: tbl-opplan
-#| tbl-cap: "Operational plan to support the implementation of strategies and actions to improve connectivity for focal species in the Horsefly River watershed."
-#| warning: false
-#| echo: false
-
-from IPython.display import display
-import pandas as pd
-import numpy as np
-
-
-def df_operation(val):
-    return "background-color: black; color: white"
-
-
-data = pd.read_csv('data/operational-plan.csv', index_col=False)
-
-data = data.replace(np.nan, '', regex=True)
-
-rows = pd.IndexSlice[[0,18,22,23,24], :]
-
-data = data.style.applymap(df_operation, subset=rows).hide().set_properties(**{'text-align': 'left'})
-data.set_table_styles(
-   [{
-       'selector': 'th',
-       'props': [('background-color', '#008270'),('text-align', 'left')]
-   }])
-
-```
-
-
-## Annual Work Plan {-}

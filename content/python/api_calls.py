@@ -5,6 +5,31 @@ import requests
 import json
 import pandas
 
+def structure_stats(wcrp, type):
+    request = 'https://cabd-pro.cwf-fcf.org/bcfishpass/functions/postgisftw.get_structure_count_spp/items.json?wcrp=' + wcrp + '&spp=' + type 
+
+    response_api = requests.get(request)
+    parse = response_api.text
+    result = json.loads(parse)
+
+    total_ranked_structures = result[0]['total_ranked_structures']
+    structures_that_potentially_disconnect_habitat = result[0]['structures_that_potentially_disconnect_habitat']
+    rehabilitated_barriers = result[0]['rehabilitated_barriers']
+    non_actionable_barriers = result[0]['non_actionable_barriers']
+    priority_barriers = result [0]['priority_barriers']
+    data_deficient_barriers = result[0]['data_deficient_barriers']
+    unassessed_structures = result[0]['unassessed_structures']
+    require_further_assessment = result[0]['require_further_assessment']
+
+    return(total_ranked_structures, 
+           structures_that_potentially_disconnect_habitat, 
+           rehabilitated_barriers, 
+           non_actionable_barriers,
+           priority_barriers,
+           data_deficient_barriers,
+           unassessed_structures,
+           require_further_assessment)
+
 def barrier_extent(barrier_type):
 
     request = 'https://cabd-pro.cwf-fcf.org/bcfishpass/functions/postgisftw.wcrp_barrier_extent/items.json?watershed_group_code=ELKR&barrier_type=' + barrier_type
@@ -155,7 +180,7 @@ def ExcludedStructures(rawDF):
         priorityDF.to_csv('data/excluded_structures.csv', index=False)
 
 def GetTrackingTableData():
-    request = "https://cabd-pro.cwf-fcf.org/bcfishpass/collections/wcrp_elkr.combined_tracking_table_crossings_wcrp_vw_elkr/items.json" 
+    request = "https://cabd-pro.cwf-fcf.org/bcfishpass/collections/wcrp_elkr.combined_output_table_vw/items.json" 
     response_api = requests.get(request)
     parse = response_api.text
     result = json.loads(parse)
@@ -217,3 +242,7 @@ add_struc = assessedStrucDD(df)
 excluded_struc = ExcludedStructures(df)
 nonaction_struc = nonActionable_barriers(df)
 rehabilitated_struc = RehabilitatedBarriers(df)
+
+
+
+
