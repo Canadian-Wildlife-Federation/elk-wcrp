@@ -216,16 +216,15 @@ source("Rscripts/table_formatting.R")
 library("flextable")
 
 data <- read.csv("data/HAS_ELK_above.csv", check.names=FALSE)
-data <- data %>%
-  rename(
-    `Barrier ID` = aggregated_crossings_id,
-    `Site Name` = internal_name,
-    `Watershed Name` = watershed_group_code,
-    `Structure Status` = structure_list_status,
-    `Rank Order` = rank_combined,
-    `Average Habitat Gain (km)` = all_spawningrearing_belowupstrbarriers_km
-  )
 ft <- flextable(data)
+ft <- set_header_labels(   
+  ft, 
+    'aggregated_crossings_id' = 'Barrier ID',
+    'internal_name' = 'Site Name',
+     'watershed_group_code'= 'Watershed Name',
+    'structure_list_status' = 'Structure Status',
+    'rank_combined' = 'Rank Order',
+    'all_spawningrearing_belowupstrbarriers_km' = 'Average Habitat Gain (km)')
 ft <- format_flextable(ft)
 ft
 ```
@@ -239,16 +238,15 @@ source("Rscripts/table_formatting.R")
 library("flextable")
 
 data <- read.csv("data/HAS_ELK_below.csv", check.names=FALSE)
-data <- data %>%
-  rename(
-    `Barrier ID` = aggregated_crossings_id,
-    `Site Name` = internal_name,
-    `Watershed Name` = watershed_group_code,
-    `Structure Status` = structure_list_status,
-    `Rank Order` = rank_combined,
-    `Average Habitat Gain (km)` = all_spawningrearing_belowupstrbarriers_km
-  )
 ft <- flextable(data)
+ft <- set_header_labels(   
+  ft, 
+    'aggregated_crossings_id' = 'Barrier ID',
+    'internal_name' = 'Site Name',
+     'watershed_group_code'= 'Watershed Name',
+    'structure_list_status' = 'Structure Status',
+    'rank_combined' = 'Rank Order',
+    'all_spawningrearing_belowupstrbarriers_km' = 'Average Habitat Gain (km)')
 ft <- format_flextable(ft)
 ft
 ```

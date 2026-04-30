@@ -11,18 +11,18 @@ source("Rscripts/table_formatting.R")
 library("flextable")
 
 data <- read.csv("data/DD_ELK_above.csv", check.names=FALSE)
-data <- data %>%
-  rename(
-    `Barrier ID` = barrier_id,
-    `Site Name` = internal_name,
-    `Watershed Name` = watershed_group_code,
-    `Structure Type` = structure_type,
-    `Assessment Step Completed` = assessment_type_completed,
-    `Next Step` = next_steps,
-    `Notes` = notes,
-    `Supporting Links` = supporting_links
-  )
 ft <- flextable(data)
+ft <- set_header_labels(   
+  ft, 
+    'barrier_id' = 'Barrier ID',
+    'internal_name' = 'Site Name',
+    'watershed_group_code' = 'Watershed Name',
+    'structure_type' = 'Structure Type',
+    'assessment_type_completed' = 'Assessment Step Completed',
+    'next_steps' = 'Next Step',
+    'notes' = 'Notes',
+    'supporting_links' = 'Supporting Links'
+  )
 ft <- format_flextable(ft)
 ft
 ```
@@ -37,18 +37,19 @@ source("Rscripts/table_formatting.R")
 library("flextable")
 
 data <- read.csv("data/DD_ELK_below.csv", check.names=FALSE)
-data <- data %>%
-  rename(
-    `Barrier ID` = barrier_id,
-    `Site Name` = internal_name,
-    `Watershed Name` = watershed_group_code,
-    `Structure Type` = structure_type,
-    `Assessment Step Completed` = assessment_type_completed,
-    `Next Step` = next_steps,
-    `Notes` = notes,
-    `Supporting Links` = supporting_links
-  )
+
 ft <- flextable(data)
+ft <- set_header_labels(   
+  ft, 
+    'barrier_id' = 'Barrier ID',
+    'internal_name' = 'Site Name',
+    'watershed_group_code' = 'Watershed Name',
+    'structure_type' = 'Structure Type',
+    'assessment_type_completed' = 'Assessment Step Completed',
+    'next_steps' = 'Next Step',
+    'notes' = 'Notes',
+    'supporting_links' = 'Supporting Links'
+  )
 ft <- format_flextable(ft)
 ft
 ```
@@ -64,17 +65,18 @@ source("Rscripts/table_formatting.R")
 library("flextable")
 
 data <- read.csv("data/EX_ELK.csv", check.names=FALSE)
-data <- data %>%
-  rename(
-    `Barrier ID` = barrier_id,
-    `Site Name` = internal_name,
-    `Watershed Name` = watershed_group_code,
-    `Structure Type` = structure_type,
-    `Reason for Exclusion` = reason_for_exclusion,
-    `Reason Details` = reason,
-    `Supporting Links` = supporting_links
-  )
+
 ft <- flextable(data)
+ft <- set_header_labels(   
+  ft, 
+    'barrier_id' = 'Barrier ID',
+    'internal_name' = 'Site Name',
+    'watershed_group_code' = 'Watershed Name',
+    'structure_type' = 'Structure Type',
+    'reason_for_exclusion' = 'Reason for Exclusion',
+    'reason' = 'Reason Details',
+    'supporting_links' = 'Supporting Links'
+  )
 ft <- format_flextable(ft)
 ft
 ```
