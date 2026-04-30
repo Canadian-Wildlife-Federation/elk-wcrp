@@ -4,11 +4,13 @@ The following situation model was developed by the planning team to “map” th
 
 ![Figure 1: Situation analysis developed by the planning team to identify factors that contribute to fragmentation (orange boxes) and potential strategies/actions to improve connectivity (yellow hexagons) for Westslope Cutthroat Trout in the Elk River watershed.](images/situation-analysis.png)
 
-```{r workplan, echo = FALSE, results = 'asis'}
+Effectiveness evaluation of identified conservation strategies and associated actions to improve connectivity for Westslope Cutthroat Trout in the Elk River watershed (Qukin ?amak?is). The Planning Team identified two broad strategies to implement through this WCRP: (1) barrier rehabilitation and (2) barrier prevention. Individual actions were qualitatively evaluated based on the anticipated effect each action will have on realizing on-the-ground gains in connectivity. Effectiveness ratings are based on a combination of "Feasibility" and "Impact", Feasibility is defined as the degree to which the project team can implement the action within realistic constraints (financial, time, ethical, etc.) and Impact is the degree to which the action is likely to contribute to achieving one or more of the goals established in this plan. 
+```{r  echo = FALSE, results = 'asis'}
 #| label: table-16
-#| tbl-cap: "Effectiveness evaluation of identified conservation strategies and associated actions to improve connectivity for Westslope Cutthroat Trout in the Elk River watershed (Qukin ?amak?is). The Planning Team identified two broad strategies to implement through this WCRP: (1) barrier rehabilitation and (2) barrier prevention. Individual actions were qualitatively evaluated based on the anticipated effect each action will have on realizing on-the-ground gains in connectivity. Effectiveness ratings are based on a combination of "Feasibility" and "Impact", Feasibility is defined as the degree to which the project team can implement the action within realistic constraints (financial, time, ethical, etc.) and Impact is the degree to which the action is likely to contribute to achieving one or more of the goals established in this plan.<br> Strategy 1: Barrier Rehabilitation "
+#| tbl-cap: "Strategy 1: Barrier Rehabilitation "
 #| warning: false
 #| echo: false
+
 source("Rscripts/table_formatting.R")
 library("flextable")
 
@@ -18,11 +20,12 @@ ft <- format_flextable(ft)
 ft
 ```
 
-```{r workplan, echo = FALSE, results = 'asis'}
+```{r echo = FALSE, results = 'asis'}
 #| label: table-17
 #| tbl-cap: "Strategy 2: Barrier Prevention"
 #| warning: false
 #| echo: false
+
 source("Rscripts/table_formatting.R")
 library("flextable")
 

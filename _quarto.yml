@@ -19,12 +19,13 @@ book:
   appendices: 
     - content/appendix-a.qmd
     - content/appendix-b.qmd
+    - content/appendix-c.qmd
 
 
 csl: csl/apa.csl
 
 
-bibliography: references.bib
+
 # nocite: |
 #   @*
 

@@ -1,4 +1,4 @@
-# Glossary
+# Glossary {-}
 
 ## General Terms {-}
 
@@ -26,7 +26,7 @@ Key habitat that is likely to support important life stages for focal species (i
 ### Introgression {-}
 The introduction of genetic material to a species through hybridization with another species. Introgression can result in the loss of genetically-pure populations of species over time.
 
-### Structure Status Terms  {-}
+## Structure Status Terms  {-}
 
 ### Unassessed structures {-}
 Mapped structures that have not been assessed in the field. 

@@ -29,7 +29,7 @@ Model outputs include an estimate of the current connectivity status along with 
 
 This plan is intended to focus on the direct rehabilitation and prevention of localized, physical barriers instead of the broad land-use patterns that are causing chronic connectivity issues in the watershed. The Planning Team decided that the primary focus of this WCRP is addressing barriers to longitudinal connectivity (i.e., along the upstream-downstream plane) due to the magnitude of the threat posed by linear development (i.e., road and rail lines) in the watershed. In Qukin ?amak?is, an additional connectivity consideration is identifying barriers that should not be rehabilitated to protect genetically pure Westslope Cutthroat Trout populations and mitigate the threat of introgression due to aquatic invasive species.Natural barriers that could be managed to increase fish passage (i.e., waterfalls and beaver dams) are not the focus of this plan and are therefore not included as structures in connectivity models. Diffuse natural barriers that make entire areas impassible are not included in the models but may be used to define the scope of this WCRP. For example, a tributary that is inhospitable because it has been permanently altered by mining may be excluded from the overall spatial scope of the WCRP because restoration needs there are broader than connectivity.
 
-![Map of the geographic scope of this connectivity restoration plan for Westslope Cutthroat Trout in the Elk River watershed (Qukin ?amak?is), British Columbia.](content\images\Fig5_Elk_Geo_Scope.png){fig-cap-location="top"}
+![Map of the geographic scope of this connectivity restoration plan for Westslope Cutthroat Trout in the Elk River watershed (Qukin ?amak?is), British Columbia.](images/Fig5_Elk_Geo_Scope.png){fig-cap-location="top"}
 
 
 ## Focal species: Westslope Cutthroat Trout | Oncorhynchus clarkii lewisi {-}
@@ -85,44 +85,19 @@ The following table highlights which barrier types pose the greatest threat to W
 #| warning: false
 #| echo: false
 
+
 from ipywidgets import *
 import pandas as pd
 import warnings
 
 warnings.filterwarnings('ignore')
 
-#condition
-def condition(pct):
-    rating = ""
-    if pct < 30 : rating = "Low"
-    elif (pct >= 30) and (pct < 71) : rating = "Medium"
-    elif (pct >= 71) and (pct < 90) : rating = "High"
-    else : rating = "Very High"
-    return rating
 
-#rating classifier
-def rating(threat, barrier):
-    if threat == "extent":
-        if barrier == "DAM":
-            pct = api.barrier_extent(barrier)[1]
-            rating = condition(pct)
-        elif barrier == "ROAD":
-            pct = api.barrier_extent('ROAD, RESOURCE/OTHER')[1] + api.barrier_extent('ROAD, DEMOGRAPHIC')[1]
-            rating = condition(pct)
-    elif threat == "severity":
-        if barrier == "DAM":
-            pct = api.barrier_severity(barrier)[2]
-            rating = condition(pct)
-        elif barrier == "ROAD":
-            pct = api.barrier_severity('ROAD, RESOURCE/OTHER')[2] + api.barrier_severity('ROAD, DEMOGRAPHIC')[2]
-            rating = condition(pct)
-            
-    return rating
             
 
 df = pd.DataFrame({"Barrier Types":["Dams","Road-Stream Crossings","Rail-stream Crossings","Trail-stream Crossings","Lateral Barriers","Sediment Wedges", "Landslides"],
-                   "Extent":[rating("extent", "DAM"),rating("extent", "ROAD"),"Low", "Low","Low","Low","Low"],
-                   "Severity":[rating("severity", "DAM"),rating("severity", "ROAD"),"High", "Low", "Low","Low","Low"],
+                   "Extent":["Low","Very High","Low", "Low","Low","Low","Low"],
+                   "Severity":["Very High","High","High", "Low", "Low","Low","Low"],
                    "Irreversibility":["High","Medium","High","Low","High", "Medium", "High"],
                    "Overall Threat Rating:":["Low","High","Medium","Low","Low", "Low", "Low"]
                    }).style.set_properties(subset=["Overall Threat Rating:"], **{'font-weight': 'bold'})

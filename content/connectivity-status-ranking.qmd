@@ -1,6 +1,6 @@
 
 
-# Key Ecological Attributes and Connectivity Status Results  
+# Key Ecological Attributes and Connectivity Status Results  {-}
 
 ## Current Connectivity Status {-}
 
@@ -9,8 +9,8 @@ The Planning Team devised two Key Ecological Attributes (KEAs) and associated in
 To support a flexible prioritization framework to identify priority barriers in the watershed, two assumptions are made: 1) any modelled (i.e., the passability status is unknown) or partial barriers are treated as complete barriers to passage and 2) the habitat modelling is binary, it does not assign any habitat quality values. As such, the current connectivity status is refined over time as more data on habitat and barriers are collected.  
 
 ```{r table-4 , echo = FALSE, results = 'asis'}
-#| label: table-4
-#| tbl-cap: "Table 4. Connectivity status assessment for (a) habitat upstream of Elko Dam and (b) habitat downstream of Elko Dam in the Elk River watershed (Qukin ?amak?is). The two Key Ecological Attributes - Accessible habitat upstream of Elko Dam and Accessible habitat downstream of Elko Dam - are evaluated using the Longest Fragment approach (Diaz et al. 2021), whereby the length of linear habitat that currently comprises the longest connected section in the watershed is divided by the total length of all linear habitat in the watershed.<br>a"
+#| label: table-4a
+#| tbl-cap: "Table 4: Connectivity status assessment for (a) habitat upstream of Elko Dam and (b) habitat downstream of Elko Dam in the Elk River watershed (Qukin ?amak?is). The two Key Ecological Attributes - Accessible habitat upstream of Elko Dam and Accessible habitat downstream of Elko Dam - are evaluated using the Longest Fragment approach (Diaz et al. 2021), whereby the length of linear habitat that currently comprises the longest connected section in the watershed is divided by the total length of all linear habitat in the watershed.<br>a"
 #| warning: false
 #| echo: false
 
@@ -66,7 +66,7 @@ ft <- ft |>
   bg(j = "fair", bg = "#FFFF00", part = "all") |>
   bg(j = "good", bg = "#92D050", part = "all") |>
   bg(j = "very_good", bg = "#00B050", part = "all") |>
-  bg(i = 1, j = "very_good", bg = "#FF00FF", part = "footer") |>
+  bg(i = 1, j = "very_good", bg = "#00B050", part = "footer") |>
   bold(part = "header") |>
   bold(i = 1, j = 1, part = "footer") |>
   bold(i = 1, j = "very_good", part = "footer") |>
@@ -87,8 +87,8 @@ ft
 ```
 
 ```{r table-4 , echo = FALSE, results = 'asis'}
-#| label: table-4
-#| tbl-cap: "Table 4. Connectivity status assessment for (a) habitat upstream of Elko Dam and (b) habitat downstream of Elko Dam in the Elk River watershed (Qukin ?amak?is). The two Key Ecological Attributes - Accessible habitat upstream of Elko Dam and Accessible habitat downstream of Elko Dam - are evaluated using the Longest Fragment approach (Diaz et al. 2021), whereby the length of linear habitat that currently comprises the longest connected section in the watershed is divided by the total length of all linear habitat in the watershed.<br>b"
+#| label: table-4b
+#| tbl-cap: "b"
 #| warning: false
 #| echo: false
 
@@ -144,7 +144,7 @@ ft <- ft |>
   bg(j = "fair", bg = "#FFFF00", part = "all") |>
   bg(j = "good", bg = "#92D050", part = "all") |>
   bg(j = "very_good", bg = "#00B050", part = "all") |>
-  bg(i = 1, j = "very_good", bg = "#FF00FF", part = "footer") |>
+  bg(i = 1, j = "very_good", bg = "#00B050", part = "footer") |>
   bold(part = "header") |>
   bold(i = 1, j = 1, part = "footer") |>
   bold(i = 1, j = "very_good", part = "footer") |>
@@ -179,7 +179,7 @@ In Qukin ?amak?is downstream of Elko Dam, X km of Westslope Cutthroat Trout habi
 source("Rscripts/table_formatting.R")
 library("flextable")
 
-data <- read.csv("data/goals.csv", check.names=FALSE)
+data <- read.csv("data/goals-elk.csv", check.names=FALSE)
 ft <- flextable(data)
 ft <- format_flextable(ft)
 ft
@@ -224,7 +224,7 @@ ft
 ```
 
 ```{r has_above, echo = FALSE, results = 'asis'}
-#| label: table-6
+#| label: table-7
 #| tbl-cap: "Table 7: Labelled structures in the Habitat Accumulation Curve (Figure 9), their rank, and upstream habitat for Westslope Cutthroat Trout in Elk River (Qukin ?amak?is) downstream of Elko Dam. Habitat gain (averaged across sets) represents the amount (km) of habitat upstream of that structure to the next structure and depicts the potential gain in habitat if passage at that structure was restored."
 #| warning: false
 #| echo: false
