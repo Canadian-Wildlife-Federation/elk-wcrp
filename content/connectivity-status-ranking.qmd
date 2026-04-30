@@ -66,7 +66,7 @@ ft <- ft |>
   bg(j = "fair", bg = "#FFFF00", part = "all") |>
   bg(j = "good", bg = "#92D050", part = "all") |>
   bg(j = "very_good", bg = "#00B050", part = "all") |>
-  bg(i = 1, j = "very_good", bg = "#00B050", part = "footer") |>
+  bg(i = 1, j = "very_good", bg = "#00B050", part = "all") |>
   bold(part = "header") |>
   bold(i = 1, j = 1, part = "footer") |>
   bold(i = 1, j = "good", part = "footer") |>
@@ -144,7 +144,7 @@ ft <- ft |>
   bg(j = "fair", bg = "#FFFF00", part = "all") |>
   bg(j = "good", bg = "#92D050", part = "all") |>
   bg(j = "very_good", bg = "#00B050", part = "all") |>
-  bg(i = 1, j = "very_good", bg = "#00B050", part = "footer") |>
+  bg(i = 1, j = "very_good", bg = "#00B050", part = "all") |>
   bold(part = "header") |>
   bold(i = 1, j = 1, part = "footer") |>
   bold(i = 1, j = "very_good", part = "footer") |>
