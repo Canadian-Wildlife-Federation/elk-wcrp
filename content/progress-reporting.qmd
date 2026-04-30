@@ -1,0 +1,102 @@
+# Progress Reporting {-}
+
+## Progress Summary {.unnumbered}
+ADD VALUES
+This WCRP process was initiated in 2020 with a series of workshops completed with local partners and rightsholders, and the first WCRP was published in 2022. Since inception, the passability of X structures has been assessed, and further habitat confirmations were completed at X of these. In-depth habitat investigations were also completed for barriers in Brule, Weigert, Lodgepole and Bean creeks, and in select tributaries to Bighorn and Morrissey creeks. Fish passage has been rehabilitated at X barriers (unnamed tributary to Lizard Creek at Mount Fernie Park Road and Tobermory Creek at Elk River Main FSR), resulting in improved or restored access to X km of habitat. Designs for rehabilitating a barrier on Stove Creek in the Lizard Creek drainage have also been completed. 
+
+
+## Rehabilitated Barriers {.unnumbered}
+
+Table 9: Westslope Cutthroat Trout barriers in the Elk River (Qukin ?amak?is) upstream of Elko Dam that have been addressed (either through removal, replacement, or modification to improve passage) as of April 2026. Habitat gain represents the amount (km) of habitat that was reconnected by these projects. 
+```{r has_above, echo = FALSE, results = 'asis'}
+#| label: table-9
+#| tbl-cap: "Table 9: Westslope Cutthroat Trout barriers in the Elk River (Qukin ?amak?is) upstream of Elko Dam that have been addressed (either through removal, replacement, or modification to improve passage) as of April 2026. Habitat gain represents the amount (km) of habitat that was reconnected by these projects."
+#| echo: false
+source("Rscripts/table_formatting.R")
+library("flextable")
+
+data <- read.csv("data/rehab_ELK_above.csv", check.names=FALSE)
+ft <- flextable(data)
+ft <- set_header_labels(   
+  ft, 
+    'aggregated_crossings_id' = 'Barrier ID',
+    'internal_name' = 'Site Name',
+    'watershed_group_code' = 'Watershed Name',
+    'type_of_rehabilitation' = 'Type of Rehabilitation',
+    'rehabilitated_by' = 'Rehabilitated By',
+    'rehabilitated_date' = 'Rehabilitated Date',
+    'all_spawningrearing_belowupstrbarriers_km' = 'Habitat Gain (km)*',
+    'actual_project_cost_$' = 'Actual Project Cost ($)',
+    'next_steps' = 'Next Step',
+    'notes' = 'Notes',
+    'supporting_links' = 'Supporting Links'
+)
+ft <- format_flextable(ft)
+ft
+```
+
+## Annual Progress Report {.unnumbered}
+
+Since April 1, 2025, the following actions were completed: 
+
+- Results of barrier assessments and habitat confirmations completed in 2024 were incorporated into the model. 
+
+- Habitat permanently altered by mining was delineated and amount (km, % of total) of habitat permanently altered by mining was calculated upstream and downstream of Elko Dam. 
+
+- The connectivity models were updated based on the above actions, and outputs were incorporated into this WCRP. 
+
+## Priority Barriers {-}
+
+```{r has_above, echo = FALSE, results = 'asis'}
+#| label: table-10
+#| tbl-cap: "Table 10: Westslope Cutthroat Trout barriers in the Elk River (Qukin ?amak?is) upstream of Elko Dam that have been addressed (either through removal, replacement, or modification to improve passage) as of April 2026. Habitat gain represents the amount (km) of habitat that was reconnected by these projects."
+#| echo: false
+source("Rscripts/table_formatting.R")
+library("flextable")
+
+data <- read.csv("data/prio_ELK_above.csv", check.names=FALSE)
+
+ft <- flextable(data)
+ft <- set_header_labels(   
+  ft,
+    'barrier_id' = 'Barrier ID',
+    'internal_name' = 'Site Name',
+    'watershed_group_code' = 'Watershed Name',
+    'structure_owner' = 'Structure Owner',
+    'structure_type' = 'Structure Type',
+    'partial_passability' = 'Partial Passability',
+    'partial_passability_notes' = 'Partial Passability Details',
+    'num_barriers_set' = 'Number of Structures in Set',
+    'all_spawningrearing_belowupstrbarriers_km' = 'Habitat Gain (km)*',
+    'next_steps' = 'Next Step'
+  )
+ft <- format_flextable(ft)
+ft
+```
+ 
+  
+```{r has_above, echo = FALSE, results = 'asis'}
+#| label: table-11
+#| tbl-cap: "Table 11: Structures in the Elk River watershed (Qukin ?amak?is) downstream of Elko Dam that are confirmed as barriers to fish passage for Westslope Cutthroat Trout with confirmed habitat upstream, as of April 2026. Barriers known to be partially passable are indicated by “yes”, with further details provided in the adjacent column. Habitat gain represents the amount (km) of habitat upstream of that barrier to the next structure that will be reconnected if that barrier is addressed. The number of structures in a set represents the number of structures that must be addressed concurrently to maximize habitat connectivity."
+#| echo: false
+source("Rscripts/table_formatting.R")
+library("flextable")
+
+data <- read.csv("data/prio_ELK_below.csv", check.names=FALSE)
+ft <- flextable(data)
+ft <- set_header_labels(   
+  ft,
+    'barrier_id' = 'Barrier ID',
+    'internal_name' = 'Site Name',
+    'watershed_group_code' = 'Watershed Name',
+    'structure_owner' = 'Structure Owner',
+    'structure_type' = 'Structure Type',
+    'partial_passability' = 'Partial Passability',
+    'partial_passability_notes' = 'Partial Passability Details',
+    'num_barriers_set' = 'Number of Structures in Set',
+    'all_spawningrearing_belowupstrbarriers_km' = 'Habitat Gain (km)*',
+    'next_steps' = 'Next Step'
+  )
+ft <- format_flextable(ft)
+ft
+```

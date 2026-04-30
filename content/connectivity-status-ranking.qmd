@@ -1,0 +1,252 @@
+
+
+# Key Ecological Attributes and Connectivity Status Results  {-}
+
+## Current Connectivity Status {-}
+
+The Planning Team devised two Key Ecological Attributes (KEAs) and associated indicators to assess the current connectivity status of Qukin ?amak?is – Accessible habitat above Elko Dam and Accessible habitat below Elko Dam (Table 4). KEAs are the key aspects of Westslope Cutthroat Trout ecology that are being targeted by this WCRP. The connectivity statuses for the Westslope Cutthroat Trout KEAs were used to establish goals to improve habitat connectivity in the watershed and will be the baseline against which progress is tracked over time.  
+
+To support a flexible prioritization framework to identify priority barriers in the watershed, two assumptions are made: 1) any modelled (i.e., the passability status is unknown) or partial barriers are treated as complete barriers to passage and 2) the habitat modelling is binary, it does not assign any habitat quality values. As such, the current connectivity status is refined over time as more data on habitat and barriers are collected.  
+
+```{r table-4 , echo = FALSE, results = 'asis'}
+#| label: table-4a
+#| tbl-cap: "Table 4: Connectivity status assessment for (a) habitat upstream of Elko Dam and (b) habitat downstream of Elko Dam in the Elk River watershed (Qukin ?amak?is). The two Key Ecological Attributes - Accessible habitat upstream of Elko Dam and Accessible habitat downstream of Elko Dam - are evaluated using the Longest Fragment approach (Diaz et al. 2021), whereby the length of linear habitat that currently comprises the longest connected section in the watershed is divided by the total length of all linear habitat in the watershed.<br>a"
+#| warning: false
+#| echo: false
+
+library(flextable)
+library(officer)
+
+df <- data.frame(
+  target_species = "Westslope Cutthroat Trout",
+  kea = "Accessible habitat downstream of Elko Dam",
+  indicator = "Longest\nFragment (%)",
+  poor = "<25%",
+  fair = "26 – 50%",
+  good = "51 – 75%",
+  very_good = ">76%",
+  stringsAsFactors = FALSE
+)
+
+ft <- flextable(df)
+
+ft <- ft |>
+  set_header_df(
+    mapping = data.frame(
+      col_keys = names(df),
+      top = c("", "", "", rep("Indicator Ratings", 4)),
+      bottom = c("TargetSpecies", "KEA", "Indicator", "Poor", "Fair", "Good", "Very Good")
+    ),
+    key = "col_keys"
+  ) |>
+  merge_h(part = "header") |>
+  add_footer_row(
+    values = c(
+      "Current Status:",
+      "",
+      "",
+      "",
+      "",
+      "77.53%",
+      ""
+    ),
+    colwidths = rep(1, 7)
+  ) |>
+  add_footer_lines(
+    values = as_paragraph(
+      as_b("Comments: "),
+      "Indicator rating definitions are based on the consensus decisions of the Planning Team. ",
+      "The current status is based on the CWF Barrier Prioritization Model output, ",
+      "which is current as of April 2026."
+    )
+  )
+
+ft <- ft |>
+  bg(j = "poor", bg = "#FF0000", part = "all") |>
+  bg(j = "fair", bg = "#FFFF00", part = "all") |>
+  bg(j = "good", bg = "#92D050", part = "all") |>
+  bg(j = "very_good", bg = "#00B050", part = "all") |>
+  bg(i = 1, j = "very_good", bg = "#00B050", part = "all") |>
+  bold(part = "header") |>
+  bold(i = 1, j = 1, part = "footer") |>
+  bold(i = 1, j = "good", part = "footer") |>
+  align(align = "center", part = "all") |>
+  valign(valign = "center", part = "all") |>
+  align(i = 2, align = "left", part = "footer") |>
+  border_outer(border = fp_border(color = "black", width = 1)) |>
+  border_inner_h(border = fp_border(color = "black", width = 0.75)) |>
+  border_inner_v(border = fp_border(color = "black", width = 0.75)) |>
+  width(j = 1, width = 1.3) |>
+  width(j = 2, width = 1.5) |>
+  width(j = 3, width = 1.3) |>
+  width(j = 4:7, width = 1.15) |>
+  height_all(height = 0.45) |>
+  fontsize(size = 10, part = "all")
+
+ft
+```
+
+```{r table-4 , echo = FALSE, results = 'asis'}
+#| label: table-4b
+#| tbl-cap: "b"
+#| warning: false
+#| echo: false
+
+library(flextable)
+library(officer)
+
+df <- data.frame(
+  target_species = "Westslope Cutthroat Trout",
+  kea = "Accessible habitat downstream of Elko Dam",
+  indicator = "Longest\nFragment (%)",
+  poor = "<25%",
+  fair = "26 – 50%",
+  good = "51 – 75%",
+  very_good = ">76%",
+  stringsAsFactors = FALSE
+)
+
+ft <- flextable(df)
+
+ft <- ft |>
+  set_header_df(
+    mapping = data.frame(
+      col_keys = names(df),
+      top = c("", "", "", rep("Indicator Ratings", 4)),
+      bottom = c("TargetSpecies", "KEA", "Indicator", "Poor", "Fair", "Good", "Very Good")
+    ),
+    key = "col_keys"
+  ) |>
+  merge_h(part = "header") |>
+  add_footer_row(
+    values = c(
+      "Current Status:",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "94.67%"
+    ),
+    colwidths = rep(1, 7)
+  ) |>
+  add_footer_lines(
+    values = as_paragraph(
+      as_b("Comments: "),
+      "Indicator rating definitions are based on the consensus decisions of the Planning Team. ",
+      "The current status is based on the CWF Barrier Prioritization Model output, ",
+      "which is current as of April 2026."
+    )
+  )
+
+ft <- ft |>
+  bg(j = "poor", bg = "#FF0000", part = "all") |>
+  bg(j = "fair", bg = "#FFFF00", part = "all") |>
+  bg(j = "good", bg = "#92D050", part = "all") |>
+  bg(j = "very_good", bg = "#00B050", part = "all") |>
+  bg(i = 1, j = "very_good", bg = "#00B050", part = "all") |>
+  bold(part = "header") |>
+  bold(i = 1, j = 1, part = "footer") |>
+  bold(i = 1, j = "very_good", part = "footer") |>
+  align(align = "center", part = "all") |>
+  valign(valign = "center", part = "all") |>
+  align(i = 2, align = "left", part = "footer") |>
+  border_outer(border = fp_border(color = "black", width = 1)) |>
+  border_inner_h(border = fp_border(color = "black", width = 0.75)) |>
+  border_inner_v(border = fp_border(color = "black", width = 0.75)) |>
+  width(j = 1, width = 1.3) |>
+  width(j = 2, width = 1.5) |>
+  width(j = 3, width = 1.3) |>
+  width(j = 4:7, width = 1.15) |>
+  height_all(height = 0.45) |>
+  fontsize(size = 10, part = "all")
+
+ft
+```
+In Qukin ?amak?is upstream of Elko Dam, 756.67 km of Westslope Cutthroat Trout habitat are currently connected, 192.15 km are disconnected, and 27.21 km are permanently altered by mining. This means that 77.53% of the 976.03 km of total habitat is connected, and 2.79% of total habitat is permanently altered by mining. 
+
+ 
+
+In Qukin ?amak?is downstream of Elko Dam, 208.36 km of Westslope Cutthroat Trout habitat are currently connected, 11.72 km are disconnected, and 0 km are permanently altered by mining. This means that 94.67% of the 220.08 km of total habitat is connected, and 0% of total habitat is permanently altered by mining. 
+
+
+## Goals {-}
+```{r goals, echo = FALSE, results = 'asis'}
+#| label: table-5
+#| tbl-cap: "Goals to improve habitat connectivity for Westslope Cutthroat Trout, upstream and downstream of Elko Dam, in the Elk River watershed over the lifespan of the WCRP (2021-2041). The goals were established through discussions with the Planning Team and represent the resulting desired state of connectivity in the watershed. The goals for the Downstream of the Elko Dam unit assume that rehabilitation can be undertaken while mitigating the risk of introgressive hybridization. The goals are subject to change as more information and data are collected over the course of the plan timeline (e.g., the current connectivity status is updated based on barrier field assessments)."
+#| warning: false
+#| echo: false
+source("Rscripts/table_formatting.R")
+library("flextable")
+
+data <- read.csv("data/goals-elk.csv", check.names=FALSE)
+ft <- flextable(data)
+ft <- format_flextable(ft)
+ft
+```
+
+## Structure Count {-}
+
+In Qukin ?amak?is upstream of Elko Dam, 216 structures potentially disconnect Westslope Cutthroat Trout habitat. Of these, 15 are identified as barriers in need of rehabilitation (priority barriers), 1 are identified as barriers that do not warrant rehabilitation (non-actionable), and 211 require further field assessment. 
+
+In Qukin ?amak?is downstream of Elko Dam, 15 structures potentially disconnect Westslope Cutthroat Trout habitat. Of these, 3 are identified as barriers in need of rehabilitation (priority barriers), 1 are identified as barriers that do not warrant rehabilitation (non-actionable), and 14 require further field assessment.
+
+## Maps {-}
+
+![Map of Westslope Cutthroat Trout habitat and structures that are confirmed or potential barriers to fish passage in the Elk River watershed (Qukin ?amak?is) as of April 2026. Structure data were obtained from BCFishPass the Canadian Aquatic Barriers Database (aquaticbarriers.ca). The accessibility model represents areas of the watershed that Westslope Cutthroat Trout could access naturally in the absence of anthropogenic barriers. The habitat model represents the subset of accessible waterbodies that may be used by Westslope Cutthroat Trout for spawning or rearing. Available local knowledge and data were incorporated and overruled habitat model results. Thick red lines represent habitat considered to be disconnected (upstream of barriers or unassessed structures). Barriers that were rehabilitated through implementation of this plan are shown, but other excluded structures (e.g., those found to be passable) are not.](images/Fig_6_Elk_upstream_map_2026-04-24.png){fig-cap-location="top"}
+
+![Map of Westslope Cutthroat Trout habitat and structures that are confirmed or potential barriers to fish passage in the Elk River watershed (Qukin ?amak?is) as of April 2026. Structure data were obtained from BCFishPass the Canadian Aquatic Barriers Database (aquaticbarriers.ca). The accessibility model represents areas of the watershed that Westslope Cutthroat Trout could access naturally in the absence of anthropogenic barriers. The habitat model represents the subset of accessible waterbodies that may be used by Westslope Cutthroat Trout for spawning or rearing. Available local knowledge and data were incorporated and overruled habitat model results. Thick red lines represent habitat considered to be disconnected (upstream of barriers or unassessed structures). Barriers that were rehabilitated through implementation of this plan are shown, but other excluded structures (e.g., those found to be passable) are not.](images/Fig_7_Elk_downstream_map_2026-04-24.png){fig-cap-location="top"}
+
+
+## Habitat Accumulation Curves {-}
+
+![Habitat Accumulation Curve (HAC) showing structures in the Elk River watershed (Qukin ?amak?is) upstream of Elko Dam as of April 2026. Structures are ranked based on how much (km) habitat for Westslope Cutthroat Trout is upstream. The y-axis represents the cumulative amount of potential habitat gain (km). Sets of structures are indicated by a grey line below the curve, indicating that gains from addressing the downstream structure alone would be less than the combined gains from addressing all structures in the set. Habitat upstream of unassessed structures is considered disconnected until field assessments are completed. Structures that were excluded as passable are not shown; however, rehabilitated barriers are shown to demonstrate the connectivity gains achieved through implementation of this plan. ](images/Fig 8_HAC US Elk.png){fig-cap-location="top"}
+
+![Figure 9: Habitat Accumulation Curve (HAC) showing structures in the Elk River watershed (Qukin ?amak?is) downstream of Elko Dam as of April 2026. Structures are ranked based on how much (km) habitat for Westslope Cutthroat Trout is upstream. The y-axis represents the cumulative amount of potential habitat gain (km). Sets of structures are indicated by a grey line below the curve, indicating that gains from addressing the downstream structure alone would be less than the combined gains from addressing all structures in the set. Habitat upstream of unassessed structures is considered disconnected until field assessments are completed. Structures that were excluded as passable are not shown; however, rehabilitated barriers are shown to demonstrate the connectivity gains achieved through implementation of this plan.](images/combined_output_alk_below_hac_plot.png){fig-cap-location="top"}
+
+
+## Habitat Accumulation Summary Tables {-} 
+
+```{r has_above, echo = FALSE, results = 'asis'}
+#| label: table-6
+#| tbl-cap: "Table 6: Labelled structures in the Habitat Accumulation Curve (Figure 8), their rank, and upstream habitat for Westslope Cutthroat Trout in Elk River (Qukin ?amak?is) upstream of Elko Dam. Habitat gain (averaged across sets) represents the amount (km) of habitat upstream of that structure to the next structure and depicts the potential gain in habitat if passage at that structure was restored.  "
+#| warning: false
+#| echo: false
+source("Rscripts/table_formatting.R")
+library("flextable")
+
+data <- read.csv("data/HAS_ELK_above.csv", check.names=FALSE)
+ft <- flextable(data)
+ft <- set_header_labels(   
+  ft, 
+    'aggregated_crossings_id' = 'Barrier ID',
+    'internal_name' = 'Site Name',
+     'watershed_group_code'= 'Watershed Name',
+    'structure_list_status' = 'Structure Status',
+    'rank_combined' = 'Rank Order',
+    'all_spawningrearing_belowupstrbarriers_km' = 'Average Habitat Gain (km)')
+ft <- format_flextable(ft)
+ft
+```
+
+```{r has_above, echo = FALSE, results = 'asis'}
+#| label: table-7
+#| tbl-cap: "Table 7: Labelled structures in the Habitat Accumulation Curve (Figure 9), their rank, and upstream habitat for Westslope Cutthroat Trout in Elk River (Qukin ?amak?is) downstream of Elko Dam. Habitat gain (averaged across sets) represents the amount (km) of habitat upstream of that structure to the next structure and depicts the potential gain in habitat if passage at that structure was restored."
+#| warning: false
+#| echo: false
+source("Rscripts/table_formatting.R")
+library("flextable")
+
+data <- read.csv("data/HAS_ELK_below.csv", check.names=FALSE)
+ft <- flextable(data)
+ft <- set_header_labels(   
+  ft, 
+    'aggregated_crossings_id' = 'Barrier ID',
+    'internal_name' = 'Site Name',
+     'watershed_group_code'= 'Watershed Name',
+    'structure_list_status' = 'Structure Status',
+    'rank_combined' = 'Rank Order',
+    'all_spawningrearing_belowupstrbarriers_km' = 'Average Habitat Gain (km)')
+ft <- format_flextable(ft)
+ft
+```

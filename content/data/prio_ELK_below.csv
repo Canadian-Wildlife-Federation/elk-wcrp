@@ -1,0 +1,4 @@
+"barrier_id","internal_name","watershed_group_code","structure_owner","structure_type","partial_passability","partial_passability_notes","num_barriers_set","all_spawningrearing_belowupstrbarriers_km","next_steps"
+"197786","1004606398","ELKR","CanFor","Stream crossing - CBS","",NULL,1,"0.51","Engage with barrier owner"
+"197787","1004606370","ELKR","CanFor","Stream crossing - CBS","Yes","Proportion of time",1,"1.15","Engage with barrier owner"
+"197844","1004605514","ELKR","CanFor","Stream crossing - CBS","No",NULL,1,"1.71","Engage with barrier owner"

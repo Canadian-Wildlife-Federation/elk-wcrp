@@ -1,0 +1,19 @@
+# Appendix B – Partners and Detailed Methods  {-}
+
+## Partners  {-}
+
+```{r echo = FALSE}
+#| label: tbl-15
+#| tbl-cap: "Elk River watershed (Qukin ?amak?is) WCRP Planning Team members (past and present). Planning Team members contributed to the development of this plan by participating in scoping and planning meetings, and reviewing documents and data."
+#| warning: false
+source("Rscripts/table_formatting.R")
+library("flextable")
+data <- read.csv("data/planning_team.csv", check.names=FALSE)
+ft <- flextable(data)
+ft <- format_flextable(ft)
+ft
+```
+
+## Detailed Methods {-}
+
+For details about accessibility, habitat, or connectivity models including structure-ranking methods, see detailed documentation for BCFishPass here: https://smnorris.github.io/bcfishpass/index.html. 

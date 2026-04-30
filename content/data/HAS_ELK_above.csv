@@ -1,0 +1,25 @@
+aggregated_crossings_id,internal_name,watershed_group_code,structure_list_status,rank_combined,all_spawningrearing_belowupstrbarriers_km
+1004600851,Leach Cr @ Unnamed Rd,ELKR,NULL,11,2.6
+1004601519,NULL,ELKR,NULL,16,2.45
+1004602074,NULL,ELKR,NULL,19,1.28
+1004602974,Grace Cr @ Line Rd (4602947),ELKR,Priority barrier,9,3.24
+1004604005,Trib to Elk R @ unnamed,ELKR,NULL,15,1.74
+1024734526,Trib to Alexander Cr @ Unnamed,ELKR,NULL,10,2.94
+1024752563,Line Cr @ Sec.03 Rd,ELKR,NULL,4,9.01
+1024760703,Michel Cr @ Sec.01 FSR,ELKR,NULL,6,4.49
+13635d39-ee0f-4d0c-bb9c-9649ac9a5c63,Harmer Cr Dam (1100001086),ELKR,Priority barrier,5,5.47
+197526,Trib to Elk R @ Elk R Main FSR ,ELKR,Data-deficient barrier,20,1.7
+197533,Brule Cr @ Busato Rd,ELKR,Priority barrier,2,0.13
+197534,Weigert Cr @ Hwy 43,ELKR,Priority barrier,3,10.32
+197542,Hartley Cr @ Dicken Rd,ELKR,Priority barrier,8,0.01
+197553,Lowe Cr @ Elk R Main FSR,ELKR,Data-deficient barrier,17,2.01
+197559,Brule Creek @ Hwy 43,ELKR,Priority barrier,2,21.56
+197825,Henretta Cr @ unnamed,ELKR,Priority barrier,18,10
+197827,Fording R @ FRO Coal Haul Rd (4600762),ELKR,Priority barrier,1,21.01
+199904,Cokato Cr @ Supr (4601996),ELKR,Data-deficient barrier,14,1.53
+50185,Trib to Morrissey Cr @ River Rd,ELKR,Priority barrier,12,2.89
+62181,Dry Cr @ Railway,ELKR,Priority barrier,13,4.53
+62182,Dry Cr @ Fording Hwy,ELKR,Priority barrier,13,0.03
+62245,Tobermory Cr @ Elk R Main FSR,ELKR,Rehabilitated barrier,7,5.33
+98a6d14e-ea75-446a-80e5-8709bf2eb8e9,Hartley Cr @ dam 1,ELKR,Priority barrier,8,0.04
+e86b513c-3dce-4b4a-a49e-e86e4dac935e,Hartley Cr @ dam 2,ELKR,Priority barrier,8,7.83
