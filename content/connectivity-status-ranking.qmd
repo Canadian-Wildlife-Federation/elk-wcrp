@@ -47,7 +47,7 @@ ft <- ft |>
       "",
       "",
       "",
-      "[77.53%]",
+      "77.53%",
       ""
     ),
     colwidths = rep(1, 7)
@@ -69,7 +69,7 @@ ft <- ft |>
   bg(i = 1, j = "very_good", bg = "#00B050", part = "footer") |>
   bold(part = "header") |>
   bold(i = 1, j = 1, part = "footer") |>
-  bold(i = 1, j = "very_good", part = "footer") |>
+  bold(i = 1, j = "good", part = "footer") |>
   align(align = "center", part = "all") |>
   valign(valign = "center", part = "all") |>
   align(i = 2, align = "left", part = "footer") |>
@@ -126,7 +126,7 @@ ft <- ft |>
       "",
       "",
       "",
-      "[94.67%]"
+      "94.67%"
     ),
     colwidths = rep(1, 7)
   ) |>
