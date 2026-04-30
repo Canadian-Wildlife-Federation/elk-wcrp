@@ -47,7 +47,7 @@ ft <- ft |>
       "",
       "",
       "",
-      "[xx%]",
+      "[77.53%]",
       ""
     ),
     colwidths = rep(1, 7)
@@ -126,7 +126,7 @@ ft <- ft |>
       "",
       "",
       "",
-      "[xx%]"
+      "[94.67%]"
     ),
     colwidths = rep(1, 7)
   ) |>
@@ -163,11 +163,11 @@ ft <- ft |>
 
 ft
 ```
-In Qukin ?amak?is upstream of Elko Dam, X km of Westslope Cutthroat Trout habitat are currently connected, X km are disconnected, and x km are permanently altered by mining. This means that X% of the X km of total habitat is connected, and x% of total habitat is permanently altered by mining. 
+In Qukin ?amak?is upstream of Elko Dam, 756.67 km of Westslope Cutthroat Trout habitat are currently connected, 192.15 km are disconnected, and 27.21 km are permanently altered by mining. This means that 77.53% of the 976.03 km of total habitat is connected, and 2.79% of total habitat is permanently altered by mining. 
 
  
 
-In Qukin ?amak?is downstream of Elko Dam, X km of Westslope Cutthroat Trout habitat are currently connected, X km are disconnected, and x km are permanently altered by mining. This means that X% of the X km of total habitat is connected, and x% of total habitat is permanently altered by mining. 
+In Qukin ?amak?is downstream of Elko Dam, 208.36 km of Westslope Cutthroat Trout habitat are currently connected, 11.72 km are disconnected, and 0 km are permanently altered by mining. This means that 94.67% of the 220.08 km of total habitat is connected, and 0% of total habitat is permanently altered by mining. 
 
 
 ## Goals {-}
@@ -187,11 +187,9 @@ ft
 
 ## Structure Count {-}
 
-In Qukin ?amak?is upstream of Elko Dam, X structures potentially disconnect Westslope Cutthroat Trout habitat. Of these, X are identified as barriers in need of rehabilitation (priority barriers), X are identified as barriers that do not warrant rehabilitation (non-actionable), and X require further field assessment. 
+In Qukin ?amak?is upstream of Elko Dam, 216 structures potentially disconnect Westslope Cutthroat Trout habitat. Of these, 15 are identified as barriers in need of rehabilitation (priority barriers), 1 are identified as barriers that do not warrant rehabilitation (non-actionable), and 211 require further field assessment. 
 
- 
-
-In Qukin ?amak?is downstream of Elko Dam, X structures potentially disconnect Westslope Cutthroat Trout habitat. Of these, X are identified as barriers in need of rehabilitation (priority barriers), X are identified as barriers that do not warrant rehabilitation (non-actionable), and X require further field assessment. 
+In Qukin ?amak?is downstream of Elko Dam, 15 structures potentially disconnect Westslope Cutthroat Trout habitat. Of these, 3 are identified as barriers in need of rehabilitation (priority barriers), 1 are identified as barriers that do not warrant rehabilitation (non-actionable), and 14 require further field assessment.
 
 ## Maps {-}
 
