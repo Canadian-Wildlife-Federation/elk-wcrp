@@ -204,7 +204,35 @@ In Qukin ?amak?is downstream of Elko Dam, X structures potentially disconnect We
 
 ![Habitat Accumulation Curve (HAC) showing structures in the Elk River watershed (Qukin ?amak?is) upstream of Elko Dam as of April 2026. Structures are ranked based on how much (km) habitat for Westslope Cutthroat Trout is upstream. The y-axis represents the cumulative amount of potential habitat gain (km). Sets of structures are indicated by a grey line below the curve, indicating that gains from addressing the downstream structure alone would be less than the combined gains from addressing all structures in the set. Habitat upstream of unassessed structures is considered disconnected until field assessments are completed. Structures that were excluded as passable are not shown; however, rehabilitated barriers are shown to demonstrate the connectivity gains achieved through implementation of this plan. ](images/Fig 8_HAC US Elk.png){fig-cap-location="top"}
 
-NEED TO SETUP API FOR THIS
-![Habitat Accumulation Curve (HAC) showing structures in the Elk River watershed (Qukin ?amak?is) downstream of Elko Dam as of April 2026. Structures are ranked based on how much (km) habitat for Westslope Cutthroat Trout is upstream. The y-axis represents the cumulative amount of potential habitat gain (km). Sets of structures are indicated by a grey line below the curve, indicating that gains from addressing the downstream structure alone would be less than the combined gains from addressing all structures in the set. Habitat upstream of unassessed structures is considered disconnected until field assessments are completed. Structures that were excluded as passable are not shown; however, rehabilitated barriers are shown to demonstrate the connectivity gains achieved through implementation of this plan. ](FIGURE 9){fig-cap-location="top"}
+![Figure 9: Habitat Accumulation Curve (HAC) showing structures in the Elk River watershed (Qukin ?amak?is) downstream of Elko Dam as of April 2026. Structures are ranked based on how much (km) habitat for Westslope Cutthroat Trout is upstream. The y-axis represents the cumulative amount of potential habitat gain (km). Sets of structures are indicated by a grey line below the curve, indicating that gains from addressing the downstream structure alone would be less than the combined gains from addressing all structures in the set. Habitat upstream of unassessed structures is considered disconnected until field assessments are completed. Structures that were excluded as passable are not shown; however, rehabilitated barriers are shown to demonstrate the connectivity gains achieved through implementation of this plan.](images/combined_output_alk_below_hac_plot.png){fig-cap-location="top"}
+
 
 ## Habitat Accumulation Summary Tables {-} 
+
+```{r has_above, echo = FALSE, results = 'asis'}
+#| label: table-6
+#| tbl-cap: "Table 6: Labelled structures in the Habitat Accumulation Curve (Figure 8), their rank, and upstream habitat for Westslope Cutthroat Trout in Elk River (Qukin ?amak?is) upstream of Elko Dam. Habitat gain (averaged across sets) represents the amount (km) of habitat upstream of that structure to the next structure and depicts the potential gain in habitat if passage at that structure was restored.  "
+#| warning: false
+#| echo: false
+source("Rscripts/table_formatting.R")
+library("flextable")
+
+data <- read.csv("data/HAS_ELK_above.csv", check.names=FALSE)
+ft <- flextable(data)
+ft <- format_flextable(ft)
+ft
+```
+
+```{r has_above, echo = FALSE, results = 'asis'}
+#| label: table-6
+#| tbl-cap: "Table 7: Labelled structures in the Habitat Accumulation Curve (Figure 9), their rank, and upstream habitat for Westslope Cutthroat Trout in Elk River (Qukin ?amak?is) downstream of Elko Dam. Habitat gain (averaged across sets) represents the amount (km) of habitat upstream of that structure to the next structure and depicts the potential gain in habitat if passage at that structure was restored."
+#| warning: false
+#| echo: false
+source("Rscripts/table_formatting.R")
+library("flextable")
+
+data <- read.csv("data/HAS_ELK_below.csv", check.names=FALSE)
+ft <- flextable(data)
+ft <- format_flextable(ft)
+ft
+```

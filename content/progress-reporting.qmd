@@ -8,7 +8,18 @@ This WCRP process was initiated in 2020 with a series of workshops completed wit
 ## Rehabilitated Barriers {.unnumbered}
 
 Table 9: Westslope Cutthroat Trout barriers in the Elk River (Qukin ?amak?is) upstream of Elko Dam that have been addressed (either through removal, replacement, or modification to improve passage) as of April 2026. Habitat gain represents the amount (km) of habitat that was reconnected by these projects. 
+```{r has_above, echo = FALSE, results = 'asis'}
+#| label: table-9
+#| tbl-cap: "Table 9: Westslope Cutthroat Trout barriers in the Elk River (Qukin ?amak?is) upstream of Elko Dam that have been addressed (either through removal, replacement, or modification to improve passage) as of April 2026. Habitat gain represents the amount (km) of habitat that was reconnected by these projects."
+#| echo: false
+source("Rscripts/table_formatting.R")
+library("flextable")
 
+data <- read.csv("data/rehab_ELK_above.csv", check.names=FALSE)
+ft <- flextable(data)
+ft <- format_flextable(ft)
+ft
+```
 
 ## Annual Progress Report {.unnumbered}
 
@@ -22,8 +33,29 @@ Since April 1, 2025, the following actions were completed:
 
 ## Priority Barriers {-}
 
-Table 10: Structures in the Elk River watershed (Qukin ?amak?is) upstream of Elko Dam that are confirmed as barriers to fish passage for Westslope Cutthroat Trout with confirmed habitat upstream, as of April 2026. Barriers known to be partially passable are indicated by “yes”, with further details provided in the adjacent column. Habitat gain represents the amount (km) of habitat upstream of that barrier to the next structure that will be reconnected if that barrier is addressed. The number of structures in a set represents the number of structures that must be addressed concurrently to maximize habitat connectivity.  
+```{r has_above, echo = FALSE, results = 'asis'}
+#| label: table-10
+#| tbl-cap: "Table 10: Westslope Cutthroat Trout barriers in the Elk River (Qukin ?amak?is) upstream of Elko Dam that have been addressed (either through removal, replacement, or modification to improve passage) as of April 2026. Habitat gain represents the amount (km) of habitat that was reconnected by these projects."
+#| echo: false
+source("Rscripts/table_formatting.R")
+library("flextable")
 
+data <- read.csv("data/prio_ELK_above.csv", check.names=FALSE)
+ft <- flextable(data)
+ft <- format_flextable(ft)
+ft
+```
  
+  
+```{r has_above, echo = FALSE, results = 'asis'}
+#| label: table-11
+#| tbl-cap: "Table 11: Structures in the Elk River watershed (Qukin ?amak?is) downstream of Elko Dam that are confirmed as barriers to fish passage for Westslope Cutthroat Trout with confirmed habitat upstream, as of April 2026. Barriers known to be partially passable are indicated by “yes”, with further details provided in the adjacent column. Habitat gain represents the amount (km) of habitat upstream of that barrier to the next structure that will be reconnected if that barrier is addressed. The number of structures in a set represents the number of structures that must be addressed concurrently to maximize habitat connectivity."
+#| echo: false
+source("Rscripts/table_formatting.R")
+library("flextable")
 
-Table 11: Structures in the Elk River watershed (Qukin ?amak?is) downstream of Elko Dam that are confirmed as barriers to fish passage for Westslope Cutthroat Trout with confirmed habitat upstream, as of April 2026. Barriers known to be partially passable are indicated by “yes”, with further details provided in the adjacent column. Habitat gain represents the amount (km) of habitat upstream of that barrier to the next structure that will be reconnected if that barrier is addressed. The number of structures in a set represents the number of structures that must be addressed concurrently to maximize habitat connectivity.  
+data <- read.csv("data/prio_ELK_below.csv", check.names=FALSE)
+ft <- flextable(data)
+ft <- format_flextable(ft)
+ft
+```

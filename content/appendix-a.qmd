@@ -2,11 +2,47 @@
 
 ## Data-deficient Barriers {-}
 
-Table 12: Structures in Elk River watershed (Qukin ?amak?is) upstream of Elko Dam that have been assessed for fish passage for Westslope Cutthroat Trout as of April 2026 but either require an additional in-depth fish-passage assessment to confirm the passability status or a habitat assessment to confirm upstream values.  
+  
+```{r has_above, echo = FALSE, results = 'asis'}
+#| label: table-12
+#| tbl-cap: "Table 12: Structures in Elk River watershed (Qukin ?amak?is) upstream of Elko Dam that have been assessed for fish passage for Westslope Cutthroat Trout as of April 2026 but either require an additional in-depth fish-passage assessment to confirm the passability status or a habitat assessment to confirm upstream values."
+#| echo: false
+source("Rscripts/table_formatting.R")
+library("flextable")
 
-Table 13: Structures in Elk River watershed (Qukin ?amak?is) downstream of Elko Dam that have been assessed for fish passage for Westslope Cutthroat Trout as of April 2026 but either require an additional in-depth fish-passage assessment to confirm the passability status or a habitat assessment to confirm upstream values.  
+data <- read.csv("data/DD_ELK_above.csv", check.names=FALSE)
+ft <- flextable(data)
+ft <- format_flextable(ft)
+ft
+```
 
+
+  
+```{r has_above, echo = FALSE, results = 'asis'}
+#| label: table-13
+#| tbl-cap: "Table 13: Structures in Elk River watershed (Qukin ?amak?is) downstream of Elko Dam that have been assessed for fish passage for Westslope Cutthroat Trout as of April 2026 but either require an additional in-depth fish-passage assessment to confirm the passability status or a habitat assessment to confirm upstream values."
+#| echo: false
+source("Rscripts/table_formatting.R")
+library("flextable")
+
+data <- read.csv("data/DD_ELK_below.csv", check.names=FALSE)
+ft <- flextable(data)
+ft <- format_flextable(ft)
+ft
+```
 
 ## Excluded Structures {-}
 
-Table 14: Structures in Elk River watershed (Qukin ?amak?is) that are excluded from further consideration in subsequent ranking and work planning because the structure is not present, is confirmed passable (e.g., bridge), or has no habitat upstream for Westslope Cutthroat Trout.  
+  
+```{r has_above, echo = FALSE, results = 'asis'}
+#| label: table-14
+#| tbl-cap: "Table 14: Structures in Elk River watershed (Qukin ?amak?is) that are excluded from further consideration in subsequent ranking and work planning because the structure is not present, is confirmed passable (e.g., bridge), or has no habitat upstream for Westslope Cutthroat Trout."
+#| echo: false
+source("Rscripts/table_formatting.R")
+library("flextable")
+
+data <- read.csv("data/EX_ELK.csv", check.names=FALSE)
+ft <- flextable(data)
+ft <- format_flextable(ft)
+ft
+```
