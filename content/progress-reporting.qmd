@@ -16,6 +16,20 @@ source("Rscripts/table_formatting.R")
 library("flextable")
 
 data <- read.csv("data/rehab_ELK_above.csv", check.names=FALSE)
+data <- data %>%
+  rename(
+    `Barrier ID` = aggregated_crossings_id,
+    `Site Name` = internal_name,
+    `Watershed Name` = watershed_group_code,
+    `Type of Rehabilitation` = type_of_rehabilitation,
+    `Rehabilitated By` = rehabilitated_by,
+    `Rehabilitated Date` = rehabilitated_date,
+    `Habitat Gain (km)*` = all_spawningrearing_belowupstrbarriers_km,
+    `Actual Project Cost ($)` = actual_project_cost_$,
+    `Next Step` = next_steps,
+    `Notes` = notes,
+    `Supporting Links` = supporting_links
+  )
 ft <- flextable(data)
 ft <- format_flextable(ft)
 ft
@@ -41,6 +55,19 @@ source("Rscripts/table_formatting.R")
 library("flextable")
 
 data <- read.csv("data/prio_ELK_above.csv", check.names=FALSE)
+data <- data %>%
+  rename(
+    `Barrier ID` = barrier_id,
+    `Site Name` = internal_name,
+    `Watershed Name` = watershed_group_code,
+    `Structure Owner` = structure_owner,
+    `Structure Type` = structure_type,
+    `Partial Passability` = partial_passability,
+    `Partial Passability Details` = partial_passability_notes,
+    `Number of Structures in Set` = num_barriers_set,
+    `Habitat Gain (km)*` = all_spawningrearing_belowupstrbarriers_km,
+    `Next Step` = next_steps
+  )
 ft <- flextable(data)
 ft <- format_flextable(ft)
 ft
@@ -55,6 +82,19 @@ source("Rscripts/table_formatting.R")
 library("flextable")
 
 data <- read.csv("data/prio_ELK_below.csv", check.names=FALSE)
+data <- data %>%
+  rename(
+    `Barrier ID` = barrier_id,
+    `Site Name` = internal_name,
+    `Watershed Name` = watershed_group_code,
+    `Structure Owner` = structure_owner,
+    `Structure Type` = structure_type,
+    `Partial Passability` = partial_passability,
+    `Partial Passability Details` = partial_passability_notes,
+    `Number of Structures in Set` = num_barriers_set,
+    `Habitat Gain (km)*` = all_spawningrearing_belowupstrbarriers_km,
+    `Next Step` = next_steps
+  )
 ft <- flextable(data)
 ft <- format_flextable(ft)
 ft
