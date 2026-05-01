@@ -95,7 +95,10 @@
     "href": "content/version-history.html",
     "title": "Version History",
     "section": "",
-    "text": "v.1.0 – August 2024"
+    "text": "v.1.0 – August 2024",
+    "crumbs": [
+      "Version History"
+    ]
   },
   {
     "objectID": "content/project-partners.html#planning-team",
