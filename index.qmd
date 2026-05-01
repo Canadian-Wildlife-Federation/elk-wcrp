@@ -6,7 +6,7 @@ The purpose of the Elk River Watershed (Qukin ?amak?is) Connectivity Restoration
 
 Local data and knowledge are combined with connectivity modelling to estimate current connectivity status and identify structures that potentially block the most habitat. This informs the prioritization of field assessments to close the most significant knowledge gaps efficiently. Information from field assessments of barrier status and habitat condition are incorporated into the model, improving understanding of which barriers block the most habitat, and informing restoration prioritization. As knowledge gaps are closed and barriers are addressed, this plan will be revised to summarize progress and provide updated estimates of connectivity status and the status and relative importance of remaining structures. 
 
-In Qukin ?amak?is upstream of Elko Dam, 756.67 km of Westslope Cutthroat Trout habitat are currently connected and 219.36 km are disconnected. This means that 77.53% of the 976.03 km of total habitat is connected. 
+In Qukin ?amak?is upstream of Elko Dam, 756.67 km of Westslope Cutthroat Trout habitat are currently connected, 192.15 km are disconnected, and 27.21 km are permanently altered by mining. This means that 77.53% of the 976.03 km of total habitat is connected, and 2.79% of total habitat is permanently altered by mining. 
 
 In Qukin ?amak?is downstream of Elko Dam, 208.36 km of Westslope Cutthroat Trout habitat are currently connected and 11.72 km are disconnected. This means that 94.67% of the 220.08 km of total habitat is connected. 
 
